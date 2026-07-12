@@ -32,6 +32,32 @@ for (const quest of questsData) {
 }
 
 /**
+ * Materials obtainable ONLY from an event quest — rewarded by an event quest,
+ * with no monster drop, no (non-quest) gathering source, and not also a reward
+ * of any non-event quest. These are what make a piece of gear "event-locked"
+ * (e.g. Amstrigian Ticket → the Amstrigian α set). Drives the Events filter.
+ * materialIndex + gatheringSources are passed in (this module doesn't import them).
+ */
+export function computeEventExclusiveMaterials(materialIndex, gatheringSources) {
+  const eventReward = new Set();
+  const otherReward = new Set();
+  for (const q of questsData) {
+    for (const item of (q.rewardItems || [])) {
+      (q.type === 'event' ? eventReward : otherReward).add(item);
+    }
+  }
+
+  const exclusive = new Set();
+  for (const name of eventReward) {
+    if (otherReward.has(name)) continue;                                   // also from a non-event quest
+    if ((materialIndex[name] || []).length > 0) continue;                  // drops from a monster
+    if ((gatheringSources[name] || []).some(g => g.type !== 'Quest Reward')) continue; // gatherable
+    exclusive.add(name);
+  }
+  return exclusive;
+}
+
+/**
  * Find quests relevant to a specific material.
  * Checks both direct item rewards and monster targets.
  */

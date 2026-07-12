@@ -22,6 +22,7 @@ import { initSearch, search, skillQueryOf } from './search.js';
 import { setMaterialIndex, renderMaterialSource, renderStatLegend, renderResults, renderLoading, renderWelcome, renderGrid, renderGridDetail } from './ui.js';
 import { initFarmingList } from './farming-list.js';
 import { initReferencePanel } from './reference-panel.js';
+import { computeEventExclusiveMaterials } from './quest-lookup.js';
 
 // ---- Weapon grouping ----
 function buildWeaponGroups(weapons) {
@@ -75,6 +76,8 @@ let currentRankFilter = 'all'; // 'all', 'low', 'high'
 let currentTypeFilter = 'all'; // 'all', 'armor', 'charm', 'pendant', 'palico', 'weapon'
 let currentWeaponKindFilter = 'all'; // 'all' or any weapon kind slug
 let currentSort = 'default'; // 'default' | 'defense' | fire/water/ice/thunder/dragon | 'rarity'
+let eventsFilterActive = false; // when on, show only gear needing an event-quest material
+let eventMaterials = new Set(); // event-exclusive material names, computed at init
 let searchTimeout = null;
 let viewMode = 'welcome'; // 'welcome' | 'grid' | 'detail' | 'search'
 
@@ -85,6 +88,21 @@ let visualBtn = null;
 
 function setVisualActive(active) {
   if (visualBtn) visualBtn.classList.toggle('active', active);
+}
+
+// Any non-default filter/sort is active (drives welcome-vs-results decisions).
+function anyFilterActive() {
+  return currentTypeFilter !== 'all' || currentRankFilter !== 'all' || currentSort !== 'default' || eventsFilterActive;
+}
+
+// All crafting-material names for an item (sets/weapon-groups aggregate into
+// allMaterials; charms/pendants/palico/pieces use materials).
+function itemMaterialNames(item) {
+  return (item.allMaterials || item.materials || []).map(m => m.name);
+}
+
+function itemNeedsEvent(item) {
+  return itemMaterialNames(item).some(n => eventMaterials.has(n));
 }
 
 // ---- Grid helpers ----
@@ -154,6 +172,9 @@ function getFilteredItems(query = '') {
   if (currentTypeFilter === 'weapon' && currentWeaponKindFilter !== 'all') {
     items = items.filter(item => item.kind === currentWeaponKindFilter);
   }
+  if (eventsFilterActive) {
+    items = items.filter(itemNeedsEvent);
+  }
   return applySort(items);
 }
 
@@ -188,8 +209,7 @@ function showGridDetail(item, query = '') {
 
 function exitGridMode(searchInput) {
   setVisualActive(false);
-  const hasActiveFilter = currentTypeFilter !== 'all' || currentRankFilter !== 'all' || currentSort !== 'default';
-  if (hasActiveFilter) {
+  if (anyFilterActive()) {
     // Stay in list mode showing filtered results, not welcome
     viewMode = 'search';
     const query = searchInput ? searchInput.value : '';
@@ -206,6 +226,9 @@ function exitGridMode(searchInput) {
 function init() {
   // Set up material index for the UI module
   setMaterialIndex(materialIndexData);
+
+  // Materials only obtainable from event quests → drives the Events filter
+  eventMaterials = computeEventExclusiveMaterials(materialIndexData, gatheringSourcesData);
 
   // Farming list drawer (persistent, localStorage-backed)
   initFarmingList(materialIndexData);
@@ -231,8 +254,7 @@ function init() {
       exitGridMode(searchInput);
     } else {
       searchInput.value = '';
-      const hasActiveFilter = currentTypeFilter !== 'all' || currentRankFilter !== 'all' || currentSort !== 'default';
-      if (hasActiveFilter) {
+      if (anyFilterActive()) {
         showGrid();
       } else {
         viewMode = 'grid';
@@ -329,6 +351,14 @@ function init() {
     rerenderResults();
   });
 
+  // ---- Events filter (gear that needs an event-quest-only material) ----
+  document.getElementById('events-filter-btn').addEventListener('click', (e) => {
+    eventsFilterActive = !eventsFilterActive;
+    e.currentTarget.classList.toggle('active', eventsFilterActive);
+    e.currentTarget.setAttribute('aria-pressed', String(eventsFilterActive));
+    rerenderResults();
+  });
+
   // ---- Weapon kind filter ----
   document.querySelectorAll('.weapon-kind-btn').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -383,7 +413,7 @@ function performSearch(query, container, countEl) {
   let results;
 
   if (!query || query.trim().length < 2) {
-    if (query.trim().length === 0 && currentTypeFilter === 'all' && currentRankFilter === 'all' && currentSort === 'default') {
+    if (query.trim().length === 0 && !anyFilterActive()) {
       viewMode = 'welcome';
       renderWelcome(container);
       countEl.textContent = '';
@@ -414,6 +444,9 @@ function performSearch(query, container, countEl) {
   }
   if (currentTypeFilter === 'weapon' && currentWeaponKindFilter !== 'all') {
     results = results.filter(item => item.kind === currentWeaponKindFilter);
+  }
+  if (eventsFilterActive) {
+    results = results.filter(itemNeedsEvent);
   }
 
   results = applySort(results);

@@ -300,6 +300,31 @@ h4 { font-size: 0.95rem; }
   color: var(--gold);
 }
 
+/* Events filter — an independent toggle (event-purple when on) among the rank pills */
+.events-filter-btn {
+  padding: 0.35rem 0.9rem;
+  text-align: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: 20px;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.events-filter-btn:hover {
+  border-color: var(--badge-event);
+  color: var(--text-primary);
+}
+
+.events-filter-btn.active {
+  background: rgba(137, 87, 229, 0.18);
+  border-color: var(--badge-event);
+  color: #c3aef2;
+}
+
 /* Stat sort dropdown — styled to sit in the filter rows */
 .sort-select {
   padding: 0.35rem 0.75rem;
