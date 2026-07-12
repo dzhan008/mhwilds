@@ -1,0 +1,1141 @@
+[
+  {
+    "name": "A Royal Request",
+    "type": "event",
+    "targets": [],
+    "targetCount": 0,
+    "rewardItems": [
+      "Royal Felyne Emblem"
+    ]
+  },
+  {
+    "name": "Specter of Their Sins",
+    "type": "event",
+    "difficulty": 45,
+    "targets": [
+      "Gogmazios"
+    ],
+    "targetCount": 1,
+    "location": "Ruins of Wyveria",
+    "exclusiveRewards": [
+      "Gogmazios Alpha Set",
+      "Gogmazios Beta Set"
+    ],
+    "rewardItems": [
+      "Gogmazios Certificate"
+    ],
+    "stars": 9,
+    "hr": "100+"
+  },
+  {
+    "name": "A Flash of Brilliance",
+    "type": "event",
+    "difficulty": 40,
+    "targets": [
+      "Rathalos"
+    ],
+    "targetCount": 1,
+    "location": "Scarlet Forest",
+    "exclusiveRewards": [
+      "Azure Age Alpha Set",
+      "Azure Star Blade",
+      "Azure Era Wyrmbow"
+    ],
+    "rewardItems": [
+      "Azure Age Ticket",
+      "Azure Stargem",
+      "Azuz Tanned Leather"
+    ],
+    "stars": 8,
+    "hr": "41+"
+  },
+  {
+    "name": "Razzle Dazzle Frazzle",
+    "type": "event",
+    "difficulty": 37,
+    "targets": [
+      "Rompopolo"
+    ],
+    "targetCount": 1,
+    "location": "Scarlet Forest",
+    "exclusiveRewards": [
+      "Gala Suit Alpha Set"
+    ],
+    "rewardItems": [
+      "Gala Suit Ticket"
+    ],
+    "stars": 8,
+    "hr": "41+"
+  },
+  {
+    "name": "Heart of Judecca",
+    "type": "event",
+    "difficulty": 53,
+    "targets": [
+      "Jin Dahaad"
+    ],
+    "targetCount": 1,
+    "location": "Iceshard Cliffs",
+    "exclusiveRewards": [
+      "Dahaad Gamma Set"
+    ],
+    "rewardItems": [
+      "Jin Dahaad Certificate \u03b3"
+    ],
+    "stars": 9,
+    "hr": "100+"
+  },
+  {
+    "name": "Freedom from Solitude",
+    "type": "event",
+    "difficulty": 60,
+    "targets": [
+      "Guardian Arkveld"
+    ],
+    "targetCount": 1,
+    "location": "Ruins of Wyveria",
+    "exclusiveRewards": [
+      "Arkveld Gamma Set"
+    ],
+    "rewardItems": [
+      "Arkveld Certificate \u03b3"
+    ],
+    "stars": 10,
+    "hr": "100+"
+  },
+  {
+    "name": "These Roots Run Deep",
+    "type": "event",
+    "difficulty": 43,
+    "targets": [
+      "Arch-Tempered Uth Duna"
+    ],
+    "targetCount": 1,
+    "location": "Oilwell Basin",
+    "exclusiveRewards": [
+      "Uth Duna Gamma Set"
+    ],
+    "rewardItems": [
+      "Uth Duna Certificate \u03b3"
+    ],
+    "stars": 8,
+    "hr": "50+"
+  },
+  {
+    "name": "Be Cursed, Ye Shadowy Flame",
+    "type": "event",
+    "difficulty": 52,
+    "targets": [
+      "Nu Udra"
+    ],
+    "targetCount": 1,
+    "location": "Oilwell Basin",
+    "exclusiveRewards": [
+      "Nu Udra Gamma Set"
+    ],
+    "rewardItems": [
+      "Nu Udra Certificate \u03b3"
+    ],
+    "stars": 9,
+    "hr": "100+"
+  },
+  {
+    "name": "The Snow Has Teeth",
+    "type": "event",
+    "difficulty": 41,
+    "targets": [
+      "Blangonga"
+    ],
+    "targetCount": 1,
+    "location": "Iceshard Cliffs",
+    "exclusiveRewards": [
+      "Orion Alpha Set"
+    ],
+    "rewardItems": [
+      "Orion Ticket"
+    ],
+    "stars": 8,
+    "hr": "41+"
+  },
+  {
+    "name": "Hirabami Harvest",
+    "type": "event",
+    "difficulty": 11,
+    "targets": [
+      "Hirabami"
+    ],
+    "targetCount": 1,
+    "location": "Scarlet Forest",
+    "exclusiveRewards": [
+      "Harvest Alpha Set"
+    ],
+    "rewardItems": [
+      "Harvest Ticket"
+    ],
+    "stars": 4,
+    "hr": "9+"
+  },
+  {
+    "name": "That Won't Faze Me!",
+    "type": "event",
+    "difficulty": 33,
+    "targets": [
+      "Gypceros"
+    ],
+    "targetCount": 1,
+    "location": "Scarlet Forest",
+    "exclusiveRewards": [
+      "Gelidron Set"
+    ],
+    "rewardItems": [
+      "Gelidron Ticket",
+      "Dreamspell Catalog"
+    ],
+    "stars": 8,
+    "hr": "41+"
+  },
+  {
+    "name": "Lalas and Toads and Bears, Oh My!",
+    "type": "event",
+    "difficulty": 35,
+    "targets": [
+      "Doshaguma",
+      "Lala Barina"
+    ],
+    "targetCount": 2,
+    "location": "Scarlet Forest",
+    "exclusiveRewards": [
+      "Thief Alpha Set"
+    ],
+    "rewardItems": [
+      "Catspaw"
+    ],
+    "stars": 8,
+    "hr": "41+"
+  },
+  {
+    "name": "Playing the Long Game",
+    "type": "event",
+    "difficulty": 39,
+    "targets": [
+      "Congalala"
+    ],
+    "targetCount": 1,
+    "location": "Scarlet Forest",
+    "exclusiveRewards": [
+      "Eager Wudwud Alpha Set"
+    ],
+    "rewardItems": [],
+    "stars": 8,
+    "hr": "41+"
+  },
+  {
+    "name": "Frenzy or Be Frenzied Upon",
+    "type": "event",
+    "difficulty": 31,
+    "targets": [
+      "Gypceros",
+      "Nerscylla"
+    ],
+    "targetCount": 2,
+    "location": "Scarlet Forest",
+    "exclusiveRewards": [
+      "Skull Mask Alpha"
+    ],
+    "rewardItems": [
+      "Skull Ticket"
+    ],
+    "stars": 8,
+    "hr": "41+"
+  },
+  {
+    "name": "A Vile Visage",
+    "type": "event",
+    "difficulty": 13,
+    "targets": [
+      "Alpha Doshaguma"
+    ],
+    "targetCount": 1,
+    "location": "Windward Plains",
+    "exclusiveRewards": [
+      "Doshagumask Alpha"
+    ],
+    "rewardItems": [
+      "Doshaguma Sketch"
+    ],
+    "stars": 5,
+    "hr": "9+"
+  },
+  {
+    "name": "Kut-Ku Gone Cuckoo",
+    "type": "event",
+    "difficulty": 6,
+    "targets": [
+      "Yian Kut-Ku"
+    ],
+    "targetCount": 1,
+    "location": "Scarlet Forest",
+    "exclusiveRewards": [
+      "Mimiphyta Alpha Set"
+    ],
+    "rewardItems": [
+      "Mimiphyta Ticket",
+      "Monster Keenbone"
+    ],
+    "stars": 4,
+    "hr": "9+"
+  },
+  {
+    "name": "Kut-Ku the Forest Conqueror",
+    "type": "event",
+    "difficulty": 19,
+    "targets": [
+      "Tempered Yian Kut-Ku"
+    ],
+    "targetCount": 1,
+    "location": "Scarlet Forest",
+    "exclusiveRewards": [
+      "Wudwud Guise Alpha Set"
+    ],
+    "rewardItems": [],
+    "stars": 5,
+    "hr": "21+"
+  },
+  {
+    "name": "Like a Fire Hidden by Sand",
+    "type": "event",
+    "difficulty": 7,
+    "targets": [
+      "Rathian"
+    ],
+    "targetCount": 1,
+    "location": "Windward Plains",
+    "exclusiveRewards": [
+      "Expedition Headgear Alpha"
+    ],
+    "rewardItems": [
+      "Expedition Headgear Ticket",
+      "Monster Keenbone"
+    ],
+    "stars": 4,
+    "hr": "9+"
+  },
+  {
+    "name": "Daughters of Carabosse",
+    "type": "event",
+    "difficulty": 8,
+    "targets": [
+      "Lala Barina"
+    ],
+    "targetCount": 1,
+    "location": "Scarlet Forest",
+    "exclusiveRewards": [
+      "Blossom Alpha Set"
+    ],
+    "rewardItems": [
+      "Blossom Ticket"
+    ],
+    "stars": 4,
+    "hr": "16+"
+  },
+  {
+    "name": "Every Hunter's Dream",
+    "type": "event",
+    "difficulty": 42,
+    "targets": [
+      "Gore Magala"
+    ],
+    "targetCount": 1,
+    "location": "Ruins of Wyveria",
+    "exclusiveRewards": [
+      "Shatterseal"
+    ],
+    "rewardItems": [
+      "Hunter's Dream Ticket"
+    ],
+    "stars": 8,
+    "hr": "41+"
+  },
+  {
+    "name": "Planetes Protocol (Savage)",
+    "type": "event",
+    "difficulty": 51,
+    "targets": [
+      "Guardian Arkveld"
+    ],
+    "targetCount": 1,
+    "location": "Ruins of Wyveria",
+    "exclusiveRewards": [
+      "Omega Attire Alpha Set",
+      "Omega's Rod",
+      "Omega's Sword"
+    ],
+    "rewardItems": [
+      "Omega Data 2.0"
+    ],
+    "stars": 9,
+    "hr": "100+"
+  },
+  {
+    "name": "Congalala Courting Carols",
+    "type": "event",
+    "difficulty": 21,
+    "targets": [
+      "Congalala"
+    ],
+    "targetCount": 1,
+    "location": "Scarlet Forest",
+    "exclusiveRewards": [],
+    "rewardItems": [],
+    "stars": 5,
+    "hr": "21+"
+  },
+  {
+    "name": "There Goes the Neighborhood",
+    "type": "event",
+    "difficulty": 48,
+    "targets": [
+      "Multiple"
+    ],
+    "targetCount": 2,
+    "location": "Various",
+    "exclusiveRewards": [],
+    "rewardItems": [
+      "Glowing Stone"
+    ],
+    "stars": 9,
+    "hr": "100+"
+  },
+  {
+    "name": "The Monkey King",
+    "type": "event",
+    "difficulty": 47,
+    "targets": [
+      "Blangonga"
+    ],
+    "targetCount": 1,
+    "location": "Iceshard Cliffs",
+    "exclusiveRewards": [],
+    "rewardItems": [
+      "Glowing Stone"
+    ],
+    "stars": 9,
+    "hr": "100+"
+  },
+  {
+    "name": "Sovereign Brute",
+    "type": "event",
+    "difficulty": 46,
+    "targets": [
+      "Doshaguma"
+    ],
+    "targetCount": 1,
+    "location": "Windward Plains",
+    "exclusiveRewards": [],
+    "rewardItems": [
+      "Glowing Stone"
+    ],
+    "stars": 7
+  },
+  {
+    "name": "Ultimate Berserker",
+    "type": "event",
+    "difficulty": 49,
+    "targets": [
+      "Guardian Fulgur Anjanath"
+    ],
+    "targetCount": 1,
+    "location": "Ruins of Wyveria",
+    "exclusiveRewards": [],
+    "rewardItems": [
+      "Glowing Stone"
+    ],
+    "stars": 9,
+    "hr": "100+"
+  },
+  {
+    "name": "That Won't Work on Me!",
+    "type": "event",
+    "difficulty": 26,
+    "targets": [
+      "Xu Wu"
+    ],
+    "targetCount": 1,
+    "location": "Iceshard Cliffs",
+    "exclusiveRewards": [
+      "Blossomdance Catalog"
+    ],
+    "rewardItems": [
+      "Blossomdance Catalog",
+      "Ancient Orb - Armor",
+      "Ancient Orb - Sword"
+    ],
+    "stars": 6,
+    "hr": "31+"
+  },
+  {
+    "name": "Hungry for Ore?",
+    "type": "event",
+    "difficulty": 38,
+    "targets": [
+      "Tempered Gravios"
+    ],
+    "targetCount": 1,
+    "location": "Windward Plains",
+    "exclusiveRewards": [
+      "Worn Pickaxe",
+      "Mad Scavenger Pickaxe",
+      "Mining Pickaxe"
+    ],
+    "rewardItems": [],
+    "stars": 8,
+    "hr": "41+"
+  },
+  {
+    "name": "Wreaking Havoc in Wyveria",
+    "type": "event",
+    "difficulty": 28,
+    "targets": [
+      "Tempered Guardian Fulgur Anjanath"
+    ],
+    "targetCount": 1,
+    "location": "Ruins of Wyveria",
+    "exclusiveRewards": [],
+    "rewardItems": [
+      "Ancient Orb - Armor",
+      "Ancient Orb - Sword",
+      "Guardian Ebony Scale +",
+      "Guardian Fulgur Certificate S"
+    ],
+    "stars": 6,
+    "hr": "31+"
+  },
+  {
+    "name": "No More Mister Ice Guy",
+    "type": "event",
+    "difficulty": 29,
+    "targets": [
+      "Tempered Blangonga"
+    ],
+    "targetCount": 1,
+    "location": "Iceshard Cliffs",
+    "exclusiveRewards": [],
+    "rewardItems": [
+      "Ancient Orb - Armor",
+      "Beast Gem",
+      "Blangonga Certificate S",
+      "Blangonga Fang +"
+    ],
+    "stars": 6,
+    "hr": "31+"
+  },
+  {
+    "name": "Fire Starter",
+    "type": "optional",
+    "difficulty": 4,
+    "targets": [
+      "Quematrice"
+    ],
+    "targetCount": 1,
+    "location": "Windward Plains",
+    "stars": 1
+  },
+  {
+    "name": "Sand Sea Surges",
+    "type": "optional",
+    "difficulty": 10,
+    "targets": [
+      "Balahara"
+    ],
+    "targetCount": 1,
+    "location": "Windward Plains",
+    "stars": 1
+  },
+  {
+    "name": "Sultan of the Sand",
+    "type": "optional",
+    "difficulty": 15,
+    "targets": [
+      "Doshaguma"
+    ],
+    "targetCount": 1,
+    "location": "Windward Plains",
+    "stars": 2
+  },
+  {
+    "name": "A Vow to Remain",
+    "type": "optional",
+    "difficulty": 20,
+    "targets": [
+      "Gravios"
+    ],
+    "targetCount": 1,
+    "location": "Windward Plains",
+    "stars": 4
+  },
+  {
+    "name": "Time to Exorcise",
+    "type": "optional",
+    "difficulty": 18,
+    "targets": [
+      "Nerscylla"
+    ],
+    "targetCount": 1,
+    "location": "Windward Plains",
+    "stars": 4
+  },
+  {
+    "name": "Rath-from-Above, Go!",
+    "type": "optional",
+    "difficulty": 22,
+    "targets": [
+      "Rathalos"
+    ],
+    "targetCount": 1,
+    "location": "Windward Plains",
+    "rewardItems": [
+      "Monster Keenbone"
+    ],
+    "stars": 4
+  },
+  {
+    "name": "The Chains of Life",
+    "type": "optional",
+    "difficulty": 25,
+    "targets": [
+      "Rey Dau"
+    ],
+    "targetCount": 1,
+    "location": "Windward Plains",
+    "stars": 7
+  },
+  {
+    "name": "When the Dust Settles",
+    "type": "optional",
+    "difficulty": 30,
+    "targets": [
+      "Gravios"
+    ],
+    "targetCount": 1,
+    "location": "Windward Plains",
+    "stars": 6
+  },
+  {
+    "name": "A Futile Fight",
+    "type": "optional",
+    "difficulty": 16,
+    "targets": [
+      "Rathian",
+      "Doshaguma"
+    ],
+    "targetCount": 2,
+    "location": "Windward Plains",
+    "stars": 4
+  },
+  {
+    "name": "The Pursued and the Pursuer",
+    "type": "optional",
+    "difficulty": 14,
+    "targets": [
+      "Nerscylla",
+      "Rathian"
+    ],
+    "targetCount": 2,
+    "location": "Windward Plains",
+    "rewardItems": [
+      "Monster Keenbone"
+    ],
+    "stars": 4
+  },
+  {
+    "name": "The Desert Knows Not the Sea",
+    "type": "optional",
+    "difficulty": 17,
+    "targets": [
+      "Balahara"
+    ],
+    "targetCount": 1,
+    "location": "Windward Plains",
+    "rewardItems": [
+      "Monster Keenbone"
+    ],
+    "stars": 4
+  },
+  {
+    "name": "Continuing Conflict",
+    "type": "optional",
+    "difficulty": 24,
+    "targets": [
+      "Seregios"
+    ],
+    "targetCount": 1,
+    "location": "Windward Plains",
+    "stars": 5
+  },
+  {
+    "name": "A Leviathan's Temper",
+    "type": "optional",
+    "difficulty": 23,
+    "targets": [
+      "Lagiacrus"
+    ],
+    "targetCount": 1,
+    "location": "Windward Plains",
+    "rewardItems": [
+      "Monster Keenbone"
+    ],
+    "stars": 5
+  },
+  {
+    "name": "Every Rose",
+    "type": "optional",
+    "difficulty": 6,
+    "targets": [
+      "Lala Barina"
+    ],
+    "targetCount": 1,
+    "location": "Scarlet Forest",
+    "stars": 1
+  },
+  {
+    "name": "Tussle in Pink",
+    "type": "optional",
+    "difficulty": 8,
+    "targets": [
+      "Rathian"
+    ],
+    "targetCount": 1,
+    "location": "Scarlet Forest",
+    "stars": 1
+  },
+  {
+    "name": "Forest Outlaw",
+    "type": "optional",
+    "difficulty": 12,
+    "targets": [
+      "Congalala"
+    ],
+    "targetCount": 1,
+    "location": "Scarlet Forest",
+    "stars": 1
+  },
+  {
+    "name": "Veiled by the Tide",
+    "type": "optional",
+    "difficulty": 18,
+    "targets": [
+      "Uth Duna"
+    ],
+    "targetCount": 1,
+    "location": "Scarlet Forest",
+    "stars": 2
+  },
+  {
+    "name": "Flower of Eternal Rest",
+    "type": "optional",
+    "difficulty": 20,
+    "targets": [
+      "Gore Magala"
+    ],
+    "targetCount": 1,
+    "location": "Scarlet Forest",
+    "stars": 4
+  },
+  {
+    "name": "All Hail the Queen",
+    "type": "optional",
+    "difficulty": 22,
+    "targets": [
+      "Rathian"
+    ],
+    "targetCount": 1,
+    "location": "Scarlet Forest",
+    "rewardItems": [
+      "Monster Keenbone"
+    ],
+    "stars": 4
+  },
+  {
+    "name": "Doshaguma Hunt",
+    "type": "optional",
+    "difficulty": 15,
+    "targets": [
+      "Doshaguma"
+    ],
+    "targetCount": 1,
+    "location": "Scarlet Forest",
+    "stars": 5
+  },
+  {
+    "name": "King of the Skies",
+    "type": "optional",
+    "difficulty": 24,
+    "targets": [
+      "Rathalos"
+    ],
+    "targetCount": 1,
+    "location": "Scarlet Forest",
+    "rewardItems": [
+      "Monster Keenbone"
+    ],
+    "stars": 5
+  },
+  {
+    "name": "Serenade of Scarlet Water",
+    "type": "optional",
+    "difficulty": 26,
+    "targets": [
+      "Mizutsune"
+    ],
+    "targetCount": 1,
+    "location": "Scarlet Forest",
+    "stars": 9
+  },
+  {
+    "name": "A Sharp Sort",
+    "type": "optional",
+    "difficulty": 5,
+    "targets": [
+      "Hirabami"
+    ],
+    "targetCount": 1,
+    "location": "Oilwell Basin",
+    "stars": 1
+  },
+  {
+    "name": "Smithy's Seal of Quality",
+    "type": "optional",
+    "difficulty": 20,
+    "targets": [
+      "Blangonga"
+    ],
+    "targetCount": 1,
+    "location": "Iceshard Cliffs",
+    "stars": 4
+  },
+  {
+    "name": "Putting Up a Stink",
+    "type": "event",
+    "difficulty": 0,
+    "targets": [
+      "Congalala"
+    ],
+    "targetCount": 1,
+    "location": "Scarlet Forest",
+    "exclusiveRewards": [
+      "Flamefete Catalog"
+    ],
+    "rewardItems": [
+      "Flamefete Catalog"
+    ],
+    "stars": 5
+  },
+  {
+    "name": "It's Darker than You Think",
+    "type": "event",
+    "difficulty": 0,
+    "targets": [],
+    "targetCount": 1,
+    "location": "Unknown",
+    "exclusiveRewards": [
+      "Lumenhymn Catalog"
+    ],
+    "rewardItems": [
+      "Lumenhymn Catalog"
+    ],
+    "stars": 8,
+    "hr": "41+"
+  },
+  {
+    "name": "Arena: Chatacabra",
+    "type": "event",
+    "difficulty": 0,
+    "targets": [
+      "Chatacabra"
+    ],
+    "targetCount": 1,
+    "location": "Arena",
+    "rewardItems": [
+      "Chata Coin"
+    ],
+    "stars": 4
+  },
+  {
+    "name": "Arena: Rathian",
+    "type": "event",
+    "difficulty": 0,
+    "targets": [
+      "Rathian"
+    ],
+    "targetCount": 1,
+    "location": "Arena",
+    "rewardItems": [
+      "Rathian Coin"
+    ],
+    "stars": 6
+  },
+  {
+    "name": "The Shining Storm Rages",
+    "type": "event",
+    "difficulty": 0,
+    "targets": [
+      "Rey Dau"
+    ],
+    "targetCount": 1,
+    "location": "Windward Plains",
+    "exclusiveRewards": [
+      "Rey Dau Gamma Set"
+    ],
+    "rewardItems": [
+      "Rey Dau Certificate \u03b3"
+    ],
+    "stars": 9
+  },
+  {
+    "name": "A Silent Flash",
+    "type": "event",
+    "difficulty": 0,
+    "targets": [
+      "Rey Dau"
+    ],
+    "targetCount": 1,
+    "location": "Windward Plains",
+    "rewardItems": [
+      "Rey Dau Certificate \u03b3"
+    ],
+    "stars": 8,
+    "hr": "50+"
+  },
+  {
+    "name": "True Strength",
+    "type": "event",
+    "difficulty": 0,
+    "targets": [],
+    "targetCount": 1,
+    "location": "Unknown",
+    "exclusiveRewards": [
+      "Akuma Alpha Set"
+    ],
+    "rewardItems": [
+      "SF6 Ticket"
+    ],
+    "stars": 8
+  },
+  {
+    "name": "Demonic Strength",
+    "type": "event",
+    "difficulty": 0,
+    "targets": [],
+    "targetCount": 1,
+    "location": "Unknown",
+    "rewardItems": [
+      "SF6 Ticket"
+    ],
+    "stars": 7
+  },
+  {
+    "name": "Running Wild",
+    "type": "event",
+    "difficulty": 0,
+    "targets": [],
+    "targetCount": 1,
+    "location": "Unknown",
+    "exclusiveRewards": [
+      "Sealed Dragon Cloth Alpha"
+    ],
+    "rewardItems": [
+      "Sealed Dragon Cloth"
+    ],
+    "stars": 5,
+    "hr": "21+"
+  },
+  {
+    "name": "The Claws Are Out",
+    "type": "event",
+    "difficulty": 0,
+    "targets": [],
+    "targetCount": 1,
+    "location": "Unknown",
+    "exclusiveRewards": [
+      "Toe Bean Mittens Alpha"
+    ],
+    "rewardItems": [
+      "Toe Bean Ticket"
+    ],
+    "stars": 8
+  },
+  {
+    "name": "When Do Quematrice Sing?",
+    "type": "event",
+    "difficulty": 0,
+    "targets": [
+      "Quematrice"
+    ],
+    "targetCount": 1,
+    "location": "Windward Plains",
+    "exclusiveRewards": [
+      "Amstrigian Alpha Set"
+    ],
+    "rewardItems": [
+      "Amstrigian Ticket"
+    ],
+    "stars": 4
+  },
+  {
+    "name": "Pick Your Poison",
+    "type": "event",
+    "difficulty": 0,
+    "targets": [
+      "Gypceros",
+      "Rompopolo"
+    ],
+    "targetCount": 2,
+    "location": "Unknown",
+    "exclusiveRewards": [
+      "Diver Alpha Set"
+    ],
+    "rewardItems": [
+      "Diving Ticket"
+    ],
+    "stars": 4,
+    "hr": "9+"
+  },
+  {
+    "name": "Three Tails Better Than None",
+    "type": "event",
+    "difficulty": 0,
+    "targets": [
+      "Quematrice"
+    ],
+    "targetCount": 1,
+    "location": "Unknown",
+    "exclusiveRewards": [
+      "Faux Felyne Alpha Set"
+    ],
+    "rewardItems": [
+      "Felyne Ticket",
+      "Monster Keenbone"
+    ],
+    "stars": 4,
+    "hr": "16+"
+  },
+  {
+    "name": "An Inferno Laid Bare",
+    "type": "event",
+    "difficulty": 0,
+    "targets": [
+      "Nu Udra"
+    ],
+    "targetCount": 1,
+    "location": "Unknown",
+    "exclusiveRewards": [
+      "Pinion Necklace Alpha"
+    ],
+    "rewardItems": [
+      "Necklace Ticket"
+    ],
+    "stars": 6,
+    "hr": "31+"
+  },
+  {
+    "name": "Lured by Abundance",
+    "type": "optional",
+    "difficulty": 0,
+    "targets": [],
+    "targetCount": 1,
+    "location": "Unknown",
+    "rewardItems": [
+      "Monster Keenbone"
+    ],
+    "stars": 5
+  },
+  {
+    "name": "Profusion of Poison",
+    "type": "optional",
+    "difficulty": 0,
+    "targets": [],
+    "targetCount": 1,
+    "location": "Unknown",
+    "rewardItems": [
+      "Monster Keenbone"
+    ],
+    "stars": 4
+  },
+  {
+    "name": "Mysterious Poison",
+    "type": "optional",
+    "difficulty": 0,
+    "targets": [],
+    "targetCount": 1,
+    "location": "Unknown",
+    "rewardItems": [
+      "Monster Keenbone"
+    ],
+    "stars": 4
+  },
+  {
+    "name": "Armor Like a Mountain",
+    "type": "optional",
+    "difficulty": 0,
+    "targets": [],
+    "targetCount": 1,
+    "location": "Unknown",
+    "rewardItems": [
+      "Monster Keenbone"
+    ],
+    "stars": 5
+  },
+  {
+    "name": "Succulent Scraps",
+    "type": "optional",
+    "difficulty": 0,
+    "targets": [],
+    "targetCount": 1,
+    "location": "Unknown",
+    "rewardItems": [
+      "Monster Keenbone"
+    ],
+    "stars": 5
+  },
+  {
+    "name": "Fleeting Victory",
+    "type": "optional",
+    "difficulty": 0,
+    "targets": [],
+    "targetCount": 1,
+    "location": "Unknown",
+    "rewardItems": [
+      "Monster Keenbone"
+    ],
+    "stars": 4
+  },
+  {
+    "name": "Just What the Doctor Ordered",
+    "type": "event",
+    "difficulty": 0,
+    "targets": [
+      "Rompopolo"
+    ],
+    "targetCount": 1,
+    "location": "Unknown",
+    "exclusiveRewards": [
+      "Rompomask Alpha"
+    ],
+    "rewardItems": [
+      "Rompopolo Sketch"
+    ],
+    "stars": 6
+  },
+  {
+    "name": "Secure Wounded Hollow",
+    "type": "optional",
+    "difficulty": 0,
+    "targets": [],
+    "targetCount": 1,
+    "location": "Wounded Hollow",
+    "rewardItems": [
+      "Monster Keenbone"
+    ],
+    "stars": 4
+  }
+]

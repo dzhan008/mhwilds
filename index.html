@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monster Hunter Wilds Equipment Search</title>
+    <meta name="description" content="Monster Hunter Wilds equipment search. Find armor sets, charms, and pendants — then trace every material back to its monster drops and quests." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="app">
+      <header class="app-header">
+        <h1><span class="header-icon">⚔️</span>Monster Hunter Wilds Equipment Search</h1>
+      </header>
+
+      <div class="search-container">
+        <div class="search-filter-group">
+        <div class="search-wrapper">
+          <span class="search-icon" aria-hidden="true">🔎</span>
+          <input
+            type="text"
+            id="search-input"
+            class="search-input"
+            placeholder="Search armor sets, pieces, or materials..."
+            autocomplete="off"
+            spellcheck="false"
+          />
+        </div>
+        <div class="search-hint">Press <kbd>/</kbd> to focus · Search by set name, piece, or material</div>
+        <div class="visual-row">
+          <button id="visual-btn" class="mode-switch" aria-label="Toggle between list and visual mode">
+            <span class="mode-switch-option">List</span>
+            <span class="mode-switch-option">Visual</span>
+          </button>
+        </div>
+        <div class="type-filter" style="display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap;">
+          <button class="type-btn rank-btn active" data-type="all">All Types</button>
+          <button class="type-btn rank-btn" data-type="armor">Armor</button>
+          <button class="type-btn rank-btn" data-type="weapon">Weapons</button>
+          <button class="type-btn rank-btn" data-type="charm">Charms</button>
+          <button class="type-btn rank-btn" data-type="pendant">Pendants</button>
+          <button class="type-btn rank-btn" data-type="palico">Palico</button>
+        </div>
+        </div><!-- /.search-filter-group -->
+        <div id="weapon-kind-filter" style="display:none; justify-content:center; gap:0.4rem; flex-wrap:wrap; margin-top:0.4rem;">
+          <button class="weapon-kind-btn rank-btn active" data-kind="all">All</button>
+          <button class="weapon-kind-btn rank-btn" data-kind="great-sword">Great Sword</button>
+          <button class="weapon-kind-btn rank-btn" data-kind="sword-shield">Sword &amp; Shield</button>
+          <button class="weapon-kind-btn rank-btn" data-kind="dual-blades">Dual Blades</button>
+          <button class="weapon-kind-btn rank-btn" data-kind="long-sword">Long Sword</button>
+          <button class="weapon-kind-btn rank-btn" data-kind="hammer">Hammer</button>
+          <button class="weapon-kind-btn rank-btn" data-kind="hunting-horn">Hunting Horn</button>
+          <button class="weapon-kind-btn rank-btn" data-kind="lance">Lance</button>
+          <button class="weapon-kind-btn rank-btn" data-kind="gunlance">Gunlance</button>
+          <button class="weapon-kind-btn rank-btn" data-kind="switch-axe">Switch Axe</button>
+          <button class="weapon-kind-btn rank-btn" data-kind="charge-blade">Charge Blade</button>
+          <button class="weapon-kind-btn rank-btn" data-kind="insect-glaive">Insect Glaive</button>
+          <button class="weapon-kind-btn rank-btn" data-kind="light-bowgun">Light Bowgun</button>
+          <button class="weapon-kind-btn rank-btn" data-kind="heavy-bowgun">Heavy Bowgun</button>
+          <button class="weapon-kind-btn rank-btn" data-kind="bow">Bow</button>
+        </div>
+        <div class="rank-filter" style="margin-top: 0.5rem;">
+          <button class="rank-btn active" data-rank="all">All Ranks</button>
+          <button class="rank-btn" data-rank="low">Low Rank</button>
+          <button class="rank-btn" data-rank="high">High Rank</button>
+          <select id="sort-select" class="sort-select" aria-label="Sort results">
+            <option value="default">Sort: Default</option>
+            <option value="defense">Defense ↓</option>
+            <option value="fire">Fire res ↓</option>
+            <option value="water">Water res ↓</option>
+            <option value="thunder">Thunder res ↓</option>
+            <option value="ice">Ice res ↓</option>
+            <option value="dragon">Dragon res ↓</option>
+            <option value="rarity">Rarity ↓</option>
+          </select>
+        </div>
+      </div>
+
+      <main class="results-container">
+        <div id="search-count" class="search-count"></div>
+        <div id="results" class="results-grid"></div>
+      </main>
+
+    </div>
+
+    <aside id="ref-panel" class="ref-panel" role="dialog" aria-label="Reference" tabindex="-1">
+      <div class="ref-header">
+        <h3>📖 Reference</h3>
+        <button id="ref-close" class="close-btn" aria-label="Close reference panel">&times;</button>
+      </div>
+      <div class="ref-tabs" role="tablist">
+        <button class="ref-tab active" data-tab="skills" role="tab" aria-selected="true">Skills</button>
+        <button class="ref-tab" data-tab="materials" role="tab" aria-selected="false">Materials</button>
+        <button class="ref-tab" data-tab="legend" role="tab" aria-selected="false">Legend</button>
+      </div>
+      <div class="ref-search" id="ref-search-row">
+        <input type="text" id="ref-skill-search" placeholder="Filter skills..." aria-label="Filter skills" />
+        <div class="ref-kind-filter" id="ref-kind-filter" role="group" aria-label="Filter skills by kind">
+          <button class="ref-kind-btn active" data-kind="all">All</button>
+          <button class="ref-kind-btn" data-kind="armor">Armor</button>
+          <button class="ref-kind-btn" data-kind="weapon">Weapon</button>
+          <button class="ref-kind-btn" data-kind="bonus">Bonuses</button>
+        </div>
+      </div>
+      <div id="ref-body" class="ref-body"></div>
+    </aside>
+
+    <button id="farming-toggle" class="farming-toggle" aria-label="Toggle farming list">
+      📌<span id="farming-count" class="farming-count" hidden>0</span>
+    </button>
+
+    <button id="ref-toggle" class="ref-toggle" aria-label="Toggle reference panel">📖</button>
+
+    <aside id="farming-panel" class="farming-panel" role="dialog" aria-label="Farming list" tabindex="-1">
+      <div class="farming-header">
+        <div class="farming-profile">
+          <span class="farming-profile-icon" aria-hidden="true">📌</span>
+          <select id="farming-profile-select" aria-label="Active build"></select>
+          <button id="farming-profile-toggle" class="farming-profile-toggle" aria-label="Build options">⋯</button>
+          <div id="farming-profile-menu" class="farming-profile-menu" hidden>
+            <button data-paction="new">＋ New build</button>
+            <button data-paction="rename">✎ Rename</button>
+            <button data-paction="duplicate">⧉ Duplicate</button>
+            <button data-paction="delete">🗑 Delete</button>
+          </div>
+        </div>
+        <button id="farming-close" class="close-btn" aria-label="Close farming list">&times;</button>
+      </div>
+      <div id="farming-profile-form" class="farming-profile-form" hidden></div>
+      <div class="farming-tabs" role="tablist">
+        <button class="farming-tab active" data-tab="plan" role="tab" aria-selected="true">Hunt Plan</button>
+        <button class="farming-tab" data-tab="gear" role="tab" aria-selected="false">
+          Gear <span id="farming-tab-count" class="farming-tab-count" hidden>0</span>
+        </button>
+      </div>
+      <div id="farming-body" class="farming-body"></div>
+      <div class="farming-footer">
+        <button id="farming-clear-checked" class="rank-btn">Reset checks</button>
+        <button id="farming-clear-all" class="rank-btn">Clear all</button>
+      </div>
+    </aside>
+
+    <footer class="app-footer">
+      Images via <img src="/images/fextralife-logo.png" alt="Fextralife" class="fextralife-logo" /><a href="https://monsterhunterwilds.wiki.fextralife.com" target="_blank" rel="noopener">Fextralife Wiki</a>
+      · Data via <a href="https://wilds.mhdb.io" target="_blank" rel="noopener">mhdb.io</a>
+      · Not affiliated with Capcom
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

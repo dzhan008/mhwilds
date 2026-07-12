@@ -1,0 +1,277 @@
+{
+  "Wingdrake Hide+": [
+    {"type": "Small Monster", "source": "Wingdrakes (Barnos, Mernos, Cortos) - High Rank"},
+    {"type": "Quest Reward", "source": "Various High Rank Quests"}
+  ],
+  "Wingdrake Hide": [
+    {"type": "Small Monster", "source": "Wingdrakes (Barnos, Mernos, Cortos) - Low Rank"},
+    {"type": "Quest Reward", "source": "Various Low Rank Quests"}
+  ],
+  "Firestone": [
+    {"type": "Mining Outcrop", "source": "Windward Plains, Scarlet Forest (Low/High Rank)"}
+  ],
+  "Firecell Stone": [
+    {"type": "Mining Outcrop", "source": "Windward Plains (High Rank, volcanic outcrops)"}
+  ],
+  "Iron Ore": [
+    {"type": "Mining Outcrop", "source": "All Locales (Low Rank)"}
+  ],
+  "Machalite Ore": [
+    {"type": "Mining Outcrop", "source": "All Locales (Low Rank)"}
+  ],
+  "Earth Crystal": [
+    {"type": "Mining Outcrop", "source": "All Locales (Low Rank)"}
+  ],
+  "Carbalite Ore": [
+    {"type": "Mining Outcrop", "source": "All Locales (High Rank)"}
+  ],
+  "Dragonite Ore": [
+    {"type": "Mining Outcrop", "source": "Windward Plains, Scarlet Forest (High Rank)"}
+  ],
+  "Fucium Ore": [
+    {"type": "Mining Outcrop", "source": "Ruins of Wyveria (High Rank)"}
+  ],
+  "Gracium": [
+    {"type": "Mining Outcrop", "source": "Iceshard Cliffs (High Rank)"}
+  ],
+  "Lightcrystal": [
+    {"type": "Mining Outcrop", "source": "Scarlet Forest, Ruins of Wyveria (Low/High Rank)"}
+  ],
+  "Novacrystal": [
+    {"type": "Mining Outcrop", "source": "Ruins of Wyveria (High Rank)"}
+  ],
+  "Quality Bone": [
+    {"type": "Bonepile", "source": "All Locales (High Rank)"}
+  ],
+  "Mystery Bone": [
+    {"type": "Bonepile", "source": "All Locales (Low Rank)"}
+  ],
+  "Stoutbone": [
+    {"type": "Bonepile", "source": "Windward Plains, Scarlet Forest (High Rank)"}
+  ],
+  "Great Stoutbone": [
+    {"type": "Bonepile", "source": "Ruins of Wyveria, Iceshard Cliffs (High Rank)"}
+  ],
+  "Colossal Bone": [
+    {"type": "Bonepile", "source": "All Locales (High Rank)"}
+  ],
+  "Monster Keenbone": [
+    {"type": "Quest Reward", "source": "Reward from various High Rank optional and event quests (see quest list below)"}
+  ],
+  "Monster Hardbone": [
+    {"type": "Quest Reward", "source": "High Rank Apex Monsters & Quests"}
+  ],
+  "Charred Oilbone": [
+    {"type": "Bonepile", "source": "Windward Plains (Low/High Rank)"}
+  ],
+  "Frozen Icebone": [
+    {"type": "Bonepile", "source": "Iceshard Cliffs (Low/High Rank)"}
+  ],
+  "Tough Guardian Bone": [
+    {"type": "Bonepile", "source": "Ruins of Wyveria (Low/High Rank)"}
+  ],
+  "Sturdy Bone": [
+    {"type": "Bonepile", "source": "Windward Plains (Low Rank)"}
+  ],
+  "Brute Bone": [
+    {"type": "Bonepile", "source": "Windward Plains, Scarlet Forest (Low Rank)"}
+  ],
+  "Dragonbone Relic": [
+    {"type": "Bonepile", "source": "All Locales (High Rank Rare)"}
+  ],
+  "Vespoid Carapace": [
+    {"type": "Small Monster", "source": "Vespoid (High Rank) - All Locales"}
+  ],
+  "Vespoid Innerwing": [
+    {"type": "Small Monster", "source": "Vespoid (High Rank) - All Locales"}
+  ],
+  "Vespoid Shell": [
+    {"type": "Small Monster", "source": "Vespoid (Low Rank) - All Locales"}
+  ],
+  "Vespoid Wing": [
+    {"type": "Small Monster", "source": "Vespoid (Low Rank) - All Locales"}
+  ],
+  "Conga Pelt+": [
+    {"type": "Small Monster", "source": "Conga (High Rank) - Scarlet Forest"}
+  ],
+  "Conga Pelt": [
+    {"type": "Small Monster", "source": "Conga (Low Rank) - Scarlet Forest"}
+  ],
+  "Acute Fang": [
+    {"type": "Small Monster", "source": "Various Small Fanged Beasts/Wyverns (High Rank)"}
+  ],
+  "Sharp Fang": [
+    {"type": "Small Monster", "source": "Various Small Fanged Beasts/Wyverns (Low Rank)"}
+  ],
+  "Herbivore Shell": [
+    {"type": "Small Monster", "source": "Aptonoth, Apceros, etc. (Low Rank)"}
+  ],
+  "Herbivore Carapace": [
+    {"type": "Small Monster", "source": "Aptonoth, Apceros, etc. (High Rank)"}
+  ],
+  "Talioth Scale+": [
+    {"type": "Small Monster", "source": "Talioth (High Rank) - Windward Plains"}
+  ],
+  "Talioth Scale": [
+    {"type": "Small Monster", "source": "Talioth (Low Rank) - Windward Plains"}
+  ],
+  "Dalthydon Wool": [
+    {"type": "Small Monster", "source": "Dalthydon (Low/High Rank) - Windward Plains"}
+  ],
+  "Comaqchi Carapace": [
+    {"type": "Small Monster", "source": "Comaqchi (High Rank) - Scarlet Forest"}
+  ],
+  "Comaqchi Shell": [
+    {"type": "Small Monster", "source": "Comaqchi (Low Rank) - Scarlet Forest"}
+  ],
+  "Guardian Seikret Feather+": [
+    {"type": "Small Monster", "source": "Guardian Seikret (High Rank) - Ruins of Wyveria"}
+  ],
+  "Guardian Seikret Feather": [
+    {"type": "Small Monster", "source": "Guardian Seikret (Low Rank) - Ruins of Wyveria"}
+  ],
+  "Sild Cotton": [
+    {"type": "Small Monster", "source": "Sild (Low/High Rank) - Iceshard Cliffs"}
+  ],
+  "Piragill Fin+": [
+    {"type": "Small Monster", "source": "Piragill (High Rank) - Water/Fishing"}
+  ],
+  "Piragill Fin": [
+    {"type": "Small Monster", "source": "Piragill (Low Rank) - Water/Fishing"}
+  ],
+  "Bulaqchi Carapace": [
+    {"type": "Small Monster", "source": "Bulaqchi (High Rank) - Iceshard Cliffs"}
+  ],
+  "Bulaqchi Shell": [
+    {"type": "Small Monster", "source": "Bulaqchi (Low Rank) - Iceshard Cliffs"}
+  ],
+  "Kranodath Skull+": [
+    {"type": "Small Monster", "source": "Kranodath (High Rank) - Iceshard Cliffs"}
+  ],
+  "Kranodath Skull": [
+    {"type": "Small Monster", "source": "Kranodath (Low Rank) - Iceshard Cliffs"}
+  ],
+  "Gajau Hide": [
+    {"type": "Small Monster", "source": "Gajau (Low/High Rank) - Water Areas"}
+  ],
+  "Great Hornfly": [
+    {"type": "Trade/Farm", "source": "Argosy / Bug Farm"}
+  ],
+  "Great Hibiscus": [
+    {"type": "Trade/Farm", "source": "Argosy / Herb Farm"}
+  ],
+  "Blango Pelt+": [
+    {"type": "Small Monster", "source": "Blango (High Rank) - Iceshard Cliffs"}
+  ],
+  "Wudwud Likey-like": [
+    {"type": "Small Monster", "source": "Wudwud (Low/High Rank) - Scarlet Forest"}
+  ],
+  "Frenzy Shard": [
+    {"type": "Large Monster", "source": "Shiny Drop from Gore Magala / Frenzied Monsters"}
+  ],
+  "Sinister Cloth": [
+    {"type": "Trade/Farm", "source": "Meowcenaries"}
+  ],
+  "Drearisite Scraps": [
+    {"type": "Trade/Farm", "source": "Meowcenaries"}
+  ],
+  "Flamefete Ticket": [
+    {"type": "Login Bonus / Bounty", "source": "Login Bonuses and daily Limited Bounties during Festival of Accord: Flamefete (limited, reruns seasonally)"}
+  ],
+  "Dreamspell Ticket": [
+    {"type": "Login Bonus / Bounty", "source": "Login Bonuses and daily Limited Bounties during Dreamspell Season (limited, reruns seasonally)"}
+  ],
+  "Blossomdance Ticket": [
+    {"type": "Login Bonus / Bounty", "source": "Login Bonuses and daily Limited Bounties during Blossomdance Season (limited, reruns seasonally)"}
+  ],
+  "Lumenhymn Ticket": [
+    {"type": "Login Bonus / Bounty", "source": "Login Bonuses and daily Limited Bounties during Lumenhymn Season (limited, reruns seasonally)"}
+  ],
+  "Scarred Scale": [
+    {"type": "NPC Trade", "source": "Gawdygog (Wudwud Hideout)"},
+    {"type": "NPC Trade", "source": "Sekka (Suja Peaks of Accord)"}
+  ],
+  "Suja Textiles": [
+    {"type": "NPC Trade", "source": "Gawdygog (Wudwud Hideout)"},
+    {"type": "NPC Trade", "source": "Sekka (Suja Peaks of Accord)"}
+  ],
+  "Pinnacle Coin": [
+    {"type": "Quest Reward", "source": "Arena and Challenge Quests"}
+  ],
+  "Hunter Symbol I": [
+    {"type": "Quest Reward", "source": "5-Star Tempered Monster Hunts"}
+  ],
+  "Hunter Symbol II": [
+    {"type": "Quest Reward", "source": "6-Star Tempered Monster Hunts"}
+  ],
+  "Hunter Symbol III": [
+    {"type": "Quest Reward", "source": "7-8 Star Tempered Monster Hunts"}
+  ],
+  "Commission Ticket": [
+    {"type": "Purchase", "source": "Support Ship (purchasable from the ship's shop)"}
+  ],
+  "Raw Meat": [
+    {"type": "Small Monster", "source": "Carve from Herbivores (Aptonoth, Kestodon, etc.) — All Locales"},
+    {"type": "Trade/Farm", "source": "Argosy / Canteen supply"}
+  ],
+  "Speartuna Fin": [
+    {"type": "Fishing", "source": "Speartuna — Fishing spots across all locales"}
+  ],
+  "Arkveld Certificate γ": [
+    {"type": "Quest Reward", "source": "γ-tier Arkveld hunt quests (endgame tempered)"}
+  ],
+  "Jin Dahaad Certificate γ": [
+    {"type": "Quest Reward", "source": "γ-tier Jin Dahaad hunt quests (endgame tempered)"}
+  ],
+  "Nu Udra Certificate γ": [
+    {"type": "Quest Reward", "source": "γ-tier Nu Udra hunt quests (endgame tempered)"}
+  ],
+  "Rey Dau Certificate γ": [
+    {"type": "Quest Reward", "source": "γ-tier Rey Dau hunt quests (endgame tempered)"}
+  ],
+  "Uth Duna Certificate γ": [
+    {"type": "Quest Reward", "source": "γ-tier Uth Duna hunt quests (endgame tempered)"}
+  ],
+  "Rathian Coin": [
+    {"type": "Quest Reward", "source": "Arena and Challenge Quests"}
+  ],
+  "Flamefete Catalog": [
+    {"type": "Login Bonus / Bounty", "source": "Login Bonuses and daily Limited Bounties during Festival of Accord: Flamefete (limited, reruns seasonally)"}
+  ],
+  "Dreamspell Catalog": [
+    {"type": "Login Bonus / Bounty", "source": "Login Bonuses and daily Limited Bounties during Dreamspell Season (limited, reruns seasonally)"}
+  ],
+  "Blossomdance Catalog": [
+    {"type": "Login Bonus / Bounty", "source": "Login Bonuses and daily Limited Bounties during Blossomdance Season (limited, reruns seasonally)"}
+  ],
+  "Lumenhymn Catalog": [
+    {"type": "Login Bonus / Bounty", "source": "Login Bonuses and daily Limited Bounties during Lumenhymn Season (limited, reruns seasonally)"}
+  ],
+  "Azure Stargem": [
+    {"type": "Quest Reward", "source": "\"A Flash of Brilliance\" event quest"}
+  ],
+  "Sealed Dragon Cloth": [
+    {"type": "Quest Reward", "source": "\"Running Wild\" event quest"}
+  ],
+  "Worn Pickaxe": [
+    {"type": "Quest Reward", "source": "\"Hungry for Ore?\" event quest"}
+  ],
+  "Master Craftsman's Blueprint": [
+    {"type": "Quest Reward", "source": "\"Every Hunter's Dream\" event quest"}
+  ],
+  "Felyne Wanted Poster": [
+    {"type": "Quest Reward", "source": "\"Lalas and Toads and Bears, Oh My!\" event quest"}
+  ],
+  "Well-done Steak Recipe Book": [
+    {"type": "Quest Reward", "source": "\"Meat at the Heart of Wyveria\" event quest"}
+  ],
+  "Azuz Tanned Leather": [
+    {"type": "NPC Trade", "source": "Gawdygog, Dogard, or Yabran (traders)"}
+  ],
+  "Monster Fluid": [
+    {"type": "Small Monster", "source": "Carve Comaqchi, Bulaqchi, or Vespoid (Low Rank)"}
+  ],
+  "Monster Broth": [
+    {"type": "Small Monster", "source": "Carve Comaqchi, Bulaqchi, or Vespoid (High Rank)"}
+  ]
+}

@@ -1,0 +1,2249 @@
+[
+  {
+    "name": "Rudy Costume Alpha Set",
+    "rank": "high",
+    "rarity": 1,
+    "defense": 52,
+    "resistances": {
+      "fire": 2,
+      "water": 2,
+      "thunder": 2,
+      "ice": 2,
+      "dragon": 2
+    },
+    "materials": [
+      {
+        "name": "Carbalite Ore",
+        "quantity": 2
+      },
+      {
+        "name": "Royal Felyne Emblem",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 0,
+    "id": 1
+  },
+  {
+    "name": "Felyne Azure Era Alpha Set",
+    "rank": "high",
+    "rarity": 8,
+    "defense": 120,
+    "resistances": {
+      "fire": 4,
+      "water": 8,
+      "thunder": 0,
+      "ice": 0,
+      "dragon": 6
+    },
+    "materials": [
+      {
+        "name": "Lagiacrus Claw +",
+        "quantity": 1
+      },
+      {
+        "name": "Azure Stargem",
+        "quantity": 3
+      },
+      {
+        "name": "Rey Dau Scale +",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 0,
+    "id": 2
+  },
+  {
+    "name": "Felyne Arkveld Gamma Set",
+    "rank": "high",
+    "rarity": 8,
+    "defense": 132,
+    "resistances": {
+      "fire": 4,
+      "water": 0,
+      "thunder": -2,
+      "ice": 0,
+      "dragon": -6
+    },
+    "materials": [
+      {
+        "name": "White Arkveld Pelt",
+        "quantity": 1
+      },
+      {
+        "name": "Arkveld Scale+",
+        "quantity": 1
+      },
+      {
+        "name": "Arkveld Calloushell",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 9900,
+    "id": 3
+  },
+  {
+    "name": "Felyne Star Alpha Set",
+    "rank": "high",
+    "rarity": 8,
+    "defense": 120,
+    "resistances": {
+      "fire": 2,
+      "water": 2,
+      "thunder": 2,
+      "ice": 2,
+      "dragon": 8
+    },
+    "materials": [
+      {
+        "name": "Gala Suit Ticket",
+        "quantity": 3
+      },
+      {
+        "name": "Novacrystal",
+        "quantity": 1
+      },
+      {
+        "name": "Gypceros Head",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 8400,
+    "id": 4
+  },
+  {
+    "name": "Athos Alpha Set",
+    "rank": "high",
+    "rarity": 8,
+    "defense": 100,
+    "resistances": {
+      "fire": 4,
+      "water": 4,
+      "thunder": 4,
+      "ice": 4,
+      "dragon": 4
+    },
+    "materials": [
+      {
+        "name": "Hunter Symbol III",
+        "quantity": 3
+      },
+      {
+        "name": "Fucium Ore",
+        "quantity": 3
+      }
+    ],
+    "totalZenny": 8400,
+    "id": 5
+  },
+  {
+    "name": "Blanka-Chan Alpha Set",
+    "rank": "high",
+    "rarity": 6,
+    "defense": 351,
+    "resistances": {
+      "fire": 4,
+      "water": -4,
+      "thunder": 8,
+      "ice": -4,
+      "dragon": 0
+    },
+    "materials": [
+      {
+        "name": "SF6 Ticket",
+        "quantity": 4
+      },
+      {
+        "name": "Ajarakan Scale +",
+        "quantity": 4
+      }
+    ],
+    "totalZenny": 7200,
+    "id": 6
+  },
+  {
+    "name": "Felyne Ajarakan Alpha Set",
+    "rank": "high",
+    "rarity": 6,
+    "defense": 76,
+    "resistances": {
+      "fire": 6,
+      "water": -6,
+      "thunder": 2,
+      "ice": -4,
+      "dragon": 0
+    },
+    "materials": [
+      {
+        "name": "Ajarakan Scale+",
+        "quantity": 1
+      },
+      {
+        "name": "Ajarakan Carapace",
+        "quantity": 1
+      },
+      {
+        "name": "Ajarakan Jewel+",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 6000,
+    "id": 7
+  },
+  {
+    "name": "Felyne Alloy Alpha Set",
+    "rank": "high",
+    "rarity": 5,
+    "defense": 52,
+    "resistances": {
+      "fire": -4,
+      "water": 2,
+      "thunder": -4,
+      "ice": -4,
+      "dragon": 2
+    },
+    "materials": [
+      {
+        "name": "Carbalite Ore",
+        "quantity": 3
+      }
+    ],
+    "totalZenny": 3000,
+    "id": 8
+  },
+  {
+    "name": "Felyne Arkveld Alpha Set",
+    "rank": "high",
+    "rarity": 8,
+    "defense": 108,
+    "resistances": {
+      "fire": 4,
+      "water": 0,
+      "thunder": -2,
+      "ice": 0,
+      "dragon": -6
+    },
+    "materials": [
+      {
+        "name": "White Arkveld Pelt",
+        "quantity": 1
+      },
+      {
+        "name": "Arkveld Scale+",
+        "quantity": 1
+      },
+      {
+        "name": "Arkveld Calloushell",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 9000,
+    "id": 9
+  },
+  {
+    "name": "Felyne Artian Alpha Set",
+    "rank": "high",
+    "rarity": 6,
+    "defense": 68,
+    "resistances": {
+      "fire": 2,
+      "water": -4,
+      "thunder": -4,
+      "ice": 4,
+      "dragon": 6
+    },
+    "materials": [
+      {
+        "name": "Gracium",
+        "quantity": 3
+      },
+      {
+        "name": "Frenzy Shard",
+        "quantity": 3
+      }
+    ],
+    "totalZenny": 5400,
+    "id": 10
+  },
+  {
+    "name": "Felyne Azuz Alpha Set",
+    "rank": "high",
+    "rarity": 6,
+    "defense": 68,
+    "resistances": {
+      "fire": 8,
+      "water": 2,
+      "thunder": 2,
+      "ice": 2,
+      "dragon": 2
+    },
+    "materials": [
+      {
+        "name": "Azuz Tanned Leather",
+        "quantity": 2
+      },
+      {
+        "name": "Charred Oilbone",
+        "quantity": 1
+      },
+      {
+        "name": "Firestone",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 3600,
+    "id": 11
+  },
+  {
+    "name": "Felyne Butterfly Alpha Set",
+    "rank": "high",
+    "rarity": 5,
+    "defense": 52,
+    "resistances": {
+      "fire": 0,
+      "water": 0,
+      "thunder": 0,
+      "ice": 0,
+      "dragon": 0
+    },
+    "materials": [
+      {
+        "name": "Blossom Ticket",
+        "quantity": 3
+      },
+      {
+        "name": "Lala Barina Mucus +",
+        "quantity": 1
+      },
+      {
+        "name": "Lala Barina Floret +",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 3000,
+    "id": 12
+  },
+  {
+    "name": "Felyne Balahara Alpha Set",
+    "rank": "high",
+    "rarity": 5,
+    "defense": 60,
+    "resistances": {
+      "fire": -2,
+      "water": 4,
+      "thunder": -6,
+      "ice": 2,
+      "dragon": 2
+    },
+    "materials": [
+      {
+        "name": "Balahara Scale+",
+        "quantity": 1
+      },
+      {
+        "name": "Balahara Carapace",
+        "quantity": 1
+      },
+      {
+        "name": "Balahara Skull+",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 4500,
+    "id": 13
+  },
+  {
+    "name": "Felyne Blango Alpha Set",
+    "rank": "high",
+    "rarity": 6,
+    "defense": 76,
+    "resistances": {
+      "fire": -8,
+      "water": 2,
+      "thunder": 0,
+      "ice": 8,
+      "dragon": 0
+    },
+    "materials": [
+      {
+        "name": "Blangonga Pelt+",
+        "quantity": 1
+      },
+      {
+        "name": "Blangonga Tail",
+        "quantity": 1
+      },
+      {
+        "name": "Blangonga Fang+",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 6000,
+    "id": 14
+  },
+  {
+    "name": "Felyne Bone Alpha Set",
+    "rank": "high",
+    "rarity": 5,
+    "defense": 44,
+    "resistances": {
+      "fire": 4,
+      "water": 0,
+      "thunder": 4,
+      "ice": 0,
+      "dragon": 4
+    },
+    "materials": [
+      {
+        "name": "Tough Guardian Bone",
+        "quantity": 3
+      }
+    ],
+    "totalZenny": 3000,
+    "id": 15
+  },
+  {
+    "name": "Felyne Chatacabra Alpha Set",
+    "rank": "high",
+    "rarity": 5,
+    "defense": 52,
+    "resistances": {
+      "fire": 2,
+      "water": 4,
+      "thunder": -6,
+      "ice": -2,
+      "dragon": 2
+    },
+    "materials": [
+      {
+        "name": "Chatacabra Hide+",
+        "quantity": 1
+      },
+      {
+        "name": "Chatacabra Scale+",
+        "quantity": 1
+      },
+      {
+        "name": "Chatacabra Jaw+",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 3600,
+    "id": 16
+  },
+  {
+    "name": "Felyne Conga Alpha Set",
+    "rank": "high",
+    "rarity": 5,
+    "defense": 52,
+    "resistances": {
+      "fire": -6,
+      "water": 2,
+      "thunder": 2,
+      "ice": -2,
+      "dragon": 4
+    },
+    "materials": [
+      {
+        "name": "Vibrant Pelt+",
+        "quantity": 1
+      },
+      {
+        "name": "Congalala Pelt+",
+        "quantity": 1
+      },
+      {
+        "name": "Congalala Claw+",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 3600,
+    "id": 17
+  },
+  {
+    "name": "Felyne Dahaad Alpha Set",
+    "rank": "high",
+    "rarity": 7,
+    "defense": 100,
+    "resistances": {
+      "fire": -8,
+      "water": 4,
+      "thunder": -2,
+      "ice": 10,
+      "dragon": -2
+    },
+    "materials": [
+      {
+        "name": "Jin Dahaad Scale+",
+        "quantity": 1
+      },
+      {
+        "name": "Jin Dahaad Carapace",
+        "quantity": 1
+      },
+      {
+        "name": "Jin Dahaad Iceplate",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 7500,
+    "id": 18
+  },
+  {
+    "name": "Felyne Dahaad Gamma Set",
+    "rank": "high",
+    "rarity": 8,
+    "defense": 132,
+    "resistances": {
+      "fire": -6,
+      "water": 4,
+      "thunder": -2,
+      "ice": 4,
+      "dragon": -2
+    },
+    "materials": [
+      {
+        "name": "Jin Dahaad Scale+",
+        "quantity": 1
+      },
+      {
+        "name": "Jin Dahaad Carapace",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 9900,
+    "id": 19
+  },
+  {
+    "name": "Felyne Death Stench Alpha Set",
+    "rank": "high",
+    "rarity": 6,
+    "defense": 68,
+    "resistances": {
+      "fire": 6,
+      "water": 4,
+      "thunder": -4,
+      "ice": 6,
+      "dragon": 8
+    },
+    "materials": [
+      {
+        "name": "Sinister Cloth",
+        "quantity": 3
+      },
+      {
+        "name": "Wingdrake Hide+",
+        "quantity": 3
+      }
+    ],
+    "totalZenny": 5400,
+    "id": 20
+  },
+  {
+    "name": "Felyne Doshaguma Alpha Set",
+    "rank": "high",
+    "rarity": 6,
+    "defense": 76,
+    "resistances": {
+      "fire": -6,
+      "water": 4,
+      "thunder": -2,
+      "ice": -2,
+      "dragon": 8
+    },
+    "materials": [
+      {
+        "name": "Doshaguma Fur+",
+        "quantity": 1
+      },
+      {
+        "name": "Doshaguma Hide+",
+        "quantity": 1
+      },
+      {
+        "name": "Doshaguma Fang+",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 6000,
+    "id": 21
+  },
+  {
+    "name": "Felyne G Ark Alpha Set",
+    "rank": "high",
+    "rarity": 8,
+    "defense": 112,
+    "resistances": {
+      "fire": 4,
+      "water": 0,
+      "thunder": -2,
+      "ice": 0,
+      "dragon": -8
+    },
+    "materials": [
+      {
+        "name": "Hunter Symbol III",
+        "quantity": 3
+      },
+      {
+        "name": "Guardian Pelt+",
+        "quantity": 1
+      },
+      {
+        "name": "Guardian Scale+",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 9000,
+    "id": 22
+  },
+  {
+    "name": "Felyne G Doshaguma Alpha Set",
+    "rank": "high",
+    "rarity": 6,
+    "defense": 76,
+    "resistances": {
+      "fire": -6,
+      "water": 4,
+      "thunder": -2,
+      "ice": -4,
+      "dragon": 4
+    },
+    "materials": [
+      {
+        "name": "Guardian Doshaguma Fur+",
+        "quantity": 1
+      },
+      {
+        "name": "Guardian Doshaguma Hide+",
+        "quantity": 1
+      },
+      {
+        "name": "Guardian Doshaguma Fang+",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 6000,
+    "id": 23
+  },
+  {
+    "name": "Felyne G Ebony Alpha Set",
+    "rank": "high",
+    "rarity": 6,
+    "defense": 76,
+    "resistances": {
+      "fire": -4,
+      "water": -6,
+      "thunder": -4,
+      "ice": -4,
+      "dragon": 8
+    },
+    "materials": [
+      {
+        "name": "Guardian Ebony Scale+",
+        "quantity": 1
+      },
+      {
+        "name": "Guardian Ebony Sinew+",
+        "quantity": 1
+      },
+      {
+        "name": "Guardian Ebony Claw+",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 6000,
+    "id": 24
+  },
+  {
+    "name": "Felyne G Fulgur Alpha Set",
+    "rank": "high",
+    "rarity": 6,
+    "defense": 76,
+    "resistances": {
+      "fire": -2,
+      "water": -2,
+      "thunder": 4,
+      "ice": -6,
+      "dragon": -4
+    },
+    "materials": [
+      {
+        "name": "Guardian Fulgur Scale+",
+        "quantity": 1
+      },
+      {
+        "name": "Guardian Fulgur Pelt+",
+        "quantity": 1
+      },
+      {
+        "name": "Guardian Fulgur Nosebone+",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 6000,
+    "id": 25
+  },
+  {
+    "name": "Felyne G Rathalos Alpha Set",
+    "rank": "high",
+    "rarity": 6,
+    "defense": 76,
+    "resistances": {
+      "fire": 6,
+      "water": 2,
+      "thunder": -4,
+      "ice": 2,
+      "dragon": -10
+    },
+    "materials": [
+      {
+        "name": "Guardian Rathalos Scale+",
+        "quantity": 1
+      },
+      {
+        "name": "Guardian Rathalos Carapace",
+        "quantity": 1
+      },
+      {
+        "name": "Guardian Rathalos Wing",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 6000,
+    "id": 26
+  },
+  {
+    "name": "Felyne Gore Alpha Set",
+    "rank": "high",
+    "rarity": 7,
+    "defense": 100,
+    "resistances": {
+      "fire": -4,
+      "water": 6,
+      "thunder": -2,
+      "ice": 4,
+      "dragon": -2
+    },
+    "materials": [
+      {
+        "name": "Gore Magala Scale+",
+        "quantity": 1
+      },
+      {
+        "name": "Gore Magala Carapace",
+        "quantity": 1
+      },
+      {
+        "name": "Gore Magala Ripclaw+",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 7500,
+    "id": 27
+  },
+  {
+    "name": "Felyne Gravios Alpha Set",
+    "rank": "high",
+    "rarity": 6,
+    "defense": 84,
+    "resistances": {
+      "fire": 8,
+      "water": -6,
+      "thunder": 2,
+      "ice": 0,
+      "dragon": -4
+    },
+    "materials": [
+      {
+        "name": "Gravios Skull",
+        "quantity": 1
+      },
+      {
+        "name": "Gravios Carapace",
+        "quantity": 1
+      },
+      {
+        "name": "Gravios Wing",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 6000,
+    "id": 28
+  },
+  {
+    "name": "Felyne Gypceros Alpha Set",
+    "rank": "high",
+    "rarity": 5,
+    "defense": 52,
+    "resistances": {
+      "fire": -8,
+      "water": 6,
+      "thunder": 8,
+      "ice": -2,
+      "dragon": 2
+    },
+    "materials": [
+      {
+        "name": "Gypceros Head",
+        "quantity": 1
+      },
+      {
+        "name": "Rubbery Hide+",
+        "quantity": 1
+      },
+      {
+        "name": "Gypceros Tail",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 3600,
+    "id": 29
+  },
+  {
+    "name": "Felyne Hirabami Alpha Set",
+    "rank": "high",
+    "rarity": 5,
+    "defense": 60,
+    "resistances": {
+      "fire": -6,
+      "water": 4,
+      "thunder": -4,
+      "ice": 6,
+      "dragon": 0
+    },
+    "materials": [
+      {
+        "name": "Hirabami Hide+",
+        "quantity": 1
+      },
+      {
+        "name": "Hirabami Scale+",
+        "quantity": 1
+      },
+      {
+        "name": "Hirabami Tail Claw+",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 4500,
+    "id": 30
+  },
+  {
+    "name": "Felyne Hope Alpha Set",
+    "rank": "high",
+    "rarity": 5,
+    "defense": 44,
+    "resistances": {
+      "fire": 2,
+      "water": 0,
+      "thunder": 2,
+      "ice": 0,
+      "dragon": 0
+    },
+    "materials": [
+      {
+        "name": "Sturdy Bone",
+        "quantity": 3
+      }
+    ],
+    "totalZenny": 3000,
+    "id": 31
+  },
+  {
+    "name": "Felyne Kunafa Alpha Set",
+    "rank": "high",
+    "rarity": 6,
+    "defense": 68,
+    "resistances": {
+      "fire": 2,
+      "water": 2,
+      "thunder": 8,
+      "ice": 2,
+      "dragon": 2
+    },
+    "materials": [
+      {
+        "name": "Dalthydon Wool",
+        "quantity": 2
+      },
+      {
+        "name": "Acute Fang",
+        "quantity": 1
+      },
+      {
+        "name": "Talioth Scale+",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 3600,
+    "id": 32
+  },
+  {
+    "name": "Felyne Kut-Ku Alpha Set",
+    "rank": "high",
+    "rarity": 5,
+    "defense": 52,
+    "resistances": {
+      "fire": 6,
+      "water": 0,
+      "thunder": -4,
+      "ice": -8,
+      "dragon": 4
+    },
+    "materials": [
+      {
+        "name": "Giant Beak",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 3600,
+    "id": 33
+  },
+  {
+    "name": "Felyne Lagiacrus Alpha Set",
+    "rank": "high",
+    "rarity": 7,
+    "defense": 375,
+    "resistances": {
+      "fire": -6,
+      "water": 4,
+      "thunder": 8,
+      "ice": -2,
+      "dragon": -4
+    },
+    "materials": [
+      {
+        "name": "Lagiacrus Shockspike",
+        "quantity": 1
+      },
+      {
+        "name": "Lagiacrus Scale +",
+        "quantity": 1
+      },
+      {
+        "name": "Lagiacrus Hide +",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 7500,
+    "id": 34
+  },
+  {
+    "name": "Felyne Lala Barina Alpha Set",
+    "rank": "high",
+    "rarity": 5,
+    "defense": 52,
+    "resistances": {
+      "fire": -6,
+      "water": 6,
+      "thunder": 0,
+      "ice": 0,
+      "dragon": 6
+    },
+    "materials": [
+      {
+        "name": "Lala Barina Floret+",
+        "quantity": 1
+      },
+      {
+        "name": "Lala Barina Carapace",
+        "quantity": 1
+      },
+      {
+        "name": "Lala Barina Claw+",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 3600,
+    "id": 35
+  },
+  {
+    "name": "Felyne Mizutsune Alpha Set",
+    "rank": "high",
+    "rarity": 6,
+    "defense": 351,
+    "resistances": {
+      "fire": 0,
+      "water": 4,
+      "thunder": -6,
+      "ice": 2,
+      "dragon": -2
+    },
+    "materials": [
+      {
+        "name": "Mizutsune Claw +",
+        "quantity": 1
+      },
+      {
+        "name": "Mizutsune Purplefur +",
+        "quantity": 1
+      },
+      {
+        "name": "Mizutsune Scale +",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 6000,
+    "id": 36
+  },
+  {
+    "name": "Felyne Nerscylla Alpha Set",
+    "rank": "high",
+    "rarity": 5,
+    "defense": 60,
+    "resistances": {
+      "fire": -4,
+      "water": 4,
+      "thunder": -4,
+      "ice": 2,
+      "dragon": 4
+    },
+    "materials": [
+      {
+        "name": "Nerscylla Spike+",
+        "quantity": 1
+      },
+      {
+        "name": "Nerscylla Carapace",
+        "quantity": 1
+      },
+      {
+        "name": "Nerscylla Claw+",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 4500,
+    "id": 37
+  },
+  {
+    "name": "Felyne Numinous Alpha Set",
+    "rank": "high",
+    "rarity": 8,
+    "defense": 395,
+    "resistances": {
+      "fire": -4,
+      "water": 4,
+      "thunder": 4,
+      "ice": 0,
+      "dragon": -8
+    },
+    "materials": [
+      {
+        "name": "Blackember Mass",
+        "quantity": 1
+      },
+      {
+        "name": "Zoh Shia Crystalhorn",
+        "quantity": 1
+      },
+      {
+        "name": "Zoh Shia Crystalscale",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 9000,
+    "id": 38
+  },
+  {
+    "name": "Felyne Nu Udra Alpha Set",
+    "rank": "high",
+    "rarity": 7,
+    "defense": 100,
+    "resistances": {
+      "fire": 10,
+      "water": -8,
+      "thunder": 0,
+      "ice": 2,
+      "dragon": 0
+    },
+    "materials": [
+      {
+        "name": "Nu Udra Horn+",
+        "quantity": 1
+      },
+      {
+        "name": "Nu Udra Hide+",
+        "quantity": 1
+      },
+      {
+        "name": "Nu Udra Tentacle+",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 7500,
+    "id": 39
+  },
+  {
+    "name": "Felyne Papier-Mâché Alpha Set",
+    "rank": "high",
+    "rarity": 1,
+    "defense": 52,
+    "resistances": {
+      "fire": -6,
+      "water": 0,
+      "thunder": 0,
+      "ice": 0,
+      "dragon": 0
+    },
+    "materials": [
+      {
+        "name": "Blossomdance Ticket",
+        "quantity": 2
+      },
+      {
+        "name": "Carbalite Ore",
+        "quantity": 2
+      }
+    ],
+    "totalZenny": 2000,
+    "id": 40
+  },
+  {
+    "name": "Felyne Quematrice Alpha Set",
+    "rank": "high",
+    "rarity": 5,
+    "defense": 52,
+    "resistances": {
+      "fire": 4,
+      "water": -6,
+      "thunder": 0,
+      "ice": -2,
+      "dragon": 0
+    },
+    "materials": [
+      {
+        "name": "Quematrice Crest+",
+        "quantity": 1
+      },
+      {
+        "name": "Quematrice Scale+",
+        "quantity": 1
+      },
+      {
+        "name": "Quematrice Igniter+",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 3600,
+    "id": 41
+  },
+  {
+    "name": "Felyne Rathalos Alpha Set",
+    "rank": "high",
+    "rarity": 6,
+    "defense": 76,
+    "resistances": {
+      "fire": 6,
+      "water": 2,
+      "thunder": -4,
+      "ice": 2,
+      "dragon": -6
+    },
+    "materials": [
+      {
+        "name": "Rathalos Scale+",
+        "quantity": 1
+      },
+      {
+        "name": "Rathalos Carapace",
+        "quantity": 1
+      },
+      {
+        "name": "Rathalos Wing",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 6000,
+    "id": 42
+  },
+  {
+    "name": "Felyne Rathian Alpha Set",
+    "rank": "high",
+    "rarity": 5,
+    "defense": 60,
+    "resistances": {
+      "fire": 4,
+      "water": 0,
+      "thunder": -4,
+      "ice": 0,
+      "dragon": -6
+    },
+    "materials": [
+      {
+        "name": "Rathian Scale+",
+        "quantity": 1
+      },
+      {
+        "name": "Rathian Carapace",
+        "quantity": 1
+      },
+      {
+        "name": "Rathian Spike+",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 4500,
+    "id": 43
+  },
+  {
+    "name": "Felyne Rey Dau Alpha Set",
+    "rank": "high",
+    "rarity": 7,
+    "defense": 100,
+    "resistances": {
+      "fire": 0,
+      "water": -4,
+      "thunder": 8,
+      "ice": -6,
+      "dragon": 0
+    },
+    "materials": [
+      {
+        "name": "Rey Dau Bolthorn",
+        "quantity": 1
+      },
+      {
+        "name": "Rey Dau Scale+",
+        "quantity": 1
+      },
+      {
+        "name": "Rey Dau Fulgurtalon",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 7500,
+    "id": 44
+  },
+  {
+    "name": "Felyne Rey Dau Gamma Set",
+    "rank": "high",
+    "rarity": 8,
+    "defense": 120,
+    "resistances": {
+      "fire": 0,
+      "water": -4,
+      "thunder": 8,
+      "ice": -6,
+      "dragon": 0
+    },
+    "materials": [
+      {
+        "name": "Rey Dau Fulgurtalon",
+        "quantity": 1
+      },
+      {
+        "name": "Rey Dau Certificate Gamma",
+        "quantity": 3
+      },
+      {
+        "name": "Rey Dau Bolthorn",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 9900,
+    "id": 45
+  },
+  {
+    "name": "Felyne Rompopolo Alpha Set",
+    "rank": "high",
+    "rarity": 5,
+    "defense": 52,
+    "resistances": {
+      "fire": 0,
+      "water": -6,
+      "thunder": 0,
+      "ice": 0,
+      "dragon": 2
+    },
+    "materials": [
+      {
+        "name": "Rompopolo Beak+",
+        "quantity": 1
+      },
+      {
+        "name": "Rompopolo Hide+",
+        "quantity": 1
+      },
+      {
+        "name": "Rompopolo Claw+",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 3600,
+    "id": 46
+  },
+  {
+    "name": "Felyne Seregios Alpha Set",
+    "rank": "high",
+    "rarity": 7,
+    "defense": 375,
+    "resistances": {
+      "fire": 8,
+      "water": 0,
+      "thunder": -6,
+      "ice": -4,
+      "dragon": 0
+    },
+    "materials": [
+      {
+        "name": "Seregios Carver",
+        "quantity": 1
+      },
+      {
+        "name": "Seregios Slavescale",
+        "quantity": 1
+      },
+      {
+        "name": "Seregios Airblade",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 7500,
+    "id": 47
+  },
+  {
+    "name": "Felyne Sild Alpha Set",
+    "rank": "high",
+    "rarity": 6,
+    "defense": 68,
+    "resistances": {
+      "fire": 2,
+      "water": 2,
+      "thunder": 2,
+      "ice": 2,
+      "dragon": 8
+    },
+    "materials": [
+      {
+        "name": "Sild Cotton",
+        "quantity": 2
+      },
+      {
+        "name": "Guardian Seikret Feather+",
+        "quantity": 2
+      }
+    ],
+    "totalZenny": 3600,
+    "id": 48
+  },
+  {
+    "name": "Felyne Suja Alpha Set",
+    "rank": "high",
+    "rarity": 6,
+    "defense": 68,
+    "resistances": {
+      "fire": 2,
+      "water": 2,
+      "thunder": 2,
+      "ice": 8,
+      "dragon": 2
+    },
+    "materials": [
+      {
+        "name": "Suja Textiles",
+        "quantity": 2
+      },
+      {
+        "name": "Fucium Ore",
+        "quantity": 2
+      }
+    ],
+    "totalZenny": 3600,
+    "id": 49
+  },
+  {
+    "name": "Felyne Uth Duna Alpha Set",
+    "rank": "high",
+    "rarity": 7,
+    "defense": 100,
+    "resistances": {
+      "fire": -2,
+      "water": 8,
+      "thunder": -6,
+      "ice": 0,
+      "dragon": 0
+    },
+    "materials": [
+      {
+        "name": "Uth Duna Cilia+",
+        "quantity": 1
+      },
+      {
+        "name": "Uth Duna Scale+",
+        "quantity": 1
+      },
+      {
+        "name": "Uth Duna Claw+",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 7500,
+    "id": 50
+  },
+  {
+    "name": "Felyne Uth Duna Gamma Set",
+    "rank": "high",
+    "rarity": 8,
+    "defense": 120,
+    "resistances": {
+      "fire": -2,
+      "water": 8,
+      "thunder": -6,
+      "ice": 0,
+      "dragon": 0
+    },
+    "materials": [
+      {
+        "name": "Uth Duna Certificate Gamma",
+        "quantity": 3
+      },
+      {
+        "name": "Uth Duna Claw +",
+        "quantity": 1
+      },
+      {
+        "name": "Uth Duna Cilia +",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 9900,
+    "id": 51
+  },
+  {
+    "name": "Felyne Xu Wu Alpha Set",
+    "rank": "high",
+    "rarity": 6,
+    "defense": 76,
+    "resistances": {
+      "fire": 2,
+      "water": 2,
+      "thunder": 2,
+      "ice": -6,
+      "dragon": 4
+    },
+    "materials": [
+      {
+        "name": "Golden Corneum+",
+        "quantity": 1
+      },
+      {
+        "name": "Xu Wu Hide+",
+        "quantity": 1
+      },
+      {
+        "name": "Xu Wu Tentacle+",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 6000,
+    "id": 52
+  },
+  {
+    "name": "Wacky Wudwud Alpha Set",
+    "rank": "high",
+    "rarity": 1,
+    "defense": 64,
+    "resistances": {
+      "fire": 4,
+      "water": 4,
+      "thunder": 4,
+      "ice": 4,
+      "dragon": 4
+    },
+    "materials": [
+      {
+        "name": "Wudwud Treasure",
+        "quantity": 2
+      },
+      {
+        "name": "Kut-Ku Carapace",
+        "quantity": 3
+      }
+    ],
+    "totalZenny": 3600,
+    "id": 53
+  },
+  {
+    "name": "Wudwud Guise Alpha Set",
+    "rank": "high",
+    "rarity": 1,
+    "defense": 68,
+    "resistances": {
+      "fire": 2,
+      "water": 8,
+      "thunder": 2,
+      "ice": 2,
+      "dragon": 2
+    },
+    "materials": [
+      {
+        "name": "Wudwud Treasure",
+        "quantity": 2
+      },
+      {
+        "name": "Kut-Ku Carapace",
+        "quantity": 3
+      }
+    ],
+    "totalZenny": 2700,
+    "id": 54
+  },
+  {
+    "name": "Morbol Seedling Alpha Set",
+    "rank": "high",
+    "rarity": 8,
+    "defense": 60,
+    "resistances": {
+      "fire": 0,
+      "water": 0,
+      "thunder": 0,
+      "ice": 0,
+      "dragon": 0
+    },
+    "materials": [
+      {
+        "name": "Omega Data 1.0",
+        "quantity": 1
+      },
+      {
+        "name": "Omega Pedal",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 8400,
+    "id": 55
+  },
+  {
+    "name": "Felyne Nu Udra Gamma Set",
+    "rank": "high",
+    "rarity": 8,
+    "defense": 0,
+    "resistances": {
+      "fire": 0,
+      "water": 0,
+      "thunder": 0,
+      "ice": 0,
+      "dragon": 0
+    },
+    "materials": [
+      {
+        "name": "Nu Udra Certificate Gamma",
+        "quantity": 3
+      },
+      {
+        "name": "Nu Udra Tentacle +",
+        "quantity": 1
+      },
+      {
+        "name": "Nu Udra Horn +",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 9900,
+    "id": 56
+  },
+  {
+    "name": "Felyne Ghost Alpha Set",
+    "rank": "high",
+    "rarity": 5,
+    "defense": 52,
+    "resistances": {
+      "fire": 8,
+      "water": 2,
+      "thunder": 2,
+      "ice": 2,
+      "dragon": 2
+    },
+    "materials": [
+      {
+        "name": "Harvest Ticket",
+        "quantity": 3
+      },
+      {
+        "name": "Hirabami Tail Claw +",
+        "quantity": 1
+      },
+      {
+        "name": "Hirabami Webbing +",
+        "quantity": 1
+      },
+      {
+        "name": "Hirabami Hide +",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 0,
+    "id": 57
+  },
+  {
+    "name": "Meowrionette Alpha Set",
+    "rank": "high",
+    "rarity": 5,
+    "defense": 52,
+    "resistances": {
+      "fire": -6,
+      "water": 4,
+      "thunder": 4,
+      "ice": 4,
+      "dragon": 4
+    },
+    "materials": [
+      {
+        "name": "Dreamspell Ticket",
+        "quantity": 2
+      },
+      {
+        "name": "Gracium",
+        "quantity": 1
+      },
+      {
+        "name": "Frozen Icebone",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 0,
+    "id": 58
+  },
+  {
+    "name": "Felyne Gog Alpha Set",
+    "rank": "high",
+    "rarity": 8,
+    "defense": 132,
+    "resistances": {
+      "fire": -8,
+      "water": 6,
+      "thunder": 0,
+      "ice": 6,
+      "dragon": -10
+    },
+    "materials": [
+      {
+        "name": "Gogmazios Lacerator",
+        "quantity": 1
+      },
+      {
+        "name": "Gogmazios Fortalice",
+        "quantity": 1
+      },
+      {
+        "name": "Gogmazios Fiberwing",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 9900,
+    "id": 59
+  },
+  {
+    "name": "Felyne Ajarakan Set",
+    "rank": "low",
+    "rarity": 3,
+    "defense": 28,
+    "resistances": {
+      "fire": 6,
+      "water": -6,
+      "thunder": 2,
+      "ice": -4,
+      "dragon": 0
+    },
+    "materials": [
+      {
+        "name": "Ajarakan Scale",
+        "quantity": 1
+      },
+      {
+        "name": "Ajarakan Shell",
+        "quantity": 1
+      },
+      {
+        "name": "Ajarakan Jewel+",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 6000,
+    "id": 60
+  },
+  {
+    "name": "Felyne Alloy Set",
+    "rank": "low",
+    "rarity": 1,
+    "defense": 12,
+    "resistances": {
+      "fire": -4,
+      "water": 2,
+      "thunder": -4,
+      "ice": -4,
+      "dragon": 2
+    },
+    "materials": [
+      {
+        "name": "Machalite Ore",
+        "quantity": 3
+      }
+    ],
+    "totalZenny": 300,
+    "id": 61
+  },
+  {
+    "name": "Felyne Balahara Set",
+    "rank": "low",
+    "rarity": 2,
+    "defense": 20,
+    "resistances": {
+      "fire": -2,
+      "water": 4,
+      "thunder": -6,
+      "ice": 2,
+      "dragon": 2
+    },
+    "materials": [
+      {
+        "name": "Balahara Scale",
+        "quantity": 1
+      },
+      {
+        "name": "Balahara Shell",
+        "quantity": 1
+      },
+      {
+        "name": "Balahara Skull",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 600,
+    "id": 62
+  },
+  {
+    "name": "Felyne Bone Set",
+    "rank": "low",
+    "rarity": 1,
+    "defense": 4,
+    "resistances": {
+      "fire": 4,
+      "water": 0,
+      "thunder": 4,
+      "ice": 0,
+      "dragon": 4
+    },
+    "materials": [
+      {
+        "name": "Mystery Bone",
+        "quantity": 3
+      }
+    ],
+    "totalZenny": 150,
+    "id": 63
+  },
+  {
+    "name": "Felyne Chatacabra Set",
+    "rank": "low",
+    "rarity": 1,
+    "defense": 12,
+    "resistances": {
+      "fire": 2,
+      "water": 4,
+      "thunder": -6,
+      "ice": -2,
+      "dragon": 2
+    },
+    "materials": [
+      {
+        "name": "Chatacabra Hide",
+        "quantity": 1
+      },
+      {
+        "name": "Chatacabra Scale",
+        "quantity": 1
+      },
+      {
+        "name": "Chatacabra Jaw",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 300,
+    "id": 64
+  },
+  {
+    "name": "Felyne Conga Set",
+    "rank": "low",
+    "rarity": 2,
+    "defense": 16,
+    "resistances": {
+      "fire": -6,
+      "water": 2,
+      "thunder": 2,
+      "ice": -2,
+      "dragon": 4
+    },
+    "materials": [
+      {
+        "name": "Vibrant Pelt",
+        "quantity": 1
+      },
+      {
+        "name": "Congalala Pelt",
+        "quantity": 1
+      },
+      {
+        "name": "Congalala Claw",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 600,
+    "id": 65
+  },
+  {
+    "name": "Felyne Doshaguma Set",
+    "rank": "low",
+    "rarity": 2,
+    "defense": 20,
+    "resistances": {
+      "fire": -6,
+      "water": 4,
+      "thunder": -2,
+      "ice": -2,
+      "dragon": 8
+    },
+    "materials": [
+      {
+        "name": "Doshaguma Fur",
+        "quantity": 1
+      },
+      {
+        "name": "Doshaguma Hide",
+        "quantity": 1
+      },
+      {
+        "name": "Doshaguma Fang",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 600,
+    "id": 66
+  },
+  {
+    "name": "Felyne Duffel Set",
+    "rank": "low",
+    "rarity": 1,
+    "defense": 4,
+    "resistances": {
+      "fire": 0,
+      "water": 0,
+      "thunder": 4,
+      "ice": 4,
+      "dragon": 0
+    },
+    "materials": [],
+    "totalZenny": 0,
+    "id": 67
+  },
+  {
+    "name": "Felyne G Ark Set",
+    "rank": "low",
+    "rarity": 4,
+    "defense": 44,
+    "resistances": {
+      "fire": 4,
+      "water": 0,
+      "thunder": -2,
+      "ice": 0,
+      "dragon": -8
+    },
+    "materials": [
+      {
+        "name": "Guardian Pelt",
+        "quantity": 1
+      },
+      {
+        "name": "Guardian Scale",
+        "quantity": 1
+      },
+      {
+        "name": "Guardian Blood",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 2100,
+    "id": 68
+  },
+  {
+    "name": "Felyne G Doshaguma Set",
+    "rank": "low",
+    "rarity": 4,
+    "defense": 36,
+    "resistances": {
+      "fire": -6,
+      "water": 4,
+      "thunder": -2,
+      "ice": -4,
+      "dragon": 4
+    },
+    "materials": [
+      {
+        "name": "Guardian Doshaguma Fur",
+        "quantity": 1
+      },
+      {
+        "name": "Guardian Doshaguma Hide",
+        "quantity": 1
+      },
+      {
+        "name": "Guardian Doshaguma Fang",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 800,
+    "id": 69
+  },
+  {
+    "name": "Felyne G Ebony Set",
+    "rank": "low",
+    "rarity": 4,
+    "defense": 36,
+    "resistances": {
+      "fire": -4,
+      "water": -6,
+      "thunder": -4,
+      "ice": -4,
+      "dragon": 8
+    },
+    "materials": [
+      {
+        "name": "Guardian Ebony Scale",
+        "quantity": 1
+      },
+      {
+        "name": "Guardian Ebony Sinew",
+        "quantity": 1
+      },
+      {
+        "name": "Guardian Ebony Claw",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 1200,
+    "id": 70
+  },
+  {
+    "name": "Felyne G Rathalos Set",
+    "rank": "low",
+    "rarity": 4,
+    "defense": 36,
+    "resistances": {
+      "fire": 6,
+      "water": 2,
+      "thunder": -4,
+      "ice": 2,
+      "dragon": -10
+    },
+    "materials": [
+      {
+        "name": "Guardian Rathalos Scale",
+        "quantity": 1
+      },
+      {
+        "name": "Guardian Rathalos Shell",
+        "quantity": 1
+      },
+      {
+        "name": "Guardian Rathalos Webbing",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 1200,
+    "id": 71
+  },
+  {
+    "name": "Felyne Hirabami Set",
+    "rank": "low",
+    "rarity": 3,
+    "defense": 28,
+    "resistances": {
+      "fire": -6,
+      "water": 4,
+      "thunder": -4,
+      "ice": 6,
+      "dragon": 0
+    },
+    "materials": [
+      {
+        "name": "Hirabami Hide",
+        "quantity": 1
+      },
+      {
+        "name": "Hirabami Scale",
+        "quantity": 1
+      },
+      {
+        "name": "Hirabami Tail Claw",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 600,
+    "id": 72
+  },
+  {
+    "name": "Felyne Hope Set",
+    "rank": "low",
+    "rarity": 1,
+    "defense": 4,
+    "resistances": {
+      "fire": 2,
+      "water": 0,
+      "thunder": 2,
+      "ice": 0,
+      "dragon": 0
+    },
+    "materials": [],
+    "totalZenny": 150,
+    "id": 73
+  },
+  {
+    "name": "Felyne Lala Barina Set",
+    "rank": "low",
+    "rarity": 1,
+    "defense": 16,
+    "resistances": {
+      "fire": -6,
+      "water": 6,
+      "thunder": 0,
+      "ice": 0,
+      "dragon": 6
+    },
+    "materials": [
+      {
+        "name": "Lala Barina Floret",
+        "quantity": 1
+      },
+      {
+        "name": "Lala Barina Shell",
+        "quantity": 1
+      },
+      {
+        "name": "Lala Barina Claw",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 600,
+    "id": 74
+  },
+  {
+    "name": "Felyne Leather Set",
+    "rank": "low",
+    "rarity": 1,
+    "defense": 4,
+    "resistances": {
+      "fire": 4,
+      "water": 0,
+      "thunder": 0,
+      "ice": 0,
+      "dragon": 0
+    },
+    "materials": [],
+    "totalZenny": 0,
+    "id": 75
+  },
+  {
+    "name": "Felyne Nerscylla Set",
+    "rank": "low",
+    "rarity": 3,
+    "defense": 28,
+    "resistances": {
+      "fire": -4,
+      "water": 4,
+      "thunder": -4,
+      "ice": 2,
+      "dragon": 4
+    },
+    "materials": [
+      {
+        "name": "Nerscylla Spike",
+        "quantity": 1
+      },
+      {
+        "name": "Nerscylla Shell",
+        "quantity": 1
+      },
+      {
+        "name": "Nerscylla Claw",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 600,
+    "id": 76
+  },
+  {
+    "name": "Felyne Nu Udra Set",
+    "rank": "low",
+    "rarity": 4,
+    "defense": 36,
+    "resistances": {
+      "fire": 10,
+      "water": -8,
+      "thunder": 0,
+      "ice": 2,
+      "dragon": 0
+    },
+    "materials": [
+      {
+        "name": "Nu Udra Horn",
+        "quantity": 1
+      },
+      {
+        "name": "Guardian Pelt",
+        "quantity": 1
+      },
+      {
+        "name": "Nu Udra Hide",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 1500,
+    "id": 77
+  },
+  {
+    "name": "Felyne Quematrice Set",
+    "rank": "low",
+    "rarity": 1,
+    "defense": 12,
+    "resistances": {
+      "fire": 4,
+      "water": -6,
+      "thunder": 0,
+      "ice": -2,
+      "dragon": 0
+    },
+    "materials": [
+      {
+        "name": "Quematrice Crest",
+        "quantity": 1
+      },
+      {
+        "name": "Quematrice Scale",
+        "quantity": 1
+      },
+      {
+        "name": "Quematrice Igniter",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 300,
+    "id": 78
+  },
+  {
+    "name": "Felyne Rey Dau Set",
+    "rank": "low",
+    "rarity": 4,
+    "defense": 36,
+    "resistances": {
+      "fire": 0,
+      "water": -4,
+      "thunder": 8,
+      "ice": -6,
+      "dragon": 0
+    },
+    "materials": [
+      {
+        "name": "Rey Dau Thunderhorn",
+        "quantity": 1
+      },
+      {
+        "name": "Guardian Pelt",
+        "quantity": 1
+      },
+      {
+        "name": "Rey Dau Scale",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 1500,
+    "id": 79
+  },
+  {
+    "name": "Felyne Rompopolo Set",
+    "rank": "low",
+    "rarity": 3,
+    "defense": 28,
+    "resistances": {
+      "fire": 0,
+      "water": -6,
+      "thunder": 0,
+      "ice": 0,
+      "dragon": 2
+    },
+    "materials": [
+      {
+        "name": "Rompopolo Beak",
+        "quantity": 1
+      },
+      {
+        "name": "Rompopolo Hide",
+        "quantity": 1
+      },
+      {
+        "name": "Rompopolo Claw",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 600,
+    "id": 80
+  },
+  {
+    "name": "Felyne Uth Duna Set",
+    "rank": "low",
+    "rarity": 4,
+    "defense": 36,
+    "resistances": {
+      "fire": -2,
+      "water": 8,
+      "thunder": -6,
+      "ice": 0,
+      "dragon": 0
+    },
+    "materials": [
+      {
+        "name": "Uth Duna Cilia",
+        "quantity": 1
+      },
+      {
+        "name": "Guardian Pelt",
+        "quantity": 1
+      },
+      {
+        "name": "Uth Duna Scale",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 1500,
+    "id": 81
+  },
+  {
+    "name": "Felyne Xu Wu Set",
+    "rank": "low",
+    "rarity": 4,
+    "defense": 36,
+    "resistances": {
+      "fire": 2,
+      "water": 2,
+      "thunder": 2,
+      "ice": -6,
+      "dragon": 4
+    },
+    "materials": [
+      {
+        "name": "Golden Corneum",
+        "quantity": 1
+      },
+      {
+        "name": "Xu Wu Hide",
+        "quantity": 1
+      },
+      {
+        "name": "Xu Wu Tentacle",
+        "quantity": 1
+      }
+    ],
+    "totalZenny": 1200,
+    "id": 82
+  }
+]

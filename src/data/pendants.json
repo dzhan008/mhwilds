@@ -1,0 +1,1259 @@
+[
+  {
+    "id": "pendant-barrelbowlingstrap",
+    "name": "Barrel Bowling Strap",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Claim at the Barrel Bowling Counter after playing once."
+  },
+  {
+    "id": "pendant-barrelbowlingtrophy",
+    "name": "Barrel Bowling Trophy",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Reward for getting an A Rank in Barrel Bowling."
+  },
+  {
+    "id": "pendant-blackcatbell",
+    "name": "Black Cat Bell",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC (Pendant Set Vol. 4)"
+  },
+  {
+    "id": "pendant-blankachandoll",
+    "name": "Blanka-Chan Doll",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Street Fighter 6 Collab DLC"
+  },
+  {
+    "id": "pendant-bluefairylight",
+    "name": "Blue Fairy Light",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC (Pendant Set Vol. 1)"
+  },
+  {
+    "id": "pendant-blueflamefetespirit",
+    "name": "Blue Flamefete Spirit",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC (Pendant Set Vol. 6)"
+  },
+  {
+    "id": "pendant-bluelaladressdoll",
+    "name": "Blue Lala Dress Doll",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC"
+  },
+  {
+    "id": "pendant-bluepoltercat",
+    "name": "Blue Poltercat",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC (Pendant Set Vol. 8)"
+  },
+  {
+    "id": "pendant-commonwoodminnow",
+    "name": "Common Wood Minnow",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Speak to Ferdinand at the Plains Base Camp (Title Update 2)"
+  },
+  {
+    "id": "pendant-dancingblackcat",
+    "name": "Dancing Black Cat",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC (Pendant Set Vol. 3)"
+  },
+  {
+    "id": "pendant-dancingwhitecat",
+    "name": "Dancing White Cat",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC (Pendant Set Vol. 3)"
+  },
+  {
+    "id": "pendant-doshaguma-bravery",
+    "name": "Doshaguma: Mark of Bravery",
+    "rarity": 4,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Challenge Quest: Doshaguma of the Hollow"
+  },
+  {
+    "id": "pendant-doshaguma-contest",
+    "name": "Doshaguma: Mark of Contest",
+    "rarity": 2,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Challenge Quest: Doshaguma of the Hollow"
+  },
+  {
+    "id": "pendant-doshaguma-mastery",
+    "name": "Doshaguma: Mark of Mastery",
+    "rarity": 5,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Challenge Quest: Doshaguma of the Hollow (A Rank)"
+  },
+  {
+    "id": "pendant-dragontorch-wings",
+    "name": "Dragontorch Wings",
+    "rarity": 2,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Talk to Nata after Main Mission Chapter 3: Monster Hunter"
+  },
+  {
+    "id": "pendant-dreamspellfelyneteddy",
+    "name": "Dreamspell Felyne Teddy",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Dreamspell Season Event"
+  },
+  {
+    "id": "pendant-dusterrig",
+    "name": "Duster Rig",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Ferdinand at Plains Base Camp (Aquatica List 4)"
+  },
+  {
+    "id": "pendant-emeraldjitterbait",
+    "name": "Emerald Jitterbait",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Ferdinand at Plains Base Camp (Aquatica List 2)"
+  },
+  {
+    "id": "pendant-felynecaramel",
+    "name": "Felyne Caramel",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC / Mobile App Promotion"
+  },
+  {
+    "id": "pendant-felynedunabobble",
+    "name": "Felyne Duna Bobble",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC"
+  },
+  {
+    "id": "pendant-felynedunagammabobble",
+    "name": "Felyne Duna Gamma Bobble",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC"
+  },
+  {
+    "id": "pendant-felynemintchocolate",
+    "name": "Felyne Mint Chocolate",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC / Mobile App Promotion"
+  },
+  {
+    "id": "pendant-felynestrawberry",
+    "name": "Felyne Strawberry",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC / Mobile App Promotion"
+  },
+  {
+    "id": "pendant-flamefetefelyneteddy",
+    "name": "Flamefete Felyne Teddy",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Participate in Festival of Accord: Flamefete"
+  },
+  {
+    "id": "pendant-floatingomg",
+    "name": "Floating OMG",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Planetes Protocol (Savage) Event Quest"
+  },
+  {
+    "id": "pendant-floatingdoodles",
+    "name": "Floating Doodles",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC (Pendant Set Vol. 5)"
+  },
+  {
+    "id": "pendant-floatinghearts",
+    "name": "Floating Hearts",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC (Pendant Set Vol. 5)"
+  },
+  {
+    "id": "pendant-floatinghoney",
+    "name": "Floating Honey",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC (Pendant Set Vol. 5)"
+  },
+  {
+    "id": "pendant-floatingpotions",
+    "name": "Floating Potions",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC (Pendant Set Vol. 5)"
+  },
+  {
+    "id": "pendant-floatingsparkles",
+    "name": "Floating Sparkles",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC (Pendant Set Vol. 5)"
+  },
+  {
+    "id": "pendant-floatingwelldonesteaks",
+    "name": "Floating Well-done Steaks",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC (Pendant Set Vol. 5)"
+  },
+  {
+    "id": "pendant-flutteringmyriads",
+    "name": "Fluttering Myriads",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC"
+  },
+  {
+    "id": "pendant-flutteringquatreflies",
+    "name": "Fluttering Quatreflies",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC"
+  },
+  {
+    "id": "pendant-goldenbughead",
+    "name": "Golden Bughead",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Ferdinand at Plains Base Camp (Aquatica List 1)"
+  },
+  {
+    "id": "pendant-greenfairylight",
+    "name": "Green Fairy Light",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC (Pendant Set Vol. 1)"
+  },
+  {
+    "id": "pendant-greenflamefetespirit",
+    "name": "Green Flamefete Spirit",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC (Pendant Set Vol. 6)"
+  },
+  {
+    "id": "pendant-greenpoltercat",
+    "name": "Green Poltercat",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC (Pendant Set Vol. 8)"
+  },
+  {
+    "id": "pendant-hope-scarf",
+    "name": "Hope Scarf: Crimson",
+    "rarity": 1,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Default / Claim from Housekeeper"
+  },
+  {
+    "id": "pendant-hopescarfgblack",
+    "name": "Hope Scarf G: Black",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Main Mission Chapter 6: What Lies Ahead"
+  },
+  {
+    "id": "pendant-hopescarfgbluered",
+    "name": "Hope Scarf G: Blue Red",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Main Mission Chapter 6: What Lies Ahead"
+  },
+  {
+    "id": "pendant-hopescarfggrape",
+    "name": "Hope Scarf G: Grape",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Main Mission Chapter 6: What Lies Ahead"
+  },
+  {
+    "id": "pendant-hopescarflightblue",
+    "name": "Hope Scarf: Light Blue",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Automatically unlocked"
+  },
+  {
+    "id": "pendant-hopescarfpeach",
+    "name": "Hope Scarf: Peach",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Automatically unlocked"
+  },
+  {
+    "id": "pendant-hopescarfsaffron",
+    "name": "Hope Scarf: Saffron",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Automatically unlocked"
+  },
+  {
+    "id": "pendant-hopescarfsblue",
+    "name": "Hope Scarf S: Blue",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Main Mission Chapter 3: Monster Hunter"
+  },
+  {
+    "id": "pendant-hopescarfsgreen",
+    "name": "Hope Scarf S: Green",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Main Mission Chapter 3: Monster Hunter"
+  },
+  {
+    "id": "pendant-hopescarfsmarmalade",
+    "name": "Hope Scarf S: Marmalade",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Main Mission Chapter 3: Monster Hunter"
+  },
+  {
+    "id": "pendant-hopescarfspastel",
+    "name": "Hope Scarf S: Pastel",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Main Mission Chapter 3: Monster Hunter"
+  },
+  {
+    "id": "pendant-hopescarftealorange",
+    "name": "Hope Scarf: Teal Orange",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Automatically unlocked"
+  },
+  {
+    "id": "pendant-kut-ku-plushie",
+    "name": "Kut-Ku Plushie",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Side Mission: A Request for Kut-Ku Plushie"
+  },
+  {
+    "id": "pendant-meatmergency",
+    "name": "Meatmergency!",
+    "rarity": 4,
+    "_type": "pendant",
+    "materials": [
+      {
+        "name": "Hunter's Dream Ticket",
+        "quantity": 1
+      },
+      {
+        "name": "Raw Meat",
+        "quantity": 2
+      }
+    ],
+    "quest": "Event Quest: Every Hunter's Dream"
+  },
+  {
+    "id": "pendant-lagiacrusplushie",
+    "name": "Lagiacrus Plushie",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC"
+  },
+  {
+    "id": "pendant-mizutsunemarkofbravery",
+    "name": "Mizutsune: Mark of Bravery",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Challenge Quest: Fleeting Bubbles"
+  },
+  {
+    "id": "pendant-mizutsunemarkofcontest",
+    "name": "Mizutsune: Mark of Contest",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Challenge Quest: Fleeting Bubbles (B Rank)"
+  },
+  {
+    "id": "pendant-mizutsunemarkofmastery",
+    "name": "Mizutsune: Mark of Mastery",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Challenge Quest: Fleeting Bubbles (A Rank)"
+  },
+  {
+    "id": "pendant-pinklaladressdoll",
+    "name": "Pink Lala Dress Doll",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC"
+  },
+  {
+    "id": "pendant-redfairylight",
+    "name": "Red Fairy Light",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC (Pendant Set Vol. 1)"
+  },
+  {
+    "id": "pendant-redflamefetespirit",
+    "name": "Red Flamefete Spirit",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC (Pendant Set Vol. 6)"
+  },
+  {
+    "id": "pendant-redlaladressdoll",
+    "name": "Red Lala Dress Doll",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC"
+  },
+  {
+    "id": "pendant-redpoltercat",
+    "name": "Red Poltercat",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC (Pendant Set Vol. 8)"
+  },
+  {
+    "id": "pendant-reydaumarkofbravery",
+    "name": "Rey Dau: Mark of Bravery",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Challenge Quest: The Shining Storm Rages"
+  },
+  {
+    "id": "pendant-reydaumarkofcontest",
+    "name": "Rey Dau: Mark of Contest",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Challenge Quest: The Shining Storm Rages"
+  },
+  {
+    "id": "pendant-reydaumarkofmastery",
+    "name": "Rey Dau: Mark of Mastery",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Challenge Quest: The Shining Storm Rages (A Rank)"
+  },
+  {
+    "id": "pendant-sakurafelyneteddy",
+    "name": "Sakura Felyne Teddy",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Palico Support Desk Reward"
+  },
+  {
+    "id": "pendant-sakuraposycolorful",
+    "name": "Sakura Posy: Colorful",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC (Pendant Set Vol. 4)"
+  },
+  {
+    "id": "pendant-sakuraposywhite",
+    "name": "Sakura Posy: White",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC (Pendant Set Vol. 4)"
+  },
+  {
+    "id": "pendant-seregiosmarkofbravery",
+    "name": "Seregios: Mark of Bravery",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Challenge Quest: Boundless Blades (B Rank)"
+  },
+  {
+    "id": "pendant-seregiosmarkofcontest",
+    "name": "Seregios: Mark of Contest",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Challenge Quest: Boundless Blades"
+  },
+  {
+    "id": "pendant-seregiosmarkofmastery",
+    "name": "Seregios: Mark of Mastery",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Challenge Quest: Boundless Blades (A Rank)"
+  },
+  {
+    "id": "pendant-stretchedblackcat",
+    "name": "Stretched Black Cat",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC (Pendant Set Vol. 3)"
+  },
+  {
+    "id": "pendant-stretchedwhitecat",
+    "name": "Stretched White Cat",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC (Pendant Set Vol. 3)"
+  },
+  {
+    "id": "pendant-strigibleamstrigian",
+    "name": "Strigible: Amstrigian",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC (Pendant Set Vol. 2)"
+  },
+  {
+    "id": "pendant-strigiblecolor",
+    "name": "Strigible: Color",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC (Pendant Set Vol. 2)"
+  },
+  {
+    "id": "pendant-strigiblecypurrpunk",
+    "name": "Strigible: Cypurrpunk",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC (Pendant Set Vol. 2)"
+  },
+  {
+    "id": "pendant-strigiblegold",
+    "name": "Strigible: Gold",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC (Pendant Set Vol. 2)"
+  },
+  {
+    "id": "pendant-strigiblehymstrigian",
+    "name": "Strigible: Hymstrigian",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC (Pendant Set Vol. 2)"
+  },
+  {
+    "id": "pendant-strigiblelove",
+    "name": "Strigible: Love",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC (Pendant Set Vol. 2)"
+  },
+  {
+    "id": "pendant-felyne-teddy",
+    "name": "Stuffed Felyne Teddy",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Open Beta Test Reward"
+  },
+  {
+    "id": "pendant-tentaclejig",
+    "name": "Tentacle Jig",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Ferdinand at Plains Base Camp (Aquatica List 5)"
+  },
+  {
+    "id": "pendant-trotalongcrake",
+    "name": "Trot-along Crake",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC"
+  },
+  {
+    "id": "pendant-trotalongcactuar",
+    "name": "Trot-along Cactuar",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Capture a Cactuar in the Omega fight"
+  },
+  {
+    "id": "pendant-tuffjointbait",
+    "name": "Tuff Joint Bait",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Ferdinand at Plains Base Camp (Aquatica List 3)"
+  },
+  {
+    "id": "pendant-uthdunamarkofbravery",
+    "name": "Uth Duna: Mark of Bravery",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Challenge Quest: The Daunting Downpour (B Rank)"
+  },
+  {
+    "id": "pendant-uthdunamarkofcontest",
+    "name": "Uth Duna: Mark of Contest",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Challenge Quest: The Daunting Downpour"
+  },
+  {
+    "id": "pendant-uthdunamarkofmastery",
+    "name": "Uth Duna: Mark of Mastery",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Challenge Quest: The Daunting Downpour (A Rank)"
+  },
+  {
+    "id": "pendant-violetfairylight",
+    "name": "Violet Fairy Light",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC (Pendant Set Vol. 1)"
+  },
+  {
+    "id": "pendant-arkveld-resolve",
+    "name": "Arkveld: Mark of Resolve",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Story Milestone"
+  },
+  {
+    "id": "pendant-azuz-gratitude",
+    "name": "Azuz: Mark of Gratitude",
+    "rarity": 2,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Side Mission: Succulent Scraps"
+  },
+  {
+    "id": "pendant-hopescarfbrown",
+    "name": "Hope Scarf: Brown",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Automatically unlocked"
+  },
+  {
+    "id": "pendant-hopescarfgreen",
+    "name": "Hope Scarf: Green",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Automatically unlocked"
+  },
+  {
+    "id": "pendant-hopescarfspurple",
+    "name": "Hope Scarf S: Purple",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Main Mission Chapter 3: Monster Hunter"
+  },
+  {
+    "id": "pendant-hopescarfsredgreen",
+    "name": "Hope Scarf S: Red Green",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Main Mission Chapter 3: Monster Hunter"
+  },
+  {
+    "id": "pendant-hopescarfsslate",
+    "name": "Hope Scarf S: Slate",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Main Mission Chapter 3: Monster Hunter"
+  },
+  {
+    "id": "pendant-hopescarfghazard",
+    "name": "Hope Scarf G: Hazard",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Main Mission Chapter 6: What Lies Ahead"
+  },
+  {
+    "id": "pendant-hopescarfgmonochrome",
+    "name": "Hope Scarf G: Monochrome",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Main Mission Chapter 6: What Lies Ahead"
+  },
+  {
+    "id": "pendant-hopescarfgpinkblack",
+    "name": "Hope Scarf G: Pink Black",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Main Mission Chapter 6: What Lies Ahead"
+  },
+  {
+    "id": "pendant-hopescarfgpinkblue",
+    "name": "Hope Scarf G: Pink Blue",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Main Mission Chapter 6: What Lies Ahead"
+  },
+  {
+    "id": "pendant-arkveldmarkofcontest",
+    "name": "Arkveld: Mark of Contest",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Challenge Quest: The Proud Child of the Wilds"
+  },
+  {
+    "id": "pendant-arkveldmarkofbravery",
+    "name": "Arkveld: Mark of Bravery",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Challenge Quest: The Proud Child of the Wilds (B Rank)"
+  },
+  {
+    "id": "pendant-arkveldmarkofmastery",
+    "name": "Arkveld: Mark of Mastery",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Challenge Quest: The Proud Child of the Wilds (A Rank)"
+  },
+  {
+    "id": "pendant-jindahaadmarkofcontest",
+    "name": "Jin Dahaad: Mark of Contest",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Challenge Quest: The Cold Path to Oblivion"
+  },
+  {
+    "id": "pendant-jindahaadmarkofbravery",
+    "name": "Jin Dahaad: Mark of Bravery",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Challenge Quest: The Cold Path to Oblivion (B Rank)"
+  },
+  {
+    "id": "pendant-jindahaadmarkofmastery",
+    "name": "Jin Dahaad: Mark of Mastery",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Challenge Quest: The Cold Path to Oblivion (A Rank)"
+  },
+  {
+    "id": "pendant-nuudramarkofcontest",
+    "name": "Nu Udra: Mark of Contest",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Challenge Quest: Burn in Blackest Hell"
+  },
+  {
+    "id": "pendant-nuudramarkofbravery",
+    "name": "Nu Udra: Mark of Bravery",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Challenge Quest: Burn in Blackest Hell (B Rank)"
+  },
+  {
+    "id": "pendant-nuudramarkofmastery",
+    "name": "Nu Udra: Mark of Mastery",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Challenge Quest: Burn in Blackest Hell (A Rank)"
+  },
+  {
+    "id": "pendant-skyscaleratha",
+    "name": "Skyscale Ratha",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Optional Quest: A Royal Request"
+  },
+  {
+    "id": "pendant-hatchlingchatacabra",
+    "name": "Hatchling Chatacabra",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Optional Quest: A Royal Request"
+  },
+  {
+    "id": "pendant-hatchlinggravios",
+    "name": "Hatchling Gravios",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Optional Quest: A Royal Request"
+  },
+  {
+    "id": "pendant-hatchlingreydau",
+    "name": "Hatchling Rey Dau",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Optional Quest: A Royal Request"
+  },
+  {
+    "id": "pendant-welldonesteakstrap",
+    "name": "Well-done Steak Strap",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Event Quest: Meat at the Heart of Wyveria"
+  },
+  {
+    "id": "pendant-azureerawindchime",
+    "name": "Azure Era Wind Chime",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Event Quest: A Flash of Brilliance"
+  },
+  {
+    "id": "pendant-noxiouslantern",
+    "name": "Noxious Lantern",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Event Quest: Just What the Doctor Ordered"
+  },
+  {
+    "id": "pendant-purplepolopal",
+    "name": "Purple Polo Pal",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Event Quest: Just What the Doctor Ordered"
+  },
+  {
+    "id": "pendant-peachgreenpolopal",
+    "name": "Peach Green Polo Pal",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Event Quest: Just What the Doctor Ordered"
+  },
+  {
+    "id": "pendant-azuregoldpolopal",
+    "name": "Azure Gold Polo Pal",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Event Quest: Just What the Doctor Ordered"
+  },
+  {
+    "id": "pendant-metallicpolopal",
+    "name": "Metallic Polo Pal",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Event Quest: Just What the Doctor Ordered"
+  },
+  {
+    "id": "pendant-amberbluepolopal",
+    "name": "Amber Blue Polo Pal",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Event Quest: Just What the Doctor Ordered"
+  },
+  {
+    "id": "pendant-blackpolopal",
+    "name": "Black Polo Pal",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Event Quest: Just What the Doctor Ordered"
+  },
+  {
+    "id": "pendant-jigglysquirmred",
+    "name": "Jigglysquirm (Red)",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Event Quest: Neon Neopterons"
+  },
+  {
+    "id": "pendant-jigglysquirmblue",
+    "name": "Jigglysquirm (Blue)",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Event Quest: Neon Neopterons"
+  },
+  {
+    "id": "pendant-jigglysquirmgreen",
+    "name": "Jigglysquirm (Green)",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Event Quest: Neon Neopterons"
+  },
+  {
+    "id": "pendant-jigglysquirmyellow",
+    "name": "Jigglysquirm (Yellow)",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Event Quest: Neon Neopterons"
+  },
+  {
+    "id": "pendant-jigglysquirmpink",
+    "name": "Jigglysquirm (Pink)",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Event Quest: Neon Neopterons"
+  },
+  {
+    "id": "pendant-jigglysquirmpurple",
+    "name": "Jigglysquirm (Purple)",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Event Quest: Neon Neopterons"
+  },
+  {
+    "id": "pendant-jigglysquirmorange",
+    "name": "Jigglysquirm (Orange)",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "Event Quest: Neon Neopterons"
+  },
+  {
+    "id": "pendant-pinkfairylight",
+    "name": "Pink Fairy Light",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC (Pendant Set Vol. 1)"
+  },
+  {
+    "id": "pendant-whitefairylight",
+    "name": "White Fairy Light",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC (Pendant Set Vol. 1)"
+  },
+  {
+    "id": "pendant-pinkflamefetespirit",
+    "name": "Pink Flamefete Spirit",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC (Pendant Set Vol. 6)"
+  },
+  {
+    "id": "pendant-violetflamefetespirit",
+    "name": "Violet Flamefete Spirit",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC (Pendant Set Vol. 6)"
+  },
+  {
+    "id": "pendant-whiteflamefetespirit",
+    "name": "White Flamefete Spirit",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC (Pendant Set Vol. 6)"
+  },
+  {
+    "id": "pendant-orangelaladressdoll",
+    "name": "Orange Lala Dress Doll",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC"
+  },
+  {
+    "id": "pendant-violetlaladressdoll",
+    "name": "Violet Lala Dress Doll",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC"
+  },
+  {
+    "id": "pendant-orangepoltercat",
+    "name": "Orange Poltercat",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC (Pendant Set Vol. 8)"
+  },
+  {
+    "id": "pendant-violetpoltercat",
+    "name": "Violet Poltercat",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC (Pendant Set Vol. 8)"
+  },
+  {
+    "id": "pendant-whitepoltercat",
+    "name": "White Poltercat",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC (Pendant Set Vol. 8)"
+  },
+  {
+    "id": "pendant-whitecatbell",
+    "name": "White Cat Bell",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC (Pendant Set Vol. 4)"
+  },
+  {
+    "id": "pendant-trotalongfledgling",
+    "name": "Trot-along Fledgling",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC"
+  },
+  {
+    "id": "pendant-avianwindchime",
+    "name": "Avian Wind Chime",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC (Deluxe Edition)"
+  },
+  {
+    "id": "pendant-floatingrathballoon",
+    "name": "Floating Rath Balloon",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC"
+  },
+  {
+    "id": "pendant-fhopeballoon",
+    "name": "F Hope Balloon",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC"
+  },
+  {
+    "id": "pendant-farkveldballoon",
+    "name": "F Arkveld Balloon",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC"
+  },
+  {
+    "id": "pendant-frompopoloballoon",
+    "name": "F Rompopolo Balloon",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC"
+  },
+  {
+    "id": "pendant-fbarinaballoon",
+    "name": "F Barina Balloon",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC"
+  },
+  {
+    "id": "pendant-athosballoon",
+    "name": "Athos Balloon",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC"
+  },
+  {
+    "id": "pendant-whiteturntail",
+    "name": "White Turntail",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC"
+  },
+  {
+    "id": "pendant-whitetubbyturntail",
+    "name": "White Tubby Turntail",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC"
+  },
+  {
+    "id": "pendant-blackturntail",
+    "name": "Black Turntail",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC"
+  },
+  {
+    "id": "pendant-blacktubbyturntail",
+    "name": "Black Tubby Turntail",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC"
+  },
+  {
+    "id": "pendant-whiterockababy",
+    "name": "White Rock-a-Baby",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC"
+  },
+  {
+    "id": "pendant-pinkrockababy",
+    "name": "Pink Rock-a-Baby",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC"
+  },
+  {
+    "id": "pendant-bluerockababy",
+    "name": "Blue Rock-a-Baby",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC"
+  },
+  {
+    "id": "pendant-greenrockababy",
+    "name": "Green Rock-a-Baby",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC"
+  },
+  {
+    "id": "pendant-purplerockababy",
+    "name": "Purple Rock-a-Baby",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC"
+  },
+  {
+    "id": "pendant-blackrockababy",
+    "name": "Black Rock-a-Baby",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC"
+  },
+  {
+    "id": "pendant-cosmoloidcore",
+    "name": "Cosmoloid Core",
+    "rarity": 3,
+    "_type": "pendant",
+    "materials": [],
+    "quest": "DLC"
+  }
+]

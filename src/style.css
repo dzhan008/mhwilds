@@ -1,0 +1,3057 @@
+/* ============================================
+   MH Wilds Planner — Design System
+   Dark theme inspired by Monster Hunter's UI
+   ============================================ */
+
+/* ---------- CSS Variables ---------- */
+:root {
+  /* Core palette */
+  --bg-primary: #0d1117;
+  --bg-secondary: #161b22;
+  --bg-card: #1c2129;
+  --bg-card-hover: #21262d;
+  --bg-input: #0d1117;
+  --bg-modal: #1c2129;
+
+  /* Borders */
+  --border-primary: #30363d;
+  --border-subtle: #21262d;
+  --border-accent: #c9a84c;
+
+  /* Text */
+  --text-primary: #e6edf3;
+  --text-secondary: #8b949e;
+  --text-muted: #6e7681;
+  --text-accent: #c9a84c;
+
+  /* MH-inspired accent colors */
+  --gold: #c9a84c;
+  --gold-dim: rgba(201, 168, 76, 0.15);
+  --gold-glow: rgba(201, 168, 76, 0.4);
+
+  /* Rarity colors (matches MH rarity system) */
+  --rarity-1: #aaa09f;
+  --rarity-2: #c6c0c2;
+  --rarity-3: #889442;
+  --rarity-4: #54795a;
+  --rarity-5: #6bb5c0;
+  --rarity-6: #6260c1;
+  --rarity-7: #7862b7;
+  --rarity-8: #e87146;
+
+  /* Element colors */
+  --fire: #e85d3a;
+  --water: #4a9ee5;
+  --ice: #87ceeb;
+  --thunder: #e8c93a;
+  --dragon: #9b4dca;
+
+  /* Quest priority badges */
+  --badge-best: #2ea043;
+  --badge-event: #8957e5;
+  --badge-multi: #d29922;
+  --badge-assignment: #6e7681;
+
+  /* Layout */
+  --max-width: 1200px;
+  --farming-width: 380px;
+  --ref-width: 360px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-smooth: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 20px rgba(201, 168, 76, 0.15);
+}
+
+/* ---------- Reset & Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: padding-right var(--transition-smooth), padding-left var(--transition-smooth);
+}
+
+/* When the farming drawer is open, squeeze page content left so results stay
+   visible beside it. The reference panel mirrors this from the left. Only on
+   screens wide enough to show both (below, the panels overlay as full-width
+   sheets). Opening one panel auto-closes the other under 1100px (JS guard),
+   so the double squeeze only ever happens with room for it. */
+@media (min-width: 768px) {
+  body.farming-open {
+    padding-right: var(--farming-width);
+  }
+  body.ref-open {
+    padding-left: var(--ref-width);
+  }
+}
+
+/* ---------- Typography ---------- */
+h1, h2, h3, h4 {
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: 1.75rem; }
+h2 { font-size: 1.35rem; }
+h3 { font-size: 1.1rem; }
+h4 { font-size: 0.95rem; }
+
+/* ---------- App Layout ---------- */
+#app {
+  flex: 1;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* ---------- Footer ---------- */
+.app-footer {
+  margin-top: 3rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--border-subtle);
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.app-footer a {
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
+.app-footer a:hover {
+  color: var(--gold);
+}
+
+/* Fextralife brand logo beside the credit — displaying it is a condition of
+   their image license (credit + link + logo). Do not remove without replacing
+   the bundled images. */
+.fextralife-logo {
+  width: 16px;
+  height: 16px;
+  vertical-align: -3px;
+  margin: 0 0.3rem 0 0.15rem;
+  border-radius: 3px;
+}
+
+/* ---------- Header ---------- */
+.app-header {
+  padding: 2rem 0 1rem;
+  text-align: center;
+  position: relative;
+}
+
+.app-header h1 {
+  color: var(--gold);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.app-header h1 .header-icon {
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+}
+
+.app-subtitle {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+/* ---------- Search ---------- */
+.search-container {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 1rem 0;
+  background: linear-gradient(to bottom, var(--bg-primary) 60%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.search-filter-group {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.search-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  pointer-events: none;
+  transition: color var(--transition-fast);
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.85rem 1rem 0.85rem 2.8rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-lg);
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-family: inherit;
+  outline: none;
+  transition: all var(--transition-normal);
+}
+
+.search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.search-input:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px var(--gold-dim), var(--shadow-glow);
+}
+
+.search-input:focus ~ .search-icon {
+  color: var(--gold);
+}
+
+.search-hint {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.search-count {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+/* ---------- Rank Filter ---------- */
+.rank-filter {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.rank-btn {
+  padding: 0.35rem 1rem;
+  min-width: 90px;
+  text-align: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: 20px;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.rank-btn:hover {
+  border-color: var(--gold);
+  color: var(--text-primary);
+}
+
+.rank-btn.active {
+  background: var(--gold-dim);
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* Stat sort dropdown — styled to sit in the filter rows */
+.sort-select {
+  padding: 0.35rem 0.75rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: 20px;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.sort-select:hover,
+.sort-select:focus {
+  border-color: var(--gold);
+  color: var(--text-primary);
+  outline: none;
+}
+
+/* highlight when a non-default sort is active */
+.sort-select.sort-active {
+  background: var(--gold-dim);
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* ---------- Results Grid ---------- */
+.results-container {
+  padding: 1rem 0 3rem;
+}
+
+.results-grid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+/* Invisible IntersectionObserver anchor for incremental batch rendering. Spans
+   the full row in both the results and gear grids so it never claims a cell. */
+.batch-sentinel {
+  grid-column: 1 / -1;
+  height: 1px;
+  margin: 0;
+  pointer-events: none;
+}
+
+/* ---------- Mode Switch Toggle ---------- */
+.visual-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.75rem 0 0.25rem;
+}
+
+.mode-switch {
+  position: relative;
+  display: inline-flex;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-primary);
+  border-radius: 999px;
+  padding: 3px;
+  cursor: pointer;
+  font-family: inherit;
+  gap: 0;
+}
+
+/* Sliding thumb — always gold */
+.mode-switch::before {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  width: calc(50% - 3px);
+  background: var(--gold-dim);
+  border: 1px solid var(--border-accent);
+  border-radius: 999px;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.mode-switch.active::before {
+  transform: translateX(100%);
+}
+
+.mode-switch-option {
+  position: relative;
+  z-index: 1;
+  min-width: 90px;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-align: center;
+  color: var(--text-muted);
+  transition: color 0.2s;
+  border-radius: 999px;
+}
+
+/* Active side is always gold, whichever it is */
+.mode-switch:not(.active) .mode-switch-option:first-child,
+.mode-switch.active .mode-switch-option:last-child {
+  color: var(--gold);
+}
+
+.mode-switch:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* ---------- Gear Grid (Visual mode) ---------- */
+/* auto-fill keys the column count off the grid's real width, so it reflows
+   correctly whether or not the drawer has squeezed the page. */
+.gear-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.gear-tile {
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1rem 0.75rem 0.85rem;
+}
+
+.gear-tile:hover {
+  border-color: var(--gold);
+  background: var(--bg-card-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+
+.gear-tile:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.gear-tile-img {
+  position: relative;
+  width: 100%;
+  max-width: 190px;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.65rem;
+  flex-shrink: 0;
+}
+
+.gear-tile-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.gear-tile-emoji {
+  font-size: 3.5rem;
+  line-height: 1;
+}
+
+.gear-tile-info {
+  width: 100%;
+}
+
+.gear-tile-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 0.25rem;
+}
+
+.gear-tile-meta {
+  font-size: 0.73rem;
+  color: var(--text-muted);
+}
+
+/* ---------- Grid Detail View ---------- */
+.grid-detail-view {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.back-btn {
+  align-self: flex-start;
+  padding: 0.35rem 0.9rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: 20px;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.back-btn:hover {
+  border-color: var(--gold);
+  color: var(--text-primary);
+}
+
+/* ---------- Armor Set Card ---------- */
+.set-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: all var(--transition-normal);
+  cursor: pointer;
+}
+
+.set-card:hover {
+  border-color: var(--border-accent);
+  box-shadow: var(--shadow-md), var(--shadow-glow);
+  transform: translateY(-1px);
+}
+
+.set-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  gap: 1rem;
+}
+
+.set-card-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.set-card-name {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.set-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.3rem;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.rarity-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+
+.rank-badge {
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: var(--gold-dim);
+  color: var(--gold);
+}
+
+.set-card-chevron {
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  transition: transform var(--transition-normal);
+  flex-shrink: 0;
+}
+
+.set-card.expanded .set-card-chevron {
+  transform: rotate(180deg);
+}
+
+/* ---------- Set Details (Expanded) ---------- */
+.set-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-smooth);
+}
+
+.set-card.expanded .set-details {
+  max-height: 5000px;
+}
+
+.set-details-inner {
+  padding: 0 1.25rem 1.25rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* Full set materials summary */
+.full-set-summary {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.full-set-summary h4 {
+  color: var(--gold);
+  margin-bottom: 0.6rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Cost line (zenny icon + text), sits under a materials list */
+.zenny-cost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: var(--gold);
+  opacity: 0.85;
+  font-size: 0.8rem;
+  margin-top: 0.55rem;
+}
+
+/* Slots row under the stats: slots icon + slot-size icons */
+.slots-row {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.35rem;
+}
+
+
+.material-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.material-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.65rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: 20px;
+  font-size: 0.78rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.material-chip:hover {
+  border-color: var(--gold);
+  background: var(--gold-dim);
+}
+
+.material-chip .qty {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+/* Piece cards */
+.piece-list {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.piece-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+  transition: border-color var(--transition-fast);
+}
+
+.piece-card:hover {
+  border-color: var(--border-primary);
+}
+
+.piece-card.expanded {
+  border-color: var(--border-accent);
+}
+
+.piece-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0;
+  cursor: pointer;
+  user-select: none;
+}
+
+.piece-chevron {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  transition: transform var(--transition-normal);
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.piece-card.expanded .piece-chevron {
+  transform: rotate(180deg);
+}
+
+.piece-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-smooth);
+}
+
+.piece-card.expanded .piece-details {
+  max-height: 2000px;
+  margin-top: 0.75rem;
+}
+
+.piece-img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 6px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+}
+
+.piece-header-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.piece-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: block;
+}
+
+.piece-kind-icon {
+  font-size: 0.85rem;
+}
+
+.weapon-kind-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  vertical-align: middle;
+  image-rendering: auto;
+}
+
+/* Shared stat row inside the gear-card shell (armor defense/resistances and
+   weapon ATK/AFF/element/sharpness both live here — see gearCardShell()). */
+.piece-stats {
+  display: flex;
+  gap: 0.5rem 0.75rem;
+  align-items: center;
+  margin-top: 0.2rem;
+  flex-wrap: wrap;
+}
+
+.piece-defense {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.piece-skills {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  position: relative;
+}
+
+.skill-tag {
+  padding: 0.2rem 0.5rem;
+  background: rgba(90, 140, 220, 0.12);
+  border: 1px solid rgba(90, 140, 220, 0.25);
+  border-radius: 4px;
+  font-size: 0.72rem;
+  color: #7db4f0;
+  cursor: pointer;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+
+.skill-tag:hover {
+  background: rgba(90, 140, 220, 0.22);
+  border-color: rgba(90, 140, 220, 0.5);
+}
+
+.skill-tag.set-bonus {
+  background: rgba(155, 89, 182, 0.12);
+  border-color: rgba(155, 89, 182, 0.25);
+  color: #c39bd3;
+}
+
+.skill-tag.set-bonus:hover {
+  background: rgba(155, 89, 182, 0.22);
+  border-color: rgba(155, 89, 182, 0.5);
+}
+
+/* Skill popup */
+/* In-flow detail band, inserted after a card's header row (never inside it, so
+   the header height and the gear icon don't move). Slides open on insertion. */
+.skill-band {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 0.75rem;
+  /* No horizontal margin by default: inside a .piece-card / .set-details-inner
+     the padded container already insets the band. */
+  margin: 0.6rem 0 1rem;
+  font-size: 0.78rem;
+  animation: skillBandIn 160ms ease;
+}
+
+/* When the band is a direct child of an unpadded .set-card (collapsed set /
+   weapon-group cards, standalone piece cards) it would otherwise run edge-to-
+   edge; inset it to align with the header's 1.25rem padding. */
+.set-card > .skill-band {
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+}
+
+@keyframes skillBandIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.skill-band-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin-bottom: 0.4rem;
+  color: var(--text-primary);
+}
+
+.skill-band-kind {
+  font-size: 0.68rem;
+  color: #c39bd3;
+  background: rgba(155, 89, 182, 0.15);
+  border: 1px solid rgba(155, 89, 182, 0.25);
+  border-radius: 3px;
+  padding: 0.1rem 0.35rem;
+}
+
+.skill-band-desc {
+  color: var(--text-secondary);
+  margin-bottom: 0.4rem;
+  font-size: 0.75rem;
+}
+
+.skill-band-ref {
+  margin-top: 0.5rem;
+  padding: 0;
+  background: none;
+  border: none;
+  color: var(--gold);
+  font-size: 0.75rem;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.skill-band-ref:hover {
+  text-decoration: underline;
+}
+
+.skill-rank-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.skill-rank-table td {
+  padding: 0.2rem 0.4rem;
+  color: var(--text-secondary);
+  vertical-align: top;
+}
+
+.skill-rank-table .skill-rank-label {
+  white-space: nowrap;
+  color: var(--text-muted);
+  font-weight: 600;
+  width: 4rem;
+  padding-right: 0.75rem;
+}
+
+.skill-rank-table tr.skill-row-active td {
+  color: var(--text-primary);
+}
+
+.skill-rank-table tr.skill-row-active .skill-rank-label {
+  color: var(--gold);
+}
+
+
+.slot-img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.slot-icon {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.piece-materials {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.piece-materials h4 {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.35rem;
+}
+
+/* ---------- Material Source Tooltip ---------- */
+.material-source-container {
+  display: block;
+  width: 100%;
+  flex-basis: 100%; /* forces a full-width row break if a flex parent ever wraps it */
+}
+
+.material-source {
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+  animation: fadeSlideIn 200ms ease;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.source-header {
+  font-weight: 600;
+  font-size: 0.82rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.source-monster {
+  margin-bottom: 0.5rem;
+}
+
+.source-monster-name {
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: var(--fire);
+  margin-bottom: 0.25rem;
+}
+
+.source-recommended {
+  display: inline-block;
+  margin-left: 0.4rem;
+  padding: 0.05rem 0.4rem;
+  border-radius: 0.7rem;
+  font-size: 0.62rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--bg-primary);
+  background: var(--badge-best);
+  vertical-align: middle;
+}
+
+/* Image + materials layout in expanded card */
+.set-overview {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  margin-bottom: 1.25rem;
+}
+
+.set-preview-image {
+  flex-shrink: 0;
+  width: 200px;
+}
+
+.set-preview-image img {
+  width: 200px;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  background: var(--bg-alt);
+  border: 1px solid var(--border-subtle);
+  cursor: zoom-in;
+  transition: opacity 0.15s;
+}
+
+.set-preview-image img:hover {
+  opacity: 0.85;
+}
+
+.set-preview-image--pendant {
+  width: 150px;
+}
+
+.set-preview-image--pendant img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+
+/* Lightbox */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  cursor: zoom-out;
+  animation: lightbox-in 0.15s ease;
+}
+
+@keyframes lightbox-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.lightbox-overlay img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.8);
+  image-rendering: auto;
+}
+
+.set-overview > .full-set-summary,
+.set-overview > .set-overview-body {
+  flex: 1;
+  min-width: 0;
+  margin-top: 0;
+}
+
+@media (max-width: 768px) {
+  .set-overview {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.drop-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.72rem;
+}
+
+.drop-table th {
+  text-align: left;
+  padding: 0.25rem 0.5rem;
+  color: var(--text-muted);
+  font-weight: 700;
+  font-size: 0.78rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.drop-table td {
+  padding: 0.25rem 0.5rem;
+  color: var(--text-secondary);
+}
+
+.drop-table .chance {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.drop-table .kind {
+  text-transform: capitalize;
+}
+
+/* Quest source */
+.source-quests {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.quest-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  margin: 0.2rem;
+}
+
+.quest-chip.event {
+  background: rgba(137, 87, 229, 0.12);
+  border: 1px solid rgba(137, 87, 229, 0.3);
+  color: #a78bfa;
+}
+
+.quest-chip.optional {
+  background: rgba(46, 160, 67, 0.12);
+  border: 1px solid rgba(46, 160, 67, 0.3);
+  color: #6ee77a;
+}
+
+.quest-chip.optional.multi-target {
+  background: rgba(210, 153, 34, 0.12);
+  border: 1px solid rgba(210, 153, 34, 0.3);
+  color: #e8c93a;
+}
+
+.quest-chip .warning-icon {
+  font-size: 0.65rem;
+}
+
+.quest-rank {
+  font-size: 0.72rem;
+  opacity: 0.9;
+  margin-left: 0.3rem;
+  font-weight: 700;
+}
+
+/* ---------- Empty / Loading States ---------- */
+.loading-state,
+.empty-state {
+  text-align: center;
+  padding: 2rem 1rem 4rem;
+  color: var(--text-muted);
+}
+
+.loading-state .spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid var(--border-primary);
+  border-top-color: var(--gold);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.empty-state h3 {
+  font-size: 1.4rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.empty-state p {
+  font-size: 1rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* ---------- Welcome feature cards ---------- */
+.welcome-state h3 {
+  margin-bottom: 1.25rem;
+}
+
+.welcome-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 0.85rem;
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.welcome-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-md);
+  padding: 1.1rem 1.15rem;
+}
+
+.welcome-card-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.welcome-card h4 {
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+
+.welcome-card p {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  max-width: none;
+  margin: 0;
+  flex: 1;
+}
+
+.welcome-try {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.35rem;
+}
+
+.welcome-try-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.welcome-chip {
+  padding: 0.2rem 0.6rem;
+  background: var(--bg-alt);
+  border: 1px solid var(--border-primary);
+  border-radius: 14px;
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.welcome-chip:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  background: var(--gold-dim);
+}
+
+.welcome-action {
+  align-self: center;
+  margin-top: 0.35rem;
+  padding: 0.3rem 0.85rem;
+  background: transparent;
+  border: 1px solid var(--border-accent);
+  border-radius: 20px;
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.welcome-action:hover {
+  background: var(--gold-dim);
+}
+
+p.welcome-footnote {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 1.25rem;
+}
+
+/* ---------- Resistances Bar ---------- */
+.resistances {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.3rem;
+}
+
+.res-item {
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.res-item.positive { color: var(--badge-best); }
+.res-item.negative { color: var(--fire); }
+.res-item.neutral { color: var(--text-muted); }
+
+.res-icon {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+/* Weapon stat icons (attack / affinity / sharpness) replacing text labels */
+.stat-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+.piece-defense .res-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .app-header h1 {
+    font-size: 1.2rem;
+  }
+
+  .set-card-header {
+    padding: 0.85rem 1rem;
+  }
+
+  .material-chip {
+    font-size: 0.72rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .drop-table {
+    font-size: 0.68rem;
+  }
+}
+
+/* ---------- Utility ---------- */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- Modal / Legend ---------- */
+/* (Legend modal retired 2026-07-05 — its content lives in the reference panel.
+   .close-btn survives because the farming + reference panels share it.) */
+.close-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.close-btn:hover {
+  color: var(--text-primary);
+}
+
+.legend-item {
+  margin-bottom: 1rem;
+}
+
+.legend-item:last-child {
+  margin-bottom: 0;
+}
+
+.legend-item p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-top: 0.25rem;
+  margin-left: 0.25rem;
+}
+
+/* Sub-tab switch inside the Legend tab (Quest Badges / Stat Icons) */
+.ref-subtabs {
+  display: flex;
+  gap: 0.35rem;
+  margin-bottom: 1.25rem;
+}
+.ref-subtab {
+  flex: 1;
+  padding: 0.35rem 0.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: 14px;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.ref-subtab:hover {
+  border-color: var(--gold);
+  color: var(--text-primary);
+}
+.ref-subtab.active {
+  background: var(--gold-dim);
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* A stat-legend row's icon + label line. */
+.legend-stat-head {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+/* Wrapped row of element / status / piece-kind chips. */
+.legend-icon-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.65rem;
+}
+.legend-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+/* ---- Weapon cards ---- */
+.weapon-stat {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.weapon-stat strong {
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-right: 0.25rem;
+}
+
+.weapon-special {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.special-type {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Weapon group tiers */
+/* Each weapon tier is a collapsible card (reuses .piece-card); stack with a gap
+   like the armor .piece-list */
+.weapon-group-tiers {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.weapon-tier-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.weapon-tier-rarity {
+  font-size: 0.8rem;
+}
+
+/* Tier pins sit just before the chevron in the card header */
+.weapon-tier-pins {
+  display: inline-flex;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+
+/* The first material section in the details needs no top separator */
+.piece-details > .weapon-tier-mats:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+/* Weapon material section — mirrors the armor .piece-materials layout:
+   a small-caps header, a material-list grid, then the cost line */
+.weapon-tier-mats {
+  margin-top: 0.75rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.tier-mat-label {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.35rem;
+}
+
+/* Sharpness bar — colored segments over a fixed track (normalized to 400) */
+.sharpness-bar {
+  display: inline-flex;
+  align-items: center;
+  width: 88px;
+  height: 8px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 2px;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.sharp-seg {
+  height: 100%;
+  flex-shrink: 0;
+}
+
+/* "This tier only / this + N higher" prompt shown when a weapon tier pin has
+   higher tiers. Floated (appended to body), positioned in JS. */
+.pin-prompt {
+  position: fixed;
+  z-index: 1200;
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-accent);
+  border-radius: 8px;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.pin-prompt button {
+  padding: 0.5rem 0.75rem;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.pin-prompt button:hover {
+  background: var(--gold-dim);
+  color: var(--gold);
+}
+
+.pin-prompt button + button {
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* ============================================
+   Farming List
+   ============================================ */
+
+/* Pin button inside material chips */
+.chip-pin {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  margin-left: 0.1rem;
+  background: transparent;
+  border: 1px solid var(--border-primary);
+  border-radius: 50%;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  line-height: 1;
+  font-family: inherit;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.chip-pin:hover {
+  border-color: var(--gold);
+  background: var(--gold-dim);
+  color: var(--gold);
+}
+
+.chip-pin-demo {
+  cursor: default;
+  vertical-align: middle;
+}
+
+/* Goal pin button (📌 on pieces, tiers, cards) */
+.pin-goal-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.1rem 0.45rem;
+  background: transparent;
+  border: 1px solid var(--border-accent);
+  border-radius: 20px;
+  color: var(--gold);
+  font-size: 0.8rem;
+  line-height: 1.4;
+  font-family: inherit;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.pin-goal-btn:hover {
+  background: var(--gold-dim);
+}
+
+/* "Add all" button on set summaries */
+.summary-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.summary-header h4 {
+  margin-bottom: 0;
+}
+
+/* Header pin on collapsed set / weapon-group / piece cards */
+.pin-header-btn {
+  flex-shrink: 0;
+  align-self: center;
+}
+
+/* Corner pin on gallery tiles */
+.pin-tile-btn {
+  position: absolute;
+  top: 0.35rem;
+  right: 0.35rem;
+  padding: 0.05rem 0.4rem;
+  background: var(--bg-card);
+  opacity: 0;
+  transition: opacity var(--transition-fast), background var(--transition-fast);
+  z-index: 2;
+}
+
+.gear-tile:hover .pin-tile-btn,
+.gear-tile:focus-within .pin-tile-btn {
+  opacity: 1;
+}
+
+.pin-tile-btn:focus-visible {
+  opacity: 1;
+  outline: 2px solid var(--gold);
+}
+
+/* Brief confirmation flash when a pin fires */
+.pin-goal-btn.pinned-flash {
+  background: var(--gold);
+  color: var(--bg-primary);
+  border-color: var(--gold);
+}
+
+/* Compact stat row on collapsed set / weapon-group cards */
+.collapsed-stats {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.85rem;
+  margin-top: 0.35rem;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.collapsed-stats .resistances {
+  display: inline-flex;
+  gap: 0.5rem;
+  margin: 0;
+}
+
+.collapsed-stats .weapon-stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.collapsed-stats .weapon-stat strong {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+
+/* Sort-emphasis badge: the sorted stat promoted out of the muted row, with a
+   mini-bar scaled to the current result set's max */
+.sort-emph {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-right: 0.5rem;
+}
+
+.sort-emph-value {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--gold);
+  font-weight: 700;
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+.sort-emph-bar {
+  width: 76px;
+  height: 4px;
+  background: var(--bg-alt);
+  border: 1px solid var(--border-subtle);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.sort-emph-fill {
+  display: block;
+  height: 100%;
+  background: var(--gold);
+  border-radius: 3px;
+}
+
+/* Sorted-stat value on gallery tiles */
+.tile-sort-stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  color: var(--gold);
+  font-weight: 600;
+}
+
+/* "Matched your search" hint on skill-driven search results */
+.matched-skill-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  font-size: 0.7rem;
+  color: var(--gold);
+  background: var(--gold-dim);
+  border: 1px solid var(--border-accent);
+  border-radius: 10px;
+  padding: 0.05rem 0.5rem;
+  white-space: nowrap;
+}
+
+/* Collapsed-card slot icons + truncated skill chips */
+.collapsed-slots {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.collapsed-skills {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.4rem;
+}
+
+/* Reuses .skill-tag chip styling (incl. .set-bonus) for parity with expanded
+   cards; clickable like them too (shared skill-popup handler). */
+.collapsed-skill {
+  white-space: nowrap;
+}
+
+/* The overflow skills stay hidden until "+n" reveals them; display:contents so
+   the revealed chips flow into the same flex row. */
+.collapsed-skills-rest {
+  display: none;
+}
+
+.collapsed-skills.skills-expanded .collapsed-skills-rest {
+  display: contents;
+}
+
+/* Gold accent, distinct from the blue skill / purple set-bonus chips — reads
+   as a control (like the pins) and is noticeable enough to invite the click. */
+.collapsed-skill-more {
+  font-family: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  background: var(--gold-dim);
+  border-color: var(--border-accent);
+  color: var(--gold);
+}
+
+.collapsed-skill-more:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--bg-primary);
+}
+
+.collapsed-skills.skills-expanded .collapsed-skill-more {
+  display: none;
+}
+
+/* Floating toggle button */
+.farming-toggle {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 52px;
+  height: 52px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-accent);
+  border-radius: 50%;
+  font-size: 1.3rem;
+  cursor: pointer;
+  z-index: 901;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-fast);
+}
+
+.farming-toggle:hover,
+.farming-toggle.active {
+  background: var(--gold-dim);
+  box-shadow: var(--shadow-md), var(--shadow-glow);
+}
+
+/* Slide the toggle out of the drawer's way while it's open */
+.farming-toggle.active {
+  right: calc(min(var(--farming-width), 100vw) + 1.25rem);
+}
+
+@media (max-width: 460px) {
+  /* Full-width drawer on small screens — hide the toggle, close via × or Esc */
+  .farming-toggle.active {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.farming-toggle.pulse {
+  animation: pinPulse 0.35s ease;
+}
+
+@keyframes pinPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.farming-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  background: var(--gold);
+  border-radius: 10px;
+  color: var(--bg-primary);
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: center;
+}
+
+/* Drawer panel */
+.farming-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  height: 100dvh;
+  width: min(var(--farming-width), 100vw);
+  background: var(--bg-secondary);
+  border-left: 1px solid var(--border-primary);
+  box-shadow: var(--shadow-lg);
+  z-index: 900;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(105%);
+  visibility: hidden;
+  transition: transform var(--transition-smooth), visibility var(--transition-smooth);
+}
+
+.farming-panel.open {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+.farming-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border-subtle);
+  flex-shrink: 0;
+}
+
+.farming-header h3 {
+  color: var(--gold);
+  font-size: 1rem;
+}
+
+.farming-panel:focus {
+  outline: none; /* programmatic focus target on open; not tab-reachable */
+}
+
+/* keep the page behind the full-width mobile sheet from scrolling */
+@media (max-width: 767px) {
+  body.farming-open,
+  body.ref-open {
+    overflow: hidden;
+  }
+}
+
+/* ---------- Reference panel (left slide-in) ---------- */
+/* Floating toggle, bottom-left — mirrors the farming 📌 toggle bottom-right */
+.ref-toggle {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  width: 52px;
+  height: 52px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-accent);
+  border-radius: 50%;
+  font-size: 1.3rem;
+  cursor: pointer;
+  z-index: 901;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-fast);
+}
+
+.ref-toggle:hover,
+.ref-toggle.active {
+  background: var(--gold-dim);
+  box-shadow: var(--shadow-md), var(--shadow-glow);
+}
+
+/* Slide the toggle out of the panel's way while it's open */
+.ref-toggle.active {
+  left: calc(min(var(--ref-width), 100vw) + 1.25rem);
+}
+
+@media (max-width: 460px) {
+  /* Full-width panel on small screens — hide the toggle, close via × or Esc */
+  .ref-toggle.active {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.ref-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  height: 100dvh;
+  width: min(var(--ref-width), 100vw);
+  background: var(--bg-secondary);
+  border-right: 1px solid var(--border-primary);
+  box-shadow: var(--shadow-lg);
+  z-index: 900;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(-105%);
+  visibility: hidden;
+  transition: transform var(--transition-smooth), visibility var(--transition-smooth);
+}
+
+.ref-panel.open {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+.ref-panel:focus {
+  outline: none; /* programmatic focus target on open; not tab-reachable */
+}
+
+.ref-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border-subtle);
+  flex-shrink: 0;
+}
+
+.ref-header h3 {
+  color: var(--gold);
+  font-size: 1rem;
+}
+
+.ref-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border-subtle);
+  flex-shrink: 0;
+}
+
+.ref-tab {
+  flex: 1;
+  padding: 0.6rem 0.5rem;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.ref-tab:hover {
+  color: var(--text-primary);
+}
+
+.ref-tab.active {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+
+.ref-search {
+  padding: 0.75rem 1.25rem 0;
+  flex-shrink: 0;
+}
+
+.ref-search input {
+  width: 100%;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-primary);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  font-family: inherit;
+  padding: 0.45rem 0.75rem;
+}
+
+.ref-search input:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+.ref-kind-filter {
+  display: flex;
+  gap: 0.35rem;
+  margin-top: 0.5rem;
+}
+
+.ref-kind-btn {
+  flex: 1;
+  padding: 0.25rem 0.4rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: 14px;
+  color: var(--text-secondary);
+  font-size: 0.72rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.ref-kind-btn:hover {
+  border-color: var(--gold);
+  color: var(--text-primary);
+}
+
+.ref-kind-btn.active {
+  background: var(--gold-dim);
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.ref-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.75rem 1.25rem 1.25rem;
+}
+
+.ref-empty {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 2rem 0.5rem;
+}
+
+/* Skill dictionary entries */
+.ref-skill {
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+/* Brief highlight when jumped to from a card's "Open in reference" link */
+.ref-skill-flash {
+  animation: refSkillFlash 1.2s ease;
+}
+
+@keyframes refSkillFlash {
+  0%, 30% { background: var(--gold-dim); }
+  100% { background: transparent; }
+}
+
+.ref-skill-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.55rem 0.15rem;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.ref-skill-head:hover .ref-skill-name {
+  color: var(--gold);
+}
+
+.ref-skill-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.ref-skill-kind {
+  font-size: 0.65rem;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 0.05rem 0.45rem;
+  background: rgba(90, 140, 220, 0.12);
+  border: 1px solid rgba(90, 140, 220, 0.25);
+  color: #7db4f0;
+}
+
+.ref-kind-set,
+.ref-kind-group {
+  background: rgba(155, 89, 182, 0.12);
+  border-color: rgba(155, 89, 182, 0.25);
+  color: #c39bd3;
+}
+
+.ref-skill-detail {
+  padding: 0.15rem 0.15rem 0.75rem;
+}
+
+/* Material dictionary entries */
+.ref-material {
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.ref-material-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.55rem 0.15rem;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.ref-material-head:hover .ref-material-name {
+  color: var(--gold);
+}
+
+.ref-material-chevron {
+  flex-shrink: 0;
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  transition: transform 0.15s ease;
+}
+
+.ref-material-head.expanded .ref-material-chevron {
+  transform: rotate(180deg);
+}
+
+.ref-material-detail {
+  padding: 0 0.15rem 0.5rem;
+}
+
+/* Hug the row head; the source card already has its own bg/border/padding. */
+.ref-material-detail .material-source {
+  margin-top: 0;
+}
+
+.ref-skill-desc {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+.ref-skill-rank {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  padding: 0.2rem 0;
+}
+
+.ref-rank-lv {
+  color: var(--gold);
+  font-weight: 600;
+  flex-shrink: 0;
+  min-width: 2.4rem;
+}
+
+.ref-find-gear {
+  margin-top: 0.5rem;
+  padding: 0.3rem 0.75rem;
+  background: transparent;
+  border: 1px solid var(--border-accent);
+  border-radius: 20px;
+  color: var(--gold);
+  font-size: 0.75rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.ref-find-gear:hover {
+  background: var(--gold-dim);
+}
+
+/* Inline profile form (New / Rename / Duplicate / Delete) */
+.farming-profile-form {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.25rem;
+  border-bottom: 1px solid var(--border-subtle);
+  background: var(--bg-alt);
+  flex-shrink: 0;
+}
+
+.farming-profile-form[hidden] {
+  display: none;
+}
+
+.farming-profile-form input {
+  flex: 1;
+  min-width: 0;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-primary);
+  border-radius: 6px;
+  color: var(--text-primary);
+  font-size: 0.85rem;
+  padding: 0.35rem 0.6rem;
+}
+
+.farming-profile-form input:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+.farming-profile-form button {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-primary);
+  border-radius: 6px;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  padding: 0.35rem 0.6rem;
+  cursor: pointer;
+}
+
+.farming-profile-form button:hover {
+  color: var(--text-primary);
+  border-color: var(--gold);
+}
+
+.profile-form-label {
+  flex: 1;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.profile-form-danger {
+  color: var(--fire) !important;
+}
+
+.profile-form-danger:hover {
+  border-color: var(--fire) !important;
+}
+
+/* "Hide farmed" filter at the top of the Hunt Plan tab */
+.farming-hide-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 0.85rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.farming-hide-toggle input {
+  width: 14px;
+  height: 14px;
+  accent-color: var(--gold);
+  cursor: pointer;
+}
+
+/* armed state of the two-click "Clear all" */
+#farming-clear-all.armed {
+  color: var(--fire);
+  border-color: var(--fire);
+}
+
+.farming-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem 1.25rem;
+}
+
+.farming-footer {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  padding: 0.85rem 1.25rem;
+  border-top: 1px solid var(--border-subtle);
+  flex-shrink: 0;
+}
+
+.farming-empty {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 2rem 0.5rem;
+}
+
+.farming-empty p {
+  margin-bottom: 0.75rem;
+}
+
+/* Hunt plan groups */
+.farming-group {
+  margin-bottom: 1.25rem;
+}
+
+.farming-group-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--fire);
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: 0.4rem;
+}
+
+.farming-group-titletext {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-width: 0;
+}
+
+.farming-group-check {
+  width: 15px;
+  height: 15px;
+  accent-color: var(--gold);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.farming-group.group-done .farming-group-titletext {
+  opacity: 0.5;
+}
+
+.farming-group-count {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--gold);
+  background: var(--gold-dim);
+  border-radius: 10px;
+  padding: 0.05rem 0.5rem;
+}
+
+.farming-group-quest {
+  margin-bottom: 0.4rem;
+}
+
+.farming-items {
+  display: flex;
+  flex-direction: column;
+}
+
+.farming-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0;
+}
+
+.farming-check {
+  accent-color: var(--gold);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.farming-item-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.farming-item-name {
+  font-size: 0.82rem;
+  color: var(--text-primary);
+}
+
+.farming-item-name .qty {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.farming-item.done .farming-item-name {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.farming-item-hint {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.farming-item-controls {
+  display: flex;
+  gap: 0.25rem;
+  flex-shrink: 0;
+}
+
+.farming-item-controls button {
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: 4px;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  line-height: 1;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.farming-item-controls button:hover {
+  border-color: var(--gold);
+  color: var(--text-primary);
+}
+
+.farming-item-controls .farming-remove:hover {
+  border-color: var(--fire);
+  color: var(--fire);
+}
+
+/* Provenance tags (which goal a material is for) */
+.farming-item-prov {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-top: 0.2rem;
+}
+
+.prov-tag {
+  font-size: 0.65rem;
+  color: var(--text-secondary);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  padding: 0.02rem 0.4rem;
+  max-width: 12rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.prov-tag.prov-more {
+  color: var(--text-muted);
+}
+
+/* ---- Profile switcher ---- */
+.farming-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  position: relative;
+  min-width: 0;
+}
+
+.farming-profile-icon {
+  font-size: 1rem;
+}
+
+#farming-profile-select {
+  max-width: 12rem;
+  padding: 0.3rem 0.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-sm);
+  color: var(--gold);
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.farming-profile-toggle {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.farming-profile-toggle:hover {
+  border-color: var(--gold);
+  color: var(--text-primary);
+}
+
+.farming-profile-menu[hidden] {
+  display: none;
+}
+
+.farming-profile-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  min-width: 10rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.farming-profile-menu button {
+  padding: 0.5rem 0.75rem;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.farming-profile-menu button:hover {
+  background: var(--bg-card-hover);
+  color: var(--text-primary);
+}
+
+/* ---- Tabs ---- */
+.farming-tabs {
+  display: flex;
+  gap: 0.25rem;
+  padding: 0.5rem 1.25rem 0;
+  border-bottom: 1px solid var(--border-subtle);
+  flex-shrink: 0;
+}
+
+.farming-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.5rem 0.85rem;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.farming-tab:hover {
+  color: var(--text-primary);
+}
+
+.farming-tab.active {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+
+.farming-tab-count {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--gold);
+  background: var(--gold-dim);
+  border-radius: 10px;
+  padding: 0.02rem 0.4rem;
+}
+
+/* ---- Gear tab: goal cards ---- */
+.goal-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.goal-card.goal-complete {
+  border-color: var(--badge-best);
+}
+
+.goal-card-head {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.goal-img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  border-radius: 6px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  flex-shrink: 0;
+}
+
+.goal-emoji {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.goal-card-title {
+  flex: 1;
+  min-width: 0;
+}
+
+.goal-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.goal-sub {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 0.1rem;
+}
+
+.goal-card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  flex-shrink: 0;
+}
+
+.goal-done-btn {
+  padding: 0.2rem 0.5rem;
+  background: transparent;
+  border: 1px solid var(--border-accent);
+  border-radius: 4px;
+  color: var(--gold);
+  font-size: 0.7rem;
+  font-family: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.goal-done-btn:hover {
+  background: var(--gold-dim);
+}
+
+.goal-done-btn.active {
+  background: rgba(46, 160, 67, 0.15);
+  border-color: var(--badge-best);
+  color: var(--badge-best);
+}
+
+.goal-remove {
+  padding: 0.2rem 0.5rem;
+  background: transparent;
+  border: 1px solid var(--border-primary);
+  border-radius: 4px;
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.goal-remove:hover {
+  border-color: var(--fire);
+  color: var(--fire);
+}
+
+.goal-progress {
+  height: 6px;
+  background: var(--bg-secondary);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.goal-progress-bar {
+  height: 100%;
+  background: var(--gold);
+  border-radius: 3px;
+  transition: width var(--transition-normal);
+}
+
+.goal-complete .goal-progress-bar {
+  background: var(--badge-best);
+}
+
+.goal-progress-label {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+.goal-stat {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-top: 0.4rem;
+}
+
+/* Icon-based per-goal stat row (armor def/resist, weapon atk/element, slots) */
+.goal-stat-icons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.3rem 0.75rem;
+}
+
+.goal-stat-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.goal-stat-item strong {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.goal-stat-resist {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.goal-slots {
+  gap: 0.15rem;
+}
+
+.goal-included {
+  font-size: 0.7rem;
+  font-style: italic;
+  color: var(--text-muted);
+  margin-top: 0.3rem;
+}
+
+/* Pendant acquisition goals: "how to get it" instead of a materials progress bar */
+.goal-acquire {
+  font-size: 0.75rem;
+  line-height: 1.4;
+  color: var(--text-secondary);
+  margin-top: 0.5rem;
+}
+
+.goal-acquire-label {
+  display: inline-block;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-right: 0.35rem;
+}
+
+.goal-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-top: 0.4rem;
+}
+
+.goal-skill {
+  font-size: 0.68rem;
+  color: #7db4f0;
+  background: rgba(90, 140, 220, 0.12);
+  border: 1px solid rgba(90, 140, 220, 0.25);
+  border-radius: 4px;
+  padding: 0.05rem 0.4rem;
+  cursor: pointer;
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.goal-skill:hover {
+  border-color: var(--gold);
+  background: rgba(90, 140, 220, 0.22);
+}
+
+/* Gear-tab "Order" sort control */
+.gear-sort {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.gear-sort-label {
+  font-size: 0.66rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.gear-sort-btn {
+  padding: 0.2rem 0.55rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: 14px;
+  color: var(--text-secondary);
+  font-size: 0.72rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.gear-sort-btn:hover {
+  border-color: var(--gold);
+  color: var(--text-primary);
+}
+
+.gear-sort-btn.active {
+  background: var(--gold-dim);
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* Combined-skills summary at the top of the Gear tab */
+.agg-summary {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+
+.agg-summary-head {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.agg-note {
+  display: block;
+  font-size: 0.66rem;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--text-muted);
+  margin-top: 0.1rem;
+}
+
+.agg-stats {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  padding-bottom: 0.6rem;
+  margin-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.agg-defense {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.agg-stats .resistances {
+  margin-top: 0;
+  gap: 0.6rem;
+}
+
+.agg-zenny {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+/* Each pinned weapon gets its own full-width row (weapons aren't summed). */
+.agg-weapon {
+  flex-basis: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.6rem;
+}
+
+.agg-weapon-name {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.agg-weapon-stats {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.6rem;
+}
+
+.agg-skill-label {
+  font-size: 0.66rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.3rem;
+}
+
+.agg-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.agg-bonuses {
+  margin-top: 0.4rem;
+}
+
+.agg-skill {
+  font-size: 0.72rem;
+  color: var(--text-primary);
+  background: rgba(90, 140, 220, 0.14);
+  border: 1px solid rgba(90, 140, 220, 0.3);
+  border-radius: 4px;
+  padding: 0.1rem 0.45rem;
+  cursor: pointer;
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+/* Selectors match the specificity of .agg-skill.agg-capped / .agg-skill.agg-bonus
+   (which set their own border-color) so the gold hover wins for those too. */
+.agg-skill:hover,
+.agg-skill.agg-capped:hover,
+.agg-skill.agg-bonus:hover {
+  border-color: var(--gold);
+}
+
+.agg-skill.agg-capped {
+  color: var(--gold);
+  background: var(--gold-dim);
+  border-color: var(--border-accent);
+}
+
+.agg-skill.agg-bonus {
+  color: #c39bd3;
+  background: rgba(155, 89, 182, 0.14);
+  border-color: rgba(155, 89, 182, 0.3);
+}
+
+/* Custom (ad-hoc) goal card */
+.goal-card--custom .goal-custom-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.goal-custom-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.goal-custom-name {
+  flex: 1;
+  min-width: 0;
+  font-size: 0.8rem;
+  color: var(--text-primary);
+}
+
+.goal-custom-name .qty {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.goal-custom-row.done .goal-custom-name {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
