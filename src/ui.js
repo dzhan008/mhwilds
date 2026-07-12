@@ -1430,7 +1430,7 @@ export function renderWelcome(container) {
       <div class="welcome-cards">
         <div class="welcome-card">
           <div class="welcome-card-icon">🔎</div>
-          <h4>Search anything</h4>
+          <h4>Search Anything</h4>
           <p>Sets, pieces, materials — or skills you want on your build.</p>
           <div class="welcome-try">
             <span class="welcome-try-label">Try:</span>
@@ -1441,8 +1441,8 @@ export function renderWelcome(container) {
         </div>
         <div class="welcome-card">
           <div class="welcome-card-icon">📖</div>
-          <h4>Reference</h4>
-          <p>Three tabs: look up skills and jump to gear, search any material's sources, and decode the stat &amp; quest-badge icons.</p>
+          <h4>Reference Information</h4>
+          <p>Look up skills and jump to gear, search any material's sources, and understand the icons from the search results.</p>
           <button class="welcome-action" data-open="ref-toggle">Open Reference</button>
         </div>
         <div class="welcome-card">
