@@ -208,7 +208,8 @@
       "Thief Alpha Set"
     ],
     "rewardItems": [
-      "Catspaw"
+      "Catspaw",
+      "Felyne Wanted Poster"
     ],
     "stars": 8,
     "hr": "41+"
@@ -351,7 +352,8 @@
       "Shatterseal"
     ],
     "rewardItems": [
-      "Hunter's Dream Ticket"
+      "Hunter's Dream Ticket",
+      "Master Craftsman's Blueprint"
     ],
     "stars": 8,
     "hr": "41+"
@@ -487,7 +489,9 @@
       "Mad Scavenger Pickaxe",
       "Mining Pickaxe"
     ],
-    "rewardItems": [],
+    "rewardItems": [
+      "Worn Pickaxe"
+    ],
     "stars": 8,
     "hr": "41+"
   },
@@ -1137,5 +1141,14 @@
       "Monster Keenbone"
     ],
     "stars": 4
+  },
+  {
+    "name": "Meat at the Heart of Wyveria",
+    "type": "event",
+    "targets": [],
+    "targetCount": 0,
+    "rewardItems": [
+      "Well-done Steak Recipe Book"
+    ]
   }
 ]
