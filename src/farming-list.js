@@ -31,7 +31,7 @@ const STORAGE_KEY = 'mhwilds-farming-list';
 const CUSTOM_GOAL_NAME = 'Pinned materials';
 
 let state = null; // { version, activeProfile, profiles: [...] }
-let activeTab = 'plan'; // 'plan' | 'gear'
+let activeTab = 'gear'; // 'gear' | 'plan' — Gear is the primary (leftmost) tab
 let hideFarmed = false; // Hunt Plan filter; session-only on purpose
 let profileAction = null; // 'new' | 'rename' | 'duplicate' | 'delete' while the inline form is open
 let disarmClearAll = () => {}; // real impl assigned in init; see commit()

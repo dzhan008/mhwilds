@@ -1441,15 +1441,15 @@ export function renderWelcome(container) {
         </div>
         <div class="welcome-card">
           <div class="welcome-card-icon">📖</div>
-          <h4>Skill dictionary</h4>
-          <p>Browse every skill's levels and jump straight to gear that carries it.</p>
+          <h4>Reference</h4>
+          <p>Three tabs: look up skills and jump to gear, search any material's sources, and decode the stat &amp; quest-badge icons.</p>
           <button class="welcome-action" data-open="ref-toggle">Open Reference</button>
         </div>
         <div class="welcome-card">
           <div class="welcome-card-icon">📌</div>
-          <h4>Farming list</h4>
-          <p>Pin gear to build a hunt plan with drop sources, quests, and progress.</p>
-          <button class="welcome-action" data-open="farming-toggle">Open List</button>
+          <h4>Build Gear</h4>
+          <p>Pin sets, weapons &amp; charms into a build — see its combined defense, skills &amp; set bonuses, then get a hunt plan with every material's sources, quests, and progress.</p>
+          <button class="welcome-action" data-open="farming-toggle">Open Builder</button>
         </div>
       </div>
       <p class="welcome-footnote">Filter by type &amp; rank, or sort by stats, with the controls above — sorted results show the ranking stat on every card.</p>
