@@ -789,7 +789,7 @@ export function renderCharmCard(charm) {
         ${charmGoal ? pinGoalBtn(charmGoal, { header: true }) : ''}
       </div>
       <div class="set-details" style="max-height: none;">
-        <div class="set-details-inner" style="border-top: none; padding-top: 1.25rem;">
+        <div class="set-details-inner" style="border-top: none; padding-top: 0.5rem;">
           ${skillTags ? `<div class="piece-skills" style="margin-bottom: 1rem;">${skillTags}</div>` : ''}
           <div class="piece-materials" style="border-top: none; padding-top: 0;">
             <div class="summary-header">
@@ -1443,13 +1443,13 @@ export function renderWelcome(container) {
           <div class="welcome-card-icon">📖</div>
           <h4>Skill dictionary</h4>
           <p>Browse every skill's levels and jump straight to gear that carries it.</p>
-          <button class="welcome-action" data-open="ref-toggle">Open reference</button>
+          <button class="welcome-action" data-open="ref-toggle">Open Reference</button>
         </div>
         <div class="welcome-card">
           <div class="welcome-card-icon">📌</div>
           <h4>Farming list</h4>
           <p>Pin gear to build a hunt plan with drop sources, quests, and progress.</p>
-          <button class="welcome-action" data-open="farming-toggle">Open list</button>
+          <button class="welcome-action" data-open="farming-toggle">Open List</button>
         </div>
       </div>
       <p class="welcome-footnote">Filter by type &amp; rank, or sort by stats, with the controls above — sorted results show the ranking stat on every card.</p>

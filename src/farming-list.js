@@ -601,11 +601,11 @@ function renderBuildSummary() {
   const statsHtml = (hasArmor || zenny || weapons.length) ? `
     <div class="agg-stats">
       ${hasArmor ? `
-        <span class="agg-defense">${defenseSvg()} DEF ${defense}</span>
+        <span class="agg-defense">${defenseSvg()} ${defense}</span>
         <div class="resistances">${RESIST_ELEMS.map(e => resItem(e, resist[e])).join('')}</div>
       ` : ''}
       ${weaponHtml}
-      ${zenny ? `<span class="agg-zenny">${zenny.toLocaleString()}z</span>` : ''}
+      ${zenny ? `<span class="agg-zenny">${zennySvg()} ${zenny.toLocaleString()}z</span>` : ''}
     </div>
   ` : '';
 
@@ -630,6 +630,10 @@ function renderBuildSummary() {
 
 function defenseSvg() {
   return `<img src="/images/icons/defense.png" alt="Defense" class="res-icon" />`;
+}
+
+function zennySvg() {
+  return `<img src="/images/icons/zenny.png" alt="Cost" title="Cost" class="res-icon" />`;
 }
 
 // ── Gear-tab display sort ──
