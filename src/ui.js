@@ -1448,7 +1448,7 @@ export function renderWelcome(container) {
         <div class="welcome-card">
           <div class="welcome-card-icon">📌</div>
           <h4>Build Gear</h4>
-          <p>Pin sets, weapons &amp; charms into a build — see its combined defense, skills &amp; set bonuses, then get a hunt plan with every material's sources, quests, and progress.</p>
+          <p>Pin sets, weapons &amp; charms into a build — see its combined stats, skills &amp; set bonuses, then get a hunt plan with every material's sources, quests, and progress.</p>
           <button class="welcome-action" data-open="farming-toggle">Open Builder</button>
         </div>
       </div>
