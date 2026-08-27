@@ -1073,13 +1073,40 @@ h4 { font-size: 0.95rem; }
   to   { opacity: 1; }
 }
 
+.lightbox-overlay {
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Source art is small (200-300px), so scale it up — a 1:1 render next to a 56px
+   thumbnail barely reads as "zoomed". contain keeps the aspect ratio honest.
+   Capped at 352px: further upscaling of the 200px piece art just gets blurry. */
 .lightbox-overlay img {
-  max-width: 90vw;
-  max-height: 90vh;
+  width: min(90vw, 352px);
+  height: auto;
+  max-height: 85vh;
   object-fit: contain;
   border-radius: 8px;
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.8);
   image-rendering: auto;
+}
+
+.lightbox-caption {
+  max-width: 90vw;
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+}
+
+/* Any gear image that opens in the lightbox (previews + card thumbnails). */
+.zoomable-img {
+  cursor: zoom-in;
+}
+
+.zoomable-img:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
 }
 
 .set-overview > .full-set-summary,
@@ -2981,6 +3008,28 @@ p.welcome-footnote {
   font-size: 0.8rem;
   font-weight: 600;
   color: var(--gold);
+}
+
+/* Hunt Plan footer: total forge/upgrade cost of everything pinned. */
+.plan-cost {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 0.9rem;
+  padding-top: 0.7rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.plan-cost-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.plan-cost .agg-zenny {
+  font-size: 0.9rem;
 }
 
 /* Each pinned weapon gets its own full-width row (weapons aren't summed). */

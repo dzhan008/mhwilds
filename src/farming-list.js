@@ -366,7 +366,23 @@ function renderPlanTab() {
   const body = materials.length
     ? buildHuntPlan(materials).map(group => renderGroup(group, checked, showProvenance)).join('')
     : `<div class="farming-empty"><p>All ${doneCount} material${doneCount !== 1 ? 's' : ''} farmed 🎉</p></div>`;
-  return toggle + body;
+  // Zenny lives here rather than in the Build Summary: it's part of what it takes
+  // to *acquire* the pinned gear, alongside the materials — not a stat of the build.
+  return toggle + body + renderPlanCost();
+}
+
+// Total forge/upgrade cost of everything pinned in the active profile. Shown at
+// the foot of the Hunt Plan; unaffected by the "hide farmed" filter (you still
+// owe the zenny once the materials are in hand).
+function renderPlanCost() {
+  const { zenny } = aggregateStats();
+  if (!zenny) return '';
+  return `
+    <div class="plan-cost">
+      <span class="plan-cost-label">Crafting cost</span>
+      <span class="agg-zenny">${zennySvg()} ${zenny.toLocaleString()}z</span>
+    </div>
+  `;
 }
 
 function renderGroup(group, checked, showProvenance) {
@@ -586,8 +602,10 @@ function renderGoalStats(goal) {
 // scoped to the active profile (one profile = one build).
 function renderBuildSummary() {
   const { regular, bonus } = aggregateSkills();
-  const { defense, resist, zenny, hasArmor, weapons } = aggregateStats();
-  if (!regular.length && !bonus.length && !hasArmor && !zenny && !weapons.length) return '';
+  // Zenny is deliberately absent — it's an acquisition requirement, so it renders
+  // at the foot of the Hunt Plan (renderPlanCost) instead of as a build stat.
+  const { defense, resist, hasArmor, weapons } = aggregateStats();
+  if (!regular.length && !bonus.length && !hasArmor && !weapons.length) return '';
 
   // One row per pinned weapon (not summed — you equip one). Name is shown so the
   // stats are attributable when more than one weapon is pinned.
@@ -598,14 +616,13 @@ function renderBuildSummary() {
     </div>
   `).join('');
 
-  const statsHtml = (hasArmor || zenny || weapons.length) ? `
+  const statsHtml = (hasArmor || weapons.length) ? `
     <div class="agg-stats">
       ${hasArmor ? `
         <span class="agg-defense">${defenseSvg()} ${defense}</span>
         <div class="resistances">${RESIST_ELEMS.map(e => resItem(e, resist[e])).join('')}</div>
       ` : ''}
       ${weaponHtml}
-      ${zenny ? `<span class="agg-zenny">${zennySvg()} ${zenny.toLocaleString()}z</span>` : ''}
     </div>
   ` : '';
 

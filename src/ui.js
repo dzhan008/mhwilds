@@ -1469,6 +1469,51 @@ export function renderWelcome(container) {
   });
 }
 
+// ---- Image lightbox ----
+// Every gear image in the list/detail views opens full-size on click. Thumbnails
+// and previews point at the same asset, so the small ones zoom just as well.
+const ZOOMABLE_IMG_SELECTOR = '.set-preview-image img, .piece-img';
+
+function openLightbox(src, alt) {
+  const overlay = document.createElement('div');
+  overlay.className = 'lightbox-overlay';
+  const fullImg = document.createElement('img');
+  fullImg.src = src;
+  fullImg.alt = alt;
+  overlay.appendChild(fullImg);
+  if (alt) {
+    const caption = document.createElement('div');
+    caption.className = 'lightbox-caption';
+    caption.textContent = alt;
+    overlay.appendChild(caption);
+  }
+  overlay.addEventListener('click', () => overlay.remove());
+  document.addEventListener('keydown', function onKey(e) {
+    if (e.key === 'Escape') { overlay.remove(); document.removeEventListener('keydown', onKey); }
+  });
+  document.body.appendChild(overlay);
+}
+
+// Click (or Enter/Space — these sit inside clickable card headers, so the
+// element takes its own focus) opens the lightbox.
+function makeImageZoomable(img) {
+  img.classList.add('zoomable-img');
+  img.tabIndex = 0;
+  img.setAttribute('role', 'button');
+  if (!img.title) img.title = `${img.alt || 'Image'} — click to zoom`;
+  img.addEventListener('click', (e) => {
+    e.stopPropagation();
+    openLightbox(img.src, img.alt);
+  });
+  img.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      e.stopPropagation();
+      openLightbox(img.src, img.alt);
+    }
+  });
+}
+
 // Goal pin (📌 on a piece / tier / set summary / weapon chain / card header /
 // gallery tile) → one goal. Header and tile pins embed their materials in the
 // data-goal payload (no adjacent chips to read); chip-adjacent pins leave
@@ -1630,23 +1675,11 @@ function attachCardListeners(container) {
     });
   });
 
-  // Preview image click → lightbox
-  container.querySelectorAll('.set-preview-image img').forEach(img => {
-    img.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const overlay = document.createElement('div');
-      overlay.className = 'lightbox-overlay';
-      const fullImg = document.createElement('img');
-      fullImg.src = img.src;
-      fullImg.alt = img.alt;
-      overlay.appendChild(fullImg);
-      overlay.addEventListener('click', () => overlay.remove());
-      document.addEventListener('keydown', function onKey(e) {
-        if (e.key === 'Escape') { overlay.remove(); document.removeEventListener('keydown', onKey); }
-      });
-      document.body.appendChild(overlay);
-    });
-  });
+  // Gear image click → lightbox. Covers the big preview inside an expanded set /
+  // pendant / palico card *and* the small thumbnails on piece and weapon-tier
+  // rows (same source file, just rendered small). stopPropagation keeps a
+  // thumbnail click from also toggling the card it sits in.
+  container.querySelectorAll(ZOOMABLE_IMG_SELECTOR).forEach(makeImageZoomable);
 
   attachPinListeners(container);
 
