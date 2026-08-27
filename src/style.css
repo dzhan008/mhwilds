@@ -1457,6 +1457,15 @@ p.welcome-footnote {
     min-height: 44px;
   }
 
+  /* iOS Safari auto-zooms the page when a text input under 16px takes focus,
+     and does NOT zoom back out on blur — you're stranded. Both of these render
+     at 0.85rem by default. 16px is the exact threshold, so 1rem is the fix.
+     Costs Chrome nothing. */
+  #ref-skill-search,
+  .farming-profile-form input {
+    font-size: 1rem;
+  }
+
   .farming-profile-toggle {
     min-width: 44px;
     min-height: 44px;
@@ -1467,6 +1476,47 @@ p.welcome-footnote {
     display: inline-block;
     padding: 0.35rem 0.15rem;
   }
+}
+
+/* ---------- Safe-area insets (notch / home indicator) ---------- */
+/* Paired with viewport-fit=cover in index.html, which is what makes these
+   resolve to anything but 0. No media query needed: env() is 0 on every device
+   without a cutout, and 0 on desktop, so these rules are inert there. Android
+   Chrome honours them too (gesture-nav bar) — this is not iOS-only. */
+.farming-toggle {
+  bottom: calc(1.5rem + env(safe-area-inset-bottom));
+  right: calc(1.5rem + env(safe-area-inset-right));
+}
+
+.ref-toggle {
+  bottom: calc(1.5rem + env(safe-area-inset-bottom));
+  left: calc(1.5rem + env(safe-area-inset-left));
+}
+
+/* The drawers are full-height fixed panels, so their last row would otherwise
+   sit under the home indicator. They're flex columns — padding the panel keeps
+   the footer above the inset without touching the scrolling body. */
+.farming-panel,
+.ref-panel {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.app-footer {
+  padding-bottom: calc(1.25rem + env(safe-area-inset-bottom));
+}
+
+/* Landscape on a notched phone puts the cutout on one side. */
+#app {
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+/* The sticky search bar pins to top:0, which viewport-fit=cover puts under the
+   status bar. In a normal browser tab the top inset is 0 (the page already
+   starts below the URL bar) — this matters if the app is ever installed to the
+   home screen, and costs nothing until then. */
+.search-container {
+  top: env(safe-area-inset-top);
 }
 
 /* ---------- Utility ---------- */
@@ -2629,8 +2679,24 @@ p.welcome-footnote {
   white-space: nowrap;
 }
 
+/* prov-more is a <button> (it toggles the overflow sources), so it has to be
+   talked back down into looking like the <span> chips beside it. */
 .prov-tag.prov-more {
   color: var(--text-muted);
+  font-family: inherit;
+  line-height: inherit;
+  cursor: pointer;
+  min-width: 1.6rem;
+}
+
+.prov-tag.prov-more:hover {
+  color: var(--text-primary);
+  border-color: var(--border-primary);
+}
+
+.prov-tag.prov-more:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 1px;
 }
 
 /* ---- Profile switcher ---- */

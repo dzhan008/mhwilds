@@ -2,7 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- viewport-fit=cover is what makes env(safe-area-inset-*) resolve to
+         anything but 0. It lets content run under the notch / home indicator,
+         so every fixed-position element near an edge must pay the inset back
+         (see the safe-area block in style.css). -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>Monster Hunter Wilds Equipment Planner</title>
     <meta name="description" content="Monster Hunter Wilds equipment search. Find armor sets, charms, and pendants — then trace every material back to its monster drops and quests." />
     <link rel="preconnect" href="https://fonts.googleapis.com">

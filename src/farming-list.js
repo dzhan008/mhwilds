@@ -437,8 +437,16 @@ function renderPlanItem(item, group, checked, showProvenance) {
   let tags = '';
   if (showProvenance) {
     const shown = item.sources.slice(0, 2).map(s => `<span class="prov-tag">${escapeHtml(s)}</span>`).join('');
-    const extra = item.sources.length > 2
-      ? `<span class="prov-tag prov-more" title="${escapeAttr(item.sources.slice(2).join(', '))}">+${item.sources.length - 2}</span>`
+    // The overflow sources used to live only in a title attribute, which is
+    // unreachable on touch — you couldn't find out which other goals wanted
+    // this material. Render them for real and let "+N" toggle them; the title
+    // stays as the hover shortcut on desktop.
+    const rest = item.sources.slice(2);
+    const extra = rest.length
+      ? rest.map(s => `<span class="prov-tag prov-rest" hidden>${escapeHtml(s)}</span>`).join('')
+        + `<button type="button" class="prov-tag prov-more" data-action="show-prov"
+             aria-expanded="false" title="${escapeAttr(rest.join(', '))}"
+           >+${rest.length}</button>`
       : '';
     tags = `<div class="farming-item-prov">${shown}${extra}</div>`;
   }
@@ -1016,6 +1024,19 @@ function onBodyClick(e) {
 
   if (action === 'gear-sort') {
     setGearSort(control.dataset.sort);
+    return;
+  }
+
+  // "+N" provenance chip → reveal the overflow sources in place. Pure view
+  // state, nothing to persist, and scoped to this one row so the rest of the
+  // plan doesn't re-render underneath the tap.
+  if (action === 'show-prov') {
+    const wrap = control.closest('.farming-item-prov');
+    if (!wrap) return;
+    const expanded = control.getAttribute('aria-expanded') === 'true';
+    wrap.querySelectorAll('.prov-rest').forEach(t => { t.hidden = expanded; });
+    control.setAttribute('aria-expanded', String(!expanded));
+    control.textContent = expanded ? `+${wrap.querySelectorAll('.prov-rest').length}` : '−';
     return;
   }
 
