@@ -95,6 +95,27 @@ function anyFilterActive() {
   return currentTypeFilter !== 'all' || currentRankFilter !== 'all' || currentSort !== 'default' || eventsFilterActive;
 }
 
+// How many filters are off their default — shown on the mobile "⚙ Filters"
+// chip so a collapsed row never hides active state. The weapon-kind sub-filter
+// only counts when it's actually reachable (Weapons type selected).
+function activeFilterCount() {
+  return [
+    currentTypeFilter !== 'all',
+    currentRankFilter !== 'all',
+    currentSort !== 'default',
+    eventsFilterActive,
+    currentTypeFilter === 'weapon' && currentWeaponKindFilter !== 'all',
+  ].filter(Boolean).length;
+}
+
+function updateFilterCount() {
+  const badge = document.getElementById('filter-count');
+  if (!badge) return;
+  const n = activeFilterCount();
+  badge.textContent = String(n);
+  badge.hidden = n === 0;
+}
+
 // All crafting-material names for an item (sets/weapon-groups aggregate into
 // allMaterials; charms/pendants/palico/pieces use materials).
 function itemMaterialNames(item) {
@@ -265,6 +286,16 @@ function init() {
     }
   });
 
+  // ---- Mobile filter disclosure ----
+  // The rows are collapsed by CSS under 768px unless body.filters-open; this
+  // just flips that class and keeps aria-expanded honest. Desktop never sees
+  // the button, so no width guard is needed here.
+  document.getElementById('filter-toggle').addEventListener('click', (e) => {
+    const open = !document.body.classList.contains('filters-open');
+    document.body.classList.toggle('filters-open', open);
+    e.currentTarget.setAttribute('aria-expanded', String(open));
+  });
+
   // ---- Enter/Go dismisses the on-screen keyboard ----
   // Results render as you type, but on a phone the keyboard covers most of
   // them and there's no obvious way to get rid of it. Blurring on Enter is the
@@ -317,6 +348,7 @@ function init() {
   // (often most relevant) results of the new set. The search bar is sticky, so
   // it stays put regardless.
   const rerenderResults = () => {
+    updateFilterCount(); // every filter change routes through here
     if (viewMode === 'grid' || viewMode === 'detail') {
       showGrid(searchInput.value);
     } else {
@@ -348,8 +380,10 @@ function init() {
       btn.classList.add('active');
       currentTypeFilter = btn.dataset.type;
 
-      // Show/hide weapon kind sub-filter
-      weaponKindFilterRow.style.display = currentTypeFilter === 'weapon' ? 'flex' : 'none';
+      // Show/hide weapon kind sub-filter. A class, not an inline style, so the
+      // mobile filter collapse can still hide the row (inline display wins over
+      // a stylesheet rule).
+      weaponKindFilterRow.classList.toggle('is-visible', currentTypeFilter === 'weapon');
       if (currentTypeFilter !== 'weapon') {
         currentWeaponKindFilter = 'all';
         document.querySelectorAll('.weapon-kind-btn').forEach(b => b.classList.remove('active'));

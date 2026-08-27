@@ -40,8 +40,14 @@
             <span class="mode-switch-option">List</span>
             <span class="mode-switch-option">Visual</span>
           </button>
+          <!-- Mobile only (CSS hides it above 767px): collapses the three filter
+               rows so the sticky header stops eating half the screen. -->
+          <button id="filter-toggle" class="filter-toggle" aria-expanded="false" aria-controls="type-filter-row">
+            <span aria-hidden="true">⚙</span> Filters<span id="filter-count" class="filter-count" hidden>0</span>
+            <span class="filter-caret" aria-hidden="true">▾</span>
+          </button>
         </div>
-        <div class="type-filter" style="display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap;">
+        <div class="type-filter" id="type-filter-row">
           <button class="type-btn rank-btn active" data-type="all">All Types</button>
           <button class="type-btn rank-btn" data-type="armor">Armor</button>
           <button class="type-btn rank-btn" data-type="weapon">Weapons</button>
@@ -50,7 +56,7 @@
           <button class="type-btn rank-btn" data-type="palico">Palico</button>
         </div>
         </div><!-- /.search-filter-group -->
-        <div id="weapon-kind-filter" style="display:none; justify-content:center; gap:0.4rem; flex-wrap:wrap; margin-top:0.4rem;">
+        <div id="weapon-kind-filter">
           <button class="weapon-kind-btn rank-btn active" data-kind="all">All</button>
           <button class="weapon-kind-btn rank-btn" data-kind="great-sword">Great Sword</button>
           <button class="weapon-kind-btn rank-btn" data-kind="sword-shield">Sword &amp; Shield</button>
@@ -67,7 +73,7 @@
           <button class="weapon-kind-btn rank-btn" data-kind="heavy-bowgun">Heavy Bowgun</button>
           <button class="weapon-kind-btn rank-btn" data-kind="bow">Bow</button>
         </div>
-        <div class="rank-filter" style="margin-top: 0.5rem;">
+        <div class="rank-filter">
           <button class="rank-btn active" data-rank="all">All Ranks</button>
           <button class="rank-btn" data-rank="low">Low Rank</button>
           <button class="rank-btn" data-rank="high">High Rank</button>

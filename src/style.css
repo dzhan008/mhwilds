@@ -271,6 +271,29 @@ h4 { font-size: 0.95rem; }
 /* wrap is load-bearing, not cosmetic: centred + nowrap overflows *both* edges,
    so on a narrow screen "All Ranks" sits at a negative x and can't be scrolled
    back to. .type-filter already wraps (inline style in index.html). */
+/* These three rows used to carry their layout as inline style attributes in
+   index.html. Moved here so the mobile collapse below can override `display` —
+   an inline display:flex beats any stylesheet rule short of !important. */
+.type-filter {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+#weapon-kind-filter {
+  display: none;
+  justify-content: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-top: 0.4rem;
+}
+
+/* Only shown while the Weapons type filter is active (toggled from main.js). */
+#weapon-kind-filter.is-visible {
+  display: flex;
+}
+
 .rank-filter {
   display: flex;
   justify-content: center;
@@ -1481,6 +1504,74 @@ p.welcome-footnote {
   .app-footer a {
     display: inline-block;
     padding: 0.35rem 0.15rem;
+  }
+}
+
+/* ---------- Mobile filter disclosure ---------- */
+/* Desktop shows all three filter rows permanently and never renders the toggle.
+   Under 768px they collapsed behind "⚙ Filters (n)": the sticky header was
+   369px — over half a phone screen — before any result or instruction. Nothing
+   is reparented, because .search-filter-group is width:fit-content and
+   .type-filter is the child that establishes its 582px width; moving it would
+   shrink the desktop search bar. */
+.filter-toggle {
+  display: none;
+  align-items: center;
+  gap: 0.35rem;
+  margin-left: 0.5rem;
+  padding: 0.35rem 0.8rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: 999px;
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.filter-toggle[aria-expanded="true"] {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.filter-caret {
+  font-size: 0.7rem;
+  transition: transform var(--transition-fast);
+}
+
+.filter-toggle[aria-expanded="true"] .filter-caret {
+  transform: rotate(180deg);
+}
+
+/* Count of non-default filters, so a collapsed row never hides active state. */
+.filter-count {
+  min-width: 1.15rem;
+  padding: 0 0.25rem;
+  background: var(--gold);
+  color: var(--bg-primary);
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .filter-toggle {
+    display: inline-flex;
+  }
+
+  /* The rows stay in the DOM (and keep their listeners) — just collapsed. */
+  body:not(.filters-open) .type-filter,
+  body:not(.filters-open) #weapon-kind-filter,
+  body:not(.filters-open) .rank-filter {
+    display: none;
+  }
+
+  /* "Press /" is meaningless without a keyboard, and it's 20px of sticky
+     header. (Next Actions P3 #11.) */
+  .search-hint {
+    display: none;
   }
 }
 
