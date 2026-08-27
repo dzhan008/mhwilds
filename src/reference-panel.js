@@ -22,6 +22,7 @@
  */
 
 import skillsData from './data/skills.json';
+import { swipeToClose } from './swipe.js';
 
 const KIND_LABELS = { armor: 'Armor', weapon: 'Weapon', set: 'Set Bonus', group: 'Group Bonus' };
 
@@ -312,6 +313,9 @@ export function initReferencePanel({ findGear, materialNames, renderMaterialSour
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && isRefOpen() && !e.defaultPrevented) closeRefPanel();
   });
+
+  // Panel slid in from the left, so a leftward shove sends it back.
+  swipeToClose(panelEl, 'left', closeRefPanel, isRefOpen);
 
   // Narrow-window guard: if the farming drawer opens and both panels would
   // squeeze the page (<1100px), yield — and vice versa (farming-list listens too).

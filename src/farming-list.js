@@ -23,6 +23,7 @@
 
 import { findQuestsForMonster, getQuestBadgeInfo } from './quest-lookup.js';
 import { slotIcons } from './icons.js';
+import { swipeToClose } from './swipe.js';
 import { showSkill } from './reference-panel.js';
 import gatheringSources from './data/gathering-sources.json';
 import skillsData from './data/skills.json';
@@ -1190,6 +1191,9 @@ export function initFarmingList(index) {
     }
   });
   bodyEl.addEventListener('click', onBodyClick);
+
+  // Drawer slid in from the right, so a rightward shove sends it back.
+  swipeToClose(panelEl, 'right', closePanel, () => panelEl.classList.contains('open'));
 
   // Narrow-window guard: when the reference panel opens and both panels would
   // squeeze the page (<1100px), yield to it (reference-panel.js listens too).

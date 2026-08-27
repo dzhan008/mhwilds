@@ -265,6 +265,22 @@ function init() {
     }
   });
 
+  // ---- Enter/Go dismisses the on-screen keyboard ----
+  // Results render as you type, but on a phone the keyboard covers most of
+  // them and there's no obvious way to get rid of it. Blurring on Enter is the
+  // gesture people already expect from the "Search" key (labelled via
+  // enterkeyhint in index.html). The search itself already ran on `input`, so
+  // this only has to flush the pending debounce.
+  searchInput.addEventListener('keydown', (e) => {
+    if (e.key !== 'Enter') return;
+    e.preventDefault();
+    clearTimeout(searchTimeout);
+    const query = searchInput.value;
+    if (viewMode === 'grid' || viewMode === 'detail') showGrid(query);
+    else performSearch(query, resultsContainer, searchCount);
+    searchInput.blur();
+  });
+
   // ---- Search handler with debounce ----
   searchInput.addEventListener('input', (e) => {
     clearTimeout(searchTimeout);

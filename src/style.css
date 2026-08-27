@@ -392,9 +392,15 @@ h4 { font-size: 0.95rem; }
   margin: 0.75rem 0 0.25rem;
 }
 
+/* align-items must be explicit: the default `stretch` makes the option spans
+   grow to the button's height and leaves their text sitting at the top the
+   moment anything gives the button more height than its content needs (the
+   pointer:coarse min-height: 44px did exactly that). The ::before thumb is
+   absolutely positioned via inset, so it tracks the height either way. */
 .mode-switch {
   position: relative;
   display: inline-flex;
+  align-items: center;
   background: var(--bg-secondary);
   border: 1px solid var(--border-primary);
   border-radius: 999px;
@@ -1499,6 +1505,13 @@ p.welcome-footnote {
 .farming-panel,
 .ref-panel {
   padding-bottom: env(safe-area-inset-bottom);
+  /* Claim horizontal drags for swipe-to-close (see swipe.js) so the browser
+     doesn't read them as back/forward navigation and leave the site. pan-y
+     still allows the panel body to scroll vertically. Note this can't override
+     the OS-level edge-swipe on iOS — that gesture belongs to the system — but
+     it covers swipes that start anywhere inside the panel. */
+  touch-action: pan-y;
+  overscroll-behavior: contain;
 }
 
 .app-footer {
