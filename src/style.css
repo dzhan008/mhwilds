@@ -268,9 +268,13 @@ h4 { font-size: 0.95rem; }
 }
 
 /* ---------- Rank Filter ---------- */
+/* wrap is load-bearing, not cosmetic: centred + nowrap overflows *both* edges,
+   so on a narrow screen "All Ranks" sits at a negative x and can't be scrolled
+   back to. .type-filter already wraps (inline style in index.html). */
 .rank-filter {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 0.5rem;
   margin-top: 0.75rem;
 }
@@ -357,8 +361,17 @@ h4 { font-size: 0.95rem; }
   padding: 1rem 0 3rem;
 }
 
+/* minmax(0, 1fr) rather than a bare implicit track: an `auto` track floors at
+   the item's min-content width, and .empty-state's min-content is driven by
+   .welcome-cards' `repeat(auto-fit, minmax(230px, 1fr))`, which resolves to 3
+   tracks (717px) when the width is indefinite. That blew the column out to
+   749px and dragged the whole document to 769px — on a phone Chrome then
+   zoomed out ~50% to fit, which also made window.innerWidth report 769 and
+   silently disabled every JS/CSS mobile breakpoint below it. Still one column
+   at every width, so desktop layout is unchanged. */
 .results-grid {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 0.75rem;
 }
 
@@ -1405,6 +1418,54 @@ p.welcome-footnote {
 
   .drop-table {
     font-size: 0.68rem;
+  }
+}
+
+/* Touch targets. Keyed off `pointer: coarse` rather than a width breakpoint so
+   desktop keeps its current density — a mouse doesn't need 44px, and widening
+   the filter pills there would push the rank row onto a second line.
+   Buttons vertically centre their own content, so min-height is enough.
+   .material-chip is deliberately left alone: it's dense inline text inside long
+   material lists, and 44px per chip would bloat every expanded card. */
+@media (pointer: coarse) {
+  .type-btn,
+  .rank-btn,
+  .events-filter-btn,
+  .sort-select,
+  .welcome-action,
+  .ref-tab,
+  .farming-tab,
+  .mode-switch {
+    min-height: 44px;
+  }
+
+  .welcome-chip {
+    min-height: 36px;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .close-btn {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  /* Same treatment for the controls inside the two drawers. */
+  #ref-skill-search,
+  #farming-profile-select,
+  .ref-kind-btn,
+  .farming-footer .rank-btn {
+    min-height: 44px;
+  }
+
+  .farming-profile-toggle {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  /* Footer credit links are 15px of text — pad the line box, not the glyphs. */
+  .app-footer a {
+    display: inline-block;
+    padding: 0.35rem 0.15rem;
   }
 }
 
