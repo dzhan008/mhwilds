@@ -27,6 +27,25 @@ node scripts/verify-farming.mjs  # Headless E2E suite for the farming list (need
 
 There are no unit tests or linting configs — this is a vanilla JS project. The farming-list drawer has the headless verification suite above (193 checks covering goal pinning, subsumption, profiles, migration, drawer polish, card structure, the reference panel, and the mobile/touch pass).
 
+## Task backlog — keep it current
+
+The list of open work is **not in this repo**. It lives as a private Claude artifact titled
+**"Wilds Planner Backlog"**, so that it can be read from a phone without a checkout. Its URL is
+deliberately not recorded here (this repo is public); recover it with the Artifact tool's
+`action: "list"`, or ask the user for the link.
+
+**Update it in the same session that changes what's open** — when an item ships, when something is
+newly deferred, or when a trigger condition is met. A backlog that lags the code is worse than none,
+because the next session starts from it cold and trusts it.
+
+- Update in place by passing the recovered URL as `url`. Publishing **without** `url` from a session
+  that didn't originally create it silently makes a *second* artifact instead of updating this one.
+- The page has two halves that must stay in sync: the prose items, and the plain-text **Briefing**
+  block at the bottom that gets pasted into cold chats. Editing only one leaves them contradicting.
+- In the primary working copy, `implementation-plan.md` is the plan of record and its "Next Actions"
+  section must be updated too. A clone won't have that file — say the plan doc still needs updating
+  rather than assuming it's done.
+
 ## Architecture
 
 **Stack:** Vanilla JS ES modules + Vite for bundling, Fuse.js for fuzzy search. No framework.
