@@ -2762,6 +2762,89 @@ p.welcome-footnote {
   color: var(--fire);
 }
 
+/* Inventory stepper (how many of this material you already own).
+   Sits at the right edge of a Hunt Plan row and stays visually quiet at 0 so a
+   plan nobody tracks inventory on reads as it always did; the count picks up
+   the gold accent only once it's non-zero. */
+.have-stepper {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  flex-shrink: 0;
+}
+
+.have-stepper button {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border-primary);
+  border-radius: 4px;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  line-height: 1;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.have-stepper button:hover:not(:disabled) {
+  border-color: var(--gold);
+  color: var(--text-primary);
+}
+
+/* Disabled at the ends of the range (0 and full) rather than hidden, so the
+   control doesn't reflow as you step through it. */
+.have-stepper button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.have-count {
+  min-width: 2.4rem;
+  text-align: center;
+  font-size: 0.7rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-muted);
+}
+
+.have-stepper.has-count .have-count {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.have-sep {
+  opacity: 0.5;
+  margin: 0 0.05em;
+}
+
+.farming-item.done .have-count {
+  opacity: 0.5;
+}
+
+@media (pointer: coarse) {
+  /* Full 44px touch area without a 44px visual footprint. Drawn at 30px and
+     expanded by a transparent ::after, because two 44px boxes per row visibly
+     outweigh the material name they belong to — the plan is a reading surface
+     first. The gap between the buttons (the count is ~2.4rem) is wide enough
+     that the expanded areas don't overlap. */
+  .have-stepper button {
+    width: 30px;
+    height: 30px;
+    position: relative;
+  }
+
+  .have-stepper button::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 44px;
+    height: 44px;
+    transform: translate(-50%, -50%);
+  }
+}
+
 /* Provenance tags (which goal a material is for) */
 .farming-item-prov {
   display: flex;

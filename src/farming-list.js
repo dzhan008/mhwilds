@@ -10,7 +10,11 @@
  * Storage (localStorage key `mhwilds-farming-list`), version 2:
  *   { version, activeProfile, profiles: [
  *       { id, name, goals: [{ id, type, name, sourceId, meta, materials:[{name,qty}] }],
- *         checked: { <materialName>: true } } ] }
+ *         checked: { <materialName>: true },
+ *         have: { <materialName>: n } } ] }
+ *
+ * `have` (inventory) is additive within v2 — a payload written before it existed
+ * loads with an empty map, so no version bump or migration is needed.
  *
  * A v1 flat array `[{name,qty,done}]` migrates into a single "Default" profile
  * whose `custom` goal holds the old entries.
@@ -76,6 +80,53 @@ function checkedOf() {
   return activeProfile().checked;
 }
 
+// ---- Inventory ("how many do I already have") ----
+// `have` counts against the AGGREGATE quantity — the same figure the Hunt Plan
+// shows — rather than being allocated across the individual goals wanting the
+// material. Owning 4 of a 6-needed part therefore reads identically everywhere,
+// and pinning more gear that needs it raises the need while the count stays put.
+function haveOf() {
+  return activeProfile().have;
+}
+
+function normalizeHave(raw) {
+  if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return {};
+  const out = {};
+  for (const [k, v] of Object.entries(raw)) {
+    if (Number.isFinite(v) && v > 0) out[k] = Math.floor(v);
+  }
+  return out;
+}
+
+// Material names that count as farmed: explicitly ticked off, OR owned in full.
+// Returned as a Set so the plan rows, the goal-card progress bars and the badge
+// can never disagree about what's done. Explicit ticks are carried in wholesale,
+// which also covers the two cases that never reach aggregation — acquisition
+// goals (keyed by goal id) and the materials of a subsumed goal.
+function farmedSet() {
+  const have = haveOf();
+  const set = new Set(Object.keys(checkedOf()));
+  for (const m of aggregate()) {
+    if ((have[m.name] || 0) >= m.qty) set.add(m.name);
+  }
+  return set;
+}
+
+// Step one material's owned count. An explicit tick means "I have all of these",
+// so it materialises into a real count before stepping — ticking and then
+// decrementing reads as 5 of 6 rather than staying silently done. Using a
+// stepper hands authority to the count, so the tick is cleared either way.
+function stepHave(name, qty, delta) {
+  const have = haveOf();
+  const checked = checkedOf();
+  const current = checked[name] ? qty : (have[name] || 0);
+  delete checked[name];
+  const next = Math.max(0, Math.min(qty, current + delta));
+  if (next > 0) have[name] = next;
+  else delete have[name]; // 0 is the default — don't persist it
+  commit();
+}
+
 // A material-less goal (a pendant acquisition): it has nothing to farm, so it's
 // absent from the Hunt Plan and tracks done/not-done by its own id in `checked`.
 function isAcquisitionGoal(g) {
@@ -105,7 +156,7 @@ function customGoal(create = false) {
 }
 
 function freshProfile(name = 'Default') {
-  return { id: genId(), name, goals: [], checked: {} };
+  return { id: genId(), name, goals: [], checked: {}, have: {} };
 }
 
 // ---- Persistence ----
@@ -145,6 +196,10 @@ function loadState() {
         goals: (Array.isArray(p.goals) ? p.goals : [])
           .filter(g => g && typeof g === 'object' && Array.isArray(g.materials)),
         checked: (p.checked && typeof p.checked === 'object' && !Array.isArray(p.checked)) ? p.checked : {},
+        // Inventory counts. Absent on any payload written before `have` existed,
+        // and hand-edited junk (strings, negatives, NaN) is dropped rather than
+        // trusted — a bad count would silently mark a material farmed.
+        have: normalizeHave(p.have),
       }));
     if (profiles.length) {
       // gearSort is a global view preference (validated by gearSort()); carry it
@@ -213,24 +268,26 @@ export function addGoals(goalList) {
 
 function commit({ pulse = false } = {}) {
   disarmClearAll(); // any state change invalidates an armed "Really clear?" — it may target a different profile now
-  pruneChecked();
+  pruneProgress();
   save();
   updateBadge();
   if (panelEl?.classList.contains('open')) renderPanel();
   if (pulse) pulseToggle();
 }
 
-// Drop checked entries for materials no longer pinned anywhere in the active
-// profile — otherwise a material removed and later re-pinned would come back
-// already marked as farmed.
-function pruneChecked() {
+// Drop progress for materials no longer pinned anywhere in the active profile —
+// otherwise a material removed and later re-pinned would come back already
+// marked as farmed, or carrying a stale owned count.
+function pruneProgress() {
   const checked = checkedOf();
+  const have = haveOf();
   const names = new Set();
   for (const g of goalsOf()) {
     if (isAcquisitionGoal(g)) names.add(g.id); // acquisition goals track done by id
     for (const m of g.materials) names.add(m.name);
   }
   for (const k of Object.keys(checked)) if (!names.has(k)) delete checked[k];
+  for (const k of Object.keys(have)) if (!names.has(k)) delete have[k];
 }
 
 // A goal is subsumed when its parent (the set an armor piece belongs to, or the
@@ -352,9 +409,9 @@ function renderPanel() {
 // ── Hunt Plan tab ──
 function renderPlanTab() {
   const all = aggregate();
-  const checked = checkedOf();
-  const doneCount = all.filter(m => checked[m.name]).length;
-  const materials = hideFarmed ? all.filter(m => !checked[m.name]) : all;
+  const farmed = farmedSet();
+  const doneCount = all.filter(m => farmed.has(m.name)).length;
+  const materials = hideFarmed ? all.filter(m => !farmed.has(m.name)) : all;
   // Only show provenance tags when there's more than one goal to disambiguate.
   const showProvenance = goalsOf().filter(g => g.materials.length).length > 1;
 
@@ -365,7 +422,7 @@ function renderPlanTab() {
     </label>
   ` : '';
   const body = materials.length
-    ? buildHuntPlan(materials).map(group => renderGroup(group, checked, showProvenance)).join('')
+    ? buildHuntPlan(materials).map(group => renderGroup(group, farmed, showProvenance)).join('')
     : `<div class="farming-empty"><p>All ${doneCount} material${doneCount !== 1 ? 's' : ''} farmed 🎉</p></div>`;
   // Zenny lives here rather than in the Build Summary: it's part of what it takes
   // to *acquire* the pinned gear, alongside the materials — not a stat of the build.
@@ -386,9 +443,9 @@ function renderPlanCost() {
   `;
 }
 
-function renderGroup(group, checked, showProvenance) {
+function renderGroup(group, farmed, showProvenance) {
   const icon = group.kind === 'monster' ? '🐲' : group.kind === 'gathering' ? '🌿' : '❓';
-  const allDone = group.items.every(i => checked[i.name]);
+  const allDone = group.items.every(i => farmed.has(i.name));
 
   let questHtml = '';
   if (group.kind === 'monster') {
@@ -413,13 +470,13 @@ function renderGroup(group, checked, showProvenance) {
       </div>
       ${questHtml}
       <div class="farming-items">
-        ${group.items.map(item => renderPlanItem(item, group, checked, showProvenance)).join('')}
+        ${group.items.map(item => renderPlanItem(item, group, farmed, showProvenance)).join('')}
       </div>
     </div>
   `;
 }
 
-function renderPlanItem(item, group, checked, showProvenance) {
+function renderPlanItem(item, group, farmed, showProvenance) {
   let hint = '';
   if (group.kind === 'monster') {
     const src = (materialIndex[item.name] || []).find(s => s.monsterName === group.title);
@@ -433,7 +490,19 @@ function renderPlanItem(item, group, checked, showProvenance) {
   }
 
   const n = escapeHtml(item.name);
-  const isDone = !!checked[item.name];
+  const isDone = farmed.has(item.name);
+  // Clamped on read rather than on write: unpinning a goal lowers the aggregate
+  // need without touching the count, so a stored 4 against a need of 3 is real
+  // (you own 4) and must not render as "4/3".
+  const stored = Math.min(haveOf()[item.name] || 0, item.qty);
+  // An explicit tick means "I have all of these", so the stepper shows the full
+  // count rather than the 0 actually stored. Without this a ticked row reads as
+  // "0/6 owned" and its − button is disabled, making the tick a one-way door.
+  const have = checkedOf()[item.name] ? item.qty : stored;
+  // The leading figure is what's LEFT to farm — the whole point of tracking what
+  // you already own. It only switches away from the total once a count exists,
+  // so a plan nobody tracks inventory on looks exactly as it did before.
+  const lead = have > 0 && !isDone ? item.qty - have : item.qty;
 
   let tags = '';
   if (showProvenance) {
@@ -452,15 +521,30 @@ function renderPlanItem(item, group, checked, showProvenance) {
     tags = `<div class="farming-item-prov">${shown}${extra}</div>`;
   }
 
+  // Inventory stepper. Always present so the feature is discoverable, but muted
+  // at zero so a row nobody tracks reads as quietly as it always did. The
+  // checkbox still means "I have them all", which is why there's no separate
+  // fill-to-max control: tick it, or step up to the total, same result.
+  const stepper = `
+    <div class="have-stepper${have > 0 ? ' has-count' : ''}" role="group" aria-label="Owned count for ${n}">
+      <button type="button" data-action="have-dec" data-name="${n}" data-qty="${item.qty}"
+              ${have === 0 ? 'disabled' : ''} aria-label="One fewer ${n} owned">−</button>
+      <span class="have-count" aria-live="off">${have}<span class="have-sep">/</span>${item.qty}</span>
+      <button type="button" data-action="have-inc" data-name="${n}" data-qty="${item.qty}"
+              ${have >= item.qty ? 'disabled' : ''} aria-label="One more ${n} owned">+</button>
+    </div>
+  `;
+
   return `
     <div class="farming-item${isDone ? ' done' : ''}">
       <input type="checkbox" class="farming-check" data-action="toggle" data-name="${n}"
-             ${isDone ? 'checked' : ''} aria-label="Mark ${n} as farmed" />
+             data-qty="${item.qty}" ${isDone ? 'checked' : ''} aria-label="Mark ${n} as farmed" />
       <div class="farming-item-main">
-        <span class="farming-item-name"><span class="qty">${item.qty}x</span> ${n}</span>
+        <span class="farming-item-name"><span class="qty">${lead}x</span> ${n}</span>
         ${hint ? `<span class="farming-item-hint">${escapeHtml(hint)}</span>` : ''}
         ${tags}
       </div>
+      ${stepper}
     </div>
   `;
 }
@@ -749,16 +833,18 @@ function renderGearTab() {
       return ka[0] - kb[0] || ka[1] - kb[1];
     });
   }
-  const card = g => g.type === 'custom' ? renderCustomGoalCard(g)
+  // Derived once and threaded down: farmedSet() aggregates, so calling it per
+  // card would be quadratic in goals.
+  const farmed = farmedSet();
+  const card = g => g.type === 'custom' ? renderCustomGoalCard(g, farmed)
     : isAcquisitionGoal(g) ? renderAcquisitionGoalCard(g)
-    : renderGoalCard(g);
+    : renderGoalCard(g, farmed);
   return renderGearSortControl(sort, goals) + renderBuildSummary() + goals.map(card).join('');
 }
 
-function renderGoalCard(goal) {
-  const checked = checkedOf();
+function renderGoalCard(goal, farmed = farmedSet()) {
   const total = goal.materials.length;
-  const done = goal.materials.filter(m => checked[m.name]).length;
+  const done = goal.materials.filter(m => farmed.has(m.name)).length;
   const pct = total ? Math.round((done / total) * 100) : 0;
   const meta = goal.meta || {};
   const parentGoal = subsumedBy(goal);
@@ -843,12 +929,11 @@ function renderAcquisitionGoalCard(goal) {
   `;
 }
 
-function renderCustomGoalCard(goal) {
-  const checked = checkedOf();
+function renderCustomGoalCard(goal, farmed = farmedSet()) {
   const rows = goal.materials.map(m => {
     const n = escapeHtml(m.name);
     return `
-      <div class="goal-custom-row${checked[m.name] ? ' done' : ''}">
+      <div class="goal-custom-row${farmed.has(m.name) ? ' done' : ''}">
         <span class="goal-custom-name"><span class="qty">${m.qty}x</span> ${n}</span>
         <div class="farming-item-controls">
           <button data-action="dec" data-name="${n}" aria-label="Decrease ${n}">−</button>
@@ -941,7 +1026,12 @@ function confirmProfileForm() {
     } else if (profileAction === 'rename') {
       p.name = name;
     } else if (profileAction === 'duplicate') {
-      const copy = { id: genId(), name, goals: JSON.parse(JSON.stringify(p.goals)), checked: { ...p.checked } };
+      const copy = {
+        id: genId(), name,
+        goals: JSON.parse(JSON.stringify(p.goals)),
+        checked: { ...p.checked },
+        have: { ...p.have }, // omitting this drops the counts *and* leaves haveOf() undefined
+      };
       state.profiles.push(copy);
       state.activeProfile = copy.id;
     }
@@ -977,9 +1067,9 @@ function updateTabCount() {
 
 // ---- Badge + toggle button ----
 function updateBadge() {
-  const checked = checkedOf();
-  const remaining = aggregate().filter(m => !checked[m.name]).length
-    + goalsOf().filter(g => isAcquisitionGoal(g) && !checked[g.id]).length;
+  const farmed = farmedSet();
+  const remaining = aggregate().filter(m => !farmed.has(m.name)).length
+    + goalsOf().filter(g => isAcquisitionGoal(g) && !farmed.has(g.id)).length;
   countEl.textContent = remaining;
   countEl.hidden = remaining === 0;
 }
@@ -1079,10 +1169,32 @@ function onBodyClick(e) {
   }
 
   const name = control.dataset.name;
+
+  // Inventory steppers (Hunt Plan rows). Distinct from the custom goal's
+  // inc/dec below, which edit how many you WANT, not how many you have.
+  if (action === 'have-inc' || action === 'have-dec') {
+    stepHave(name, Number(control.dataset.qty) || 0, action === 'have-inc' ? 1 : -1);
+    return;
+  }
+
   if (action === 'toggle') {
     const checked = checkedOf();
-    if (checked[name]) delete checked[name];
-    else checked[name] = true;
+    const have = haveOf();
+    const qty = Number(control.dataset.qty) || 0;
+    if (farmedSet().has(name)) {
+      // Un-ticking has to actually undo "done", whichever mechanism got it
+      // there — otherwise a row completed by its count re-ticks itself on the
+      // next render and looks broken. A full count steps back to one short
+      // rather than being cleared, so the box reads honestly without throwing
+      // away a count you built up.
+      delete checked[name];
+      if (qty > 0 && (have[name] || 0) >= qty) {
+        if (qty > 1) have[name] = qty - 1;
+        else delete have[name];
+      }
+    } else {
+      checked[name] = true;
+    }
     commit();
     return;
   }
